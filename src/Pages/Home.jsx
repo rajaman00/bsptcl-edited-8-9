@@ -14,6 +14,7 @@ import DisplayMap from '../../components/DisplayMap';
 import Tenders from '../../components/tenders';
 import OtherUtilities from '../../components/OtherUtilities';
 import Footer from '../../components/Footer';
+import OtherInformation from '../../components/OtherInformation';
 
 
 
@@ -43,8 +44,6 @@ function App() {
         <Test/>
         </div>
 
-        
-
         <div className="VMVsection">
            <VMVsection/>
         </div>
@@ -56,6 +55,16 @@ function App() {
         <div className="mapSection">
           <DisplayMap/>
         </div>
+
+        <div className="OtherInformationSection">
+          <OtherInformation/>
+        </div>
+
+        
+
+        
+
+       
 
         <div className="tenders">
            <Tenders/>
