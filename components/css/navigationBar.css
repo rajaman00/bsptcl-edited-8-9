@@ -1,0 +1,538 @@
+
+
+/*-------------- Utility Link Design --------------*/
+.utilityLink {
+    display: flex;
+    justify-content: space-between;
+    background: #ededed;
+    /* overflow: hidden; */
+    height: 2rem;
+    border-bottom: 1px solid #d4d4d4;
+}
+
+.utilityLink .leftSideDisplay{
+    display: flex;
+    justify-content: flex-start;
+ 
+}
+
+.utilityLink .rightSideDisplay{
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+ 
+}
+
+.utilityLink a {
+    text-decoration: none;
+    padding: 10px;
+    font-size: x-small;
+    color: rgb(87, 79, 79);
+}
+
+@media (max-width: 768px) {
+    .utilityLink a {
+        padding: 8px;
+    }
+}
+
+/* -----------Parent Div CSS---------- */
+.parent {
+    background-color: white;
+    height: 7rem;
+    position: relative;
+    border-bottom: 4px solid #2f2963;
+    box-sizing: border-box;
+
+}
+
+
+/*---------------------------- Logo and Link Div CSS------------------ */
+.logoAndLink {
+    display: flex;
+    /* position: relative; */
+    height: 100%;
+    justify-content: space-between;
+
+}
+
+/* ------------------------------Company Logo Css------------------------ */
+.companyLogo {
+    width: 40%;
+
+}
+
+
+.logoImage {
+    height: 100%;
+
+}
+
+@media (max-width:991px) {
+    .companyLogo {
+        width: 100%;
+        height: 43%;
+
+    }
+
+    .logoImage {
+        height: 100%;
+    }
+}
+
+/* ---------------------Main Link Css and serach Bar-------------- */
+.mainLinkAndSearchBar {
+    width: 50rem;
+    position: relative;
+    left: 0;
+    
+}
+
+@media(max-width:1200px) {
+    .mainLinkAndSearchBar{
+        width: 37rem;
+    }
+}
+@media(max-width:991px) {
+    .mainLinkAndSearchBar {
+        width: 100%;
+        position: static;
+    }
+}
+/* Company Link  and Search Bar*/
+.searchBarAndCompanyLink{
+    display: flex;
+}
+
+
+
+/* --------Main Link CSS----------- */
+.nav-link {
+    padding: 0px 10px 0 10px !important;
+}
+
+.mainLink {
+    width: 100%;
+    position: absolute;
+    font-size: 1rem;
+    bottom: 0;
+    right: 0;
+    background-color: #2f2963;
+    z-index: 3;
+    padding-bottom: 0 !important;
+    border-top-left-radius: 15px;
+}
+
+.navLinkcolor {
+    color: white !important;
+    font-weight: 700 !important;
+    /* z-index: 100000; */
+}
+
+
+.crossEffect {
+
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    background-color: #2f2963;
+    transform-origin: top left;
+    transform: skewX(-33deg);
+    border-top-left-radius: 15px;
+}
+
+@media (max-width:1200px) {
+    .mainLink {
+        font-size: 0.7rem;
+        padding: 0.3rem;
+    }
+}
+
+
+
+@media (max-width:991px) {
+    .logoAndLink {
+        position: static;
+        /* display: flex; */
+        flex-direction: column;
+    }
+
+    .mainLink {
+        width: max-content;
+        height: min-content;
+        background-color: white;
+        position: absolute;
+        top: 0;
+    }
+
+    .navLinkcolor{
+        color: black !important;
+    }
+    .crossEffect {
+        display: none;
+    }
+}
+
+/* Searchbar Css */
+.searchBar {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 1px 3px 1px;
+    width: 50%;
+    border-bottom: 1px solid #0bafec;
+}
+
+/* -------------------------Dropdowns CSS-------------------- */
+.dropDownMenu {
+    background-color: #0bafec;
+    border-radius: 5px;
+    width: 225px;
+    /* height: 5rem; */
+
+}
+
+@media (max-width:990px){
+    .dropDownMenu{
+        width: max-content;
+        font-size: xx-small;
+        height: min-content;
+    }
+}
+/* About Dropdown */
+.AboutDropDown {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    justify-items: flex-end;
+    position: absolute;
+    font-size: medium !important;
+    right: 38.35rem;
+    padding: 0;
+    top: 0.9rem;
+}
+
+
+@media (max-width:1140px) {
+    .AboutDropDown {
+        top: 0.7rem;
+    }
+}
+
+@media (max-width:991px) {
+    .AboutDropDown {
+        position: static;
+        margin-left: 10px;
+    }
+}
+
+
+
+/* Transmission N/W Dropdown */
+.transmissionDropDown {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    justify-items: flex-end;
+    position: absolute;
+    font-size: medium !important;
+    right: 27.5rem;
+    top: 0.9rem;
+}
+
+@media (max-width:1140px) {
+    .transmissionDropDown {
+        top: 0.7rem;
+    }
+}
+
+@media (max-width:991px) {
+    .transmissionDropDown {
+        position: static;
+        margin-left: 10px;
+
+    }
+    .triangle{
+        display: none;
+    }
+}
+
+
+/* Transmission N/W CurInfrastructure Dropdown */
+.CurInfrastructureDropDown {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    justify-items: flex-end;
+    position: absolute;
+    font-size: medium !important;
+    left: 14.1rem;
+    top: 1.95rem;
+}
+
+@media (max-width:1140px) {
+    .CurInfrastructureDropDown {
+        top: 0.7rem;
+    }
+}
+
+@media (max-width:991px) {
+    .CurInfrastructureDropDown {
+        position: static;
+        margin-left: 10px;
+
+    }
+    .triangle{
+        display: none;
+    }
+}
+
+/* Transmission N/W SysParameters Dropdown */
+.SysParametersDropDown {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    justify-items: flex-end;
+    position: absolute;
+    font-size: medium !important;
+    left: 14.1rem;
+    top:5.055rem;
+}
+
+@media (max-width:1140px) {
+    .CSysParametersDropDown {
+        top: 0.7rem;
+    }
+}
+
+@media (max-width:991px) {
+    .SysParametersDropDown {
+        position: static;
+        margin-left: 10px;
+
+    }
+    .triangle{
+        display: none;
+    }
+}
+
+/* Transmission N/W CurInfrastructure Dropdown */
+.UpcomInfrastructureDropDown {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    justify-items: flex-end;
+    position: absolute;
+    font-size: medium !important;
+    left: 14.1rem;
+    top: 8.1rem;
+}
+
+@media (max-width:1140px) {
+    .UpcomInfrastructureDropDown {
+        top: 0.7rem;
+    }
+}
+
+@media (max-width:991px) {
+    .UpcomInfrastructureDropDown {
+        position: static;
+        margin-left: 10px;
+
+    }
+    .triangle{
+        display: none;
+    }
+}
+
+/* Media Dropdown */
+.mediaDropDown {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    justify-items: flex-end;
+    position: absolute;
+    font-size: medium !important;
+    right: 22rem;
+    padding: 0;
+    top: 0.9rem;
+}
+
+
+@media (max-width:1140px) {
+    .mediaDropDown {
+        top: 0.7rem;
+    }
+}
+
+@media (max-width:991px) {
+    .mediaDropDown {
+        position: static;
+        margin-left: 10px;
+    }
+}
+
+
+/* Procurement DropDown */
+.procurementDropDown{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    justify-items: flex-end;
+    position: absolute;
+    font-size: medium !important;
+    right: 13.7rem;
+    padding: 0;
+    top: 0.9rem;
+}
+
+
+@media (max-width:1140px) {
+    .procurementDropDown {
+        top: 0.7rem;
+    }
+}
+
+@media (max-width:991px) {
+    .procurementDropDown {
+        position: static;
+        margin-left: 10px;
+    }
+}
+
+/* STU dropdown */
+.stuDropDown{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    justify-items: flex-end;
+    position: absolute;
+    font-size: medium !important;
+    right: 9.59rem;
+    padding: 0;
+    top: 0.9rem;
+}
+
+
+@media (max-width:1140px) {
+    .stuDropDown {
+        top: 0.7rem;
+    }
+}
+
+@media (max-width:991px) {
+    .stuDropDown {
+        position: static;
+        margin-left: 10px;
+    }
+}
+
+/* STU Regulations dropdown */
+.RegulationsDropDown{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    justify-items: flex-end;
+    position: absolute;
+    font-size: medium !important;
+    right: 14.1rem;
+    top: 1.95rem;
+}
+
+
+@media (max-width:1140px) {
+    .RegulationsDropDown {
+        top: 0.7rem;
+    }
+}
+
+@media (max-width:991px) {
+    .RegulationsDropDown {
+        position: static;
+        margin-left: 10px;
+    }
+}
+
+/* Employee Dropdwon */
+.employeeDropDown {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    justify-items: flex-end;
+    position: absolute;
+    font-size: medium !important;
+    right: 2.7rem;
+    padding: 0;
+    top: 0.9rem;
+}
+
+
+@media (max-width:1140px) {
+    .employeeDropDown {
+        top: 0.7rem;
+    }
+}
+
+@media (max-width:991px) {
+    .employeeDropDown {
+        position: static;
+        margin-left: 10px;
+    }
+}
+
+.triangle {
+    color: #db8204;
+    font-weight: 900 !important;
+    font-size: 1.3rem !important;
+    position: relative;
+    margin-left: auto;
+
+}
+
+@media(max-width:1200px) {
+    .AboutDropDown{
+          right: 29.4rem;
+          top: 0.4rem;
+    }
+    .transmissionDropDown{
+        right: 21.5rem;
+          top: 0.4rem;
+    }
+    .employeeDropDown{
+        right: 16.1rem;
+        top: 0.4rem;
+    }
+    .mediaDropDown{
+        right: 12.1rem;
+          top: 0.4rem;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+/* offcanvas button design */
+.btn {
+    width: 100%;
+    background-color: #c9722b54;
+    border-color: #007bff77;
+    color: white;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.custom-button:hover {
+    background-color: #b30057;
+    border-color: #4eb300;
+}
+
+
+
+

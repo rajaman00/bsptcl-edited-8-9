@@ -1,0 +1,109 @@
+@keyframes moveBackground {
+  0% {
+    background-position: 0% 50%;
+  }
+  100% {
+    background-position: 100% 50%;
+  }
+}
+
+.parentVMV {
+  position: relative;
+  overflow: hidden; /* Ensures the background stays within the parent */
+}
+
+.background-image {
+  background-image: url('images/VMVbackground.jpg');
+  /* background-size: cover; */
+  background-position: 0% 50%; /* Start position */
+  background-repeat: no-repeat;
+  opacity: 0.15; /* Adjust the opacity here */
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 1; /* Ensure it is below the content */
+  animation: moveBackground 800s linear infinite; 
+  /* padding: 2rem; */
+  margin: 2rem;
+  margin-bottom: -5rem;
+}
+
+.VMV {
+  display: flex; 
+  border-radius: 10px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1); 
+  padding: 2rem;
+  margin: 2rem;
+  position: relative; /* To ensure proper stacking context */
+  z-index: 2; /* Ensure it is above the background image */
+}
+
+.mission, .value {
+  padding-left: 1rem;
+  margin-left: 1rem;
+  border-left: 2px double #ddd;
+  text-align: center;
+}
+
+.vision {
+  width: 30%;
+  text-align: center;
+}
+
+.mission {
+  width: 40%;
+}
+
+.value {
+  width: 30%;
+}
+
+ul {
+  padding-left: 1.2rem !important;
+}
+
+.text-header-container {
+  position: relative;
+  margin-left: 2rem;
+  margin-right: 2rem;
+}
+
+.text-header {
+  text-align: center;
+  font-style: italic;
+  font-size: 3rem;
+  font-family: 'Brush Script MT', cursive;
+  color: #2f2963; /* Text color */
+  padding: 1rem;
+}
+
+.text-header::before,
+.text-header::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  width: 30%;
+  height: 1px; 
+  background: #2f2963; 
+  transform: translateY(-50%);
+}
+
+.text-header::before {
+  left: 0;
+}
+
+.text-header::after {
+  right: 0;
+}
+
+.text-content {
+  flex: 1;
+  color: #333;
+  font-size: 1.2rem;
+  line-height: 1.5;
+  padding: 1rem;
+  font-family: "Times New Roman", Times, serif;
+  text-align: justify;
+}

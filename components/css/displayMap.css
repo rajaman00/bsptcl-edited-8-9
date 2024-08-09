@@ -1,0 +1,423 @@
+.mapBox {
+  display: flex;
+  position: relative;
+
+
+}
+
+.map-container {
+  width: 50%;
+  overflow: hidden;
+  /* background-color: #58af6e; */
+}
+
+.district-polygon {
+  fill: gray;
+  stroke: black;
+  stroke-width: 1;
+
+}
+
+.district-text {
+  fill: white;
+  font-weight: bold;
+  font-size: 10px;
+  text-anchor: middle;
+
+}
+
+.hover-group {
+  pointer-events: none;
+  /* Prevents interaction with hover group */
+}
+
+.hover-background {
+  fill: white;
+}
+
+.hover-text1 {
+  fill: #2f2963;
+  font-weight: bold;
+  font-size: 14px;
+  text-anchor: middle;
+  pointer-events: none;
+  /* Prevent text from capturing mouse events */
+}
+
+
+.muzZone {
+  fill: #B99095;
+  stroke: white;
+  stroke-width: 1.2;
+  transition: stroke 0.3s ease, stroke-width 0.3s ease;
+  /* Smooth transition for stroke changes */
+}
+
+.muzZone:hover {
+  stroke: white;
+  /* Change stroke color on hover */
+  stroke-width: 1.2;
+  /* Change stroke width on hover */
+  animation: pulse 2s infinite alternate;
+  /* Apply the pulse animation */
+}
+
+.patnaZone {
+  fill: #C99460;
+  stroke: white;
+  stroke-width: 1.2;
+  transition: stroke 0.3s ease, stroke-width 0.3s ease;
+  /* Smooth transition for stroke changes */
+}
+
+.patnaZone:hover {
+  stroke: white;
+  /* Change stroke color on hover */
+  stroke-width: 1.2;
+  /* Change stroke width on hover */
+  animation: pulse 2s infinite alternate;
+  /* Apply the pulse animation */
+}
+
+.koshiZone {
+  fill: #8CBBBD;
+  stroke: white;
+  stroke-width: 1.2;
+  transition: stroke 0.3s ease, stroke-width 0.3s ease;
+  /* Smooth transition for stroke changes */
+}
+
+.koshiZone:hover {
+  stroke: white;
+  /* Change stroke color on hover */
+  stroke-width: 1.2;
+  /* Change stroke width on hover */
+  animation: pulse 2s infinite alternate;
+  /* Apply the pulse animation */
+}
+
+.bhagalpurZone {
+  fill: #D48C70;
+  stroke: white;
+  stroke-width: 1.2;
+  transition: stroke 0.3s ease, stroke-width 0.3s ease;
+  /* Smooth transition for stroke changes */
+}
+
+.bhagalpurZone:hover {
+  stroke: white;
+  /* Change stroke color on hover */
+  stroke-width: 1.2;
+  /* Change stroke width on hover */
+  animation: pulse 2s infinite alternate;
+  /* Apply the pulse animation */
+}
+
+.gayaZone {
+  fill: #5885AF;
+  stroke: white;
+  stroke-width: 1.2;
+  transition: stroke 0.3s ease, stroke-width 0.3s ease;
+  /* Smooth transition for stroke changes */
+}
+
+.gayaZone:hover {
+  stroke: white;
+  /* Change stroke color on hover */
+  stroke-width: 1.2;
+  /* Change stroke width on hover */
+  animation: pulse 2s infinite alternate;
+  /* Apply the pulse animation */
+}
+
+@keyframes pulse {
+  0% {
+    stroke-width: 2;
+    /* Starting width */
+  }
+
+  100% {
+    stroke-width: 2;
+    /* Hover width */
+  }
+}
+
+.secondPart {
+  width: 50%;
+  padding: 2rem;
+  transition: all 0.3s ease;
+  /* Smooth transition for layout changes */
+  /* background-color: aquamarine; */
+  display: flex;
+  flex-direction: column;
+  align-items: center; 
+  justify-content: center; 
+  position: relative;
+ 
+}
+
+ul.imagesList .criteriaImage {
+  width: 7rem;
+  height: 7rem;
+}
+ul.zoneImagesList .zoneCriteriaImage {
+  width: 7rem;
+  height: 7rem;
+  
+}
+
+.secondPart.default .imagesList {
+  flex-wrap: wrap;
+}
+
+.secondPart.default .imagesList li {
+  /* flex: 1 1 inherit; */
+  /* 3 items per row */
+  /* padding: 10px; */
+}
+
+
+.secondPart.show-zone-data .imagesList {
+
+
+  /* flex-wrap: nowrap;
+  display: flex;
+  flex-direction: row;
+  overflow-x: auto;
+
+
+  margin-top: -8rem; 
+  transition: margin-top 0.3s ease;  */
+
+}
+.secondPart.show-zone-data .headerAndImages {
+
+
+  flex-wrap: nowrap;
+  display: flex;
+  flex-direction: column;
+  overflow-x: auto;
+
+
+  margin-top: -19rem; /* Adjust this value as needed to move the imagesList up */
+  transition: margin-top 0.3s ease; /* Smooth transition for the movement */
+  /* border-bottom: 2px solid #ddd; */
+
+
+
+}
+
+.secondPart.show-zone-data .imagesList li {
+
+  /* flex: 1 1 auto; */
+  /* Make items stretch across the row */
+}
+
+.secondPart.show-zone-data .imagesList li img {
+  /* width: 50px;
+  height: 50px; */
+}
+
+.secondPart.show-zone-data .imagesList li span {
+  /* font-size: 10px; */
+
+  }
+.zoneHeaderName{
+  text-align: center;
+  /* font-style: italic; */
+  font-size: 2rem;
+  /* font-family: 'Brush Script MT', cursive; */
+  font-family: "Times New Roman", Times, serif;
+  position: relative;
+  /* Required for absolute positioning of pseudo-elements */
+  margin: 1rem 0;
+  color: #2f2963; 
+}
+
+
+
+.imagesList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+
+.imagesList li {
+  margin: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.imagesList li img {
+
+  margin-bottom: 5px;
+}
+
+.imagesList li span {
+  font-size: 15px;
+  font-weight: bold;
+  text-align: center;
+}
+
+.zone-popup {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+
+  top: 70%;  /* Center vertically */
+  left: 75%; /* Center horizontally */
+  transform: translate(-50%, -50%); /* Adjust the positioning to account for the popup's size */
+  /* bottom: 4rem; */
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+
+}
+
+.update-time {
+  font-size: 14px;
+  color: rgb(155, 41, 41);
+  margin-top: 10px;
+}
+
+
+.map-decorative-heading {
+  text-align: center;
+  /* font-style: italic; */
+  font-size: 3rem;
+  /* font-family: 'Brush Script MT', cursive; */
+  font-family: "Times New Roman", Times, serif;
+  position: relative;
+  /* Required for absolute positioning of pseudo-elements */
+  margin: 1rem 0;
+  margin-bottom: 3rem;
+  color: #2f2963; 
+}
+.map-decorative-heading::before,
+.map-decorative-heading::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  width: 15%;
+  height: 1px;
+  /* Line thickness */
+  background: #2f2963;
+  /* Line color */
+  transform: translateY(-50%);
+
+  
+
+}
+
+.map-decorative-heading::before {
+  left: 0;
+  /* Add additional styling for the left line */
+}
+
+.map-decorative-heading::after {
+  right: 0;
+  /* Add additional styling for the right line */
+}
+
+
+.lastUpdatedText{
+position:absolute;
+bottom: 1rem;
+}
+/*---------------------------------------------------------------------------Responsive code----------------------------------------------------------------------*/
+
+/* For desktop screens */
+@media only screen and (min-width: 1280px) and (max-width: 1400px) {
+  .mapBox {
+    flex-direction: row;
+  }
+
+  .map-container {
+    width: 50%;
+  }
+
+  .secondPart {
+    width: 50%;
+  }
+
+  .zone-popup {
+
+    bottom: 0rem;
+
+  }
+}
+
+/* For laptop screens */
+@media only screen and (min-width: 992px) and (max-width: 1280px) {
+
+  .map-container {
+    width: 55%;
+  }
+
+  .secondPart {
+    width: 45%;
+  }
+
+  .zone-popup {
+
+    bottom: -5rem;
+
+  }
+}
+
+/* For tablet screens */
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+  .mapBox {
+    flex-direction: column;
+    height: 150vh;
+  }
+
+  .map-container {
+    width: 100%;
+  }
+
+  .secondPart {
+    width: 100%;
+  }
+
+  .zone-popup {
+    bottom: 0;
+    right: 50%;
+
+  }
+}
+
+/* For mobile screens */
+@media only screen and (max-width: 767px) {
+  .mapBox {
+    flex-direction: column;
+  }
+
+  .map-container {
+    width: 100%;
+  }
+
+  .secondPart {
+    width: 100%;
+    height: 150vh;
+  }
+
+  .imagesList {
+    flex-direction: 2 1 column;
+  }
+
+  .imagesList li {
+    margin: 20px;
+  }
+
+  .zone-popup {
+
+    bottom: 0rem;
+
+    right: 10%;
+  }
+}
