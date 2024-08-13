@@ -70,7 +70,7 @@ function NavigationBar() {
         <>
             {/* ---------utility link--------------- */}
             <div className='utilityLink'>
-            <div className="leftSideDisplay">
+                <div className="leftSideDisplay">
                     <a href="">An ISO 270001:2013 Company</a>
                 </div>
                 <div className="rightSideDisplay">
@@ -163,7 +163,7 @@ function NavigationBar() {
                                                         < Nav.Link href="First" className='navLinkcolor' style={{ borderBottom: '1px solid black' }}
                                                             onMouseOver={() => setCurInfrastructureHovered(true)}
                                                             onMouseLeave={() => setCurInfrastructureHovered(false)}>
-                                                            <div style={{display:'flex',justifyContent:'space-between'}}>Current Infrastructure<span style={{ color: '#db8204' }}><GoTriangleRight /></span></div>
+                                                            <div style={{ display: 'flex', justifyContent: 'space-between' }}>Current Infrastructure<span style={{ color: '#db8204' }}><GoTriangleRight /></span></div>
                                                             {isCurInfrastructureHovered && (
                                                                 <div className='CurInfrastructureDropDown'>
                                                                     <div className='dropDownMenu'>
@@ -174,11 +174,21 @@ function NavigationBar() {
 
                                                             )}
                                                         </Nav.Link>
-                                                        < Nav.Link className='navLinkcolor' style={{ borderBottom: '1px solid black' }}>Power Map</Nav.Link>
+                                                        <Nav.Link
+                                                            href="public/Documents/Bihar-Power-Map.pdf"
+                                                            className='navLinkcolor'
+                                                            style={{ borderBottom: '1px solid black' }}
+                                                            onClick={(e) => {
+                                                                 e.preventDefault(); // Prevent default handling
+                                                                window.open("/Documents/Bihar-Power-Map.pdf", "_blank"); // Open the PDF in a new tab
+                                                            }}
+                                                        >
+                                                            Power Map
+                                                        </Nav.Link>
                                                         < Nav.Link className='navLinkcolor' style={{ borderBottom: '1px solid black' }}
                                                             onMouseOver={() => setSysParametersHovered(true)}
                                                             onMouseLeave={() => setSysParametersHovered(false)}>
-                                                           <div style={{display:'flex',justifyContent:'space-between'}}> System Parameters<span style={{ color: '#db8204' }}><GoTriangleRight /></span></div>
+                                                            <div style={{ display: 'flex', justifyContent: 'space-between' }}> System Parameters<span style={{ color: '#db8204' }}><GoTriangleRight /></span></div>
                                                             {isSysParametersHovered && (
                                                                 <div className='SysParametersDropDown'>
                                                                     <div className='dropDownMenu'>
@@ -310,13 +320,13 @@ function NavigationBar() {
                                                         < Nav.Link href="http://pay.bsphcl.org/" className='navLinkcolor' target="_blank"
                                                             rel="noopener noreferrer" style={{ borderBottom: '1px solid black' }}>Pay & Pension</Nav.Link>
                                                         < Nav.Link href="https://apar.bsphcl.co.in/" className='navLinkcolor' target="_blank"
-                                                            rel="noopener noreferrer"  style={{ borderBottom: '1px solid black' }}>APAR</Nav.Link>
+                                                            rel="noopener noreferrer" style={{ borderBottom: '1px solid black' }}>APAR</Nav.Link>
                                                         < Nav.Link href="https://medical.bsphcl.co.in/" className='navLinkcolor' target="_blank"
-                                                            rel="noopener noreferrer"   style={{ borderBottom: '1px solid black' }}>Mediclaim</Nav.Link>
+                                                            rel="noopener noreferrer" style={{ borderBottom: '1px solid black' }}>Mediclaim</Nav.Link>
                                                         < Nav.Link href="https://ess.bihar.gov.in:44300/irj/portal" className='navLinkcolor' target="_blank"
-                                                            rel="noopener noreferrer"   style={{ borderBottom: '1px solid black' }}>ESS\MSS</Nav.Link>
+                                                            rel="noopener noreferrer" style={{ borderBottom: '1px solid black' }}>ESS\MSS</Nav.Link>
                                                         < Nav.Link href="http://125.16.220.20:8077/Form16" className='navLinkcolor' target="_blank"
-                                                            rel="noopener noreferrer"   style={{ borderBottom: '1px solid black' }}>Form 16</Nav.Link>
+                                                            rel="noopener noreferrer" style={{ borderBottom: '1px solid black' }}>Form 16</Nav.Link>
                                                         <Nav.Link
                                                             href="https://www.google.com"
                                                             className='navLinkcolor'
