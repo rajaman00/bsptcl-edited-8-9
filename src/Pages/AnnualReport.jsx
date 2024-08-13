@@ -1,5 +1,6 @@
 import React from 'react';
 import { Grid, Card, CardContent, CardMedia, Typography, Box, Breadcrumbs, Link} from '@mui/material';
+import HeaderBox from './Header';
 
 // Import images at the top of the file
 import report2023_24 from '../assets/report1.jpg';
@@ -38,38 +39,20 @@ const reports = [
 ];
 
 const AnnualReportCards = () => {
+  const breadcrumbs = [
+    { label: 'Home', href: '/' },
+    { label: 'Reports', href: '#' },
+    { label: 'Annual Reports' }
+];
   return (
     <>
     <NavigationBar/>
     <div>
-           <Box
-      sx={{
-        position: 'relative',
-        height: '13rem',
-        backgroundImage: `url(${backgroundImage})`,
-        backgroundSize: 'cover',
-        backgroundPosition: 'center',
-        display: 'flex',
-        flexDirection: 'column',
-        justifyContent: 'center',
-        color: 'white',
-        padding: '20px',
-        textAlign: 'left'
-      }}
-    >
-      <Typography variant="h2" sx={{ fontWeight: 'bold' }}>
-        Annual Reports
-      </Typography>
-      <Breadcrumbs sx={{ color: 'white', marginTop: '10px' }}>
-        <Link href="/" underline="hover" sx={{ color: 'white' }}>
-          Home
-        </Link>
-        <Link href="#" underline="hover" sx={{ color: 'white' }}>
-          Annual Reports
-        </Link>
-        <Typography color="white">Reports</Typography>
-      </Breadcrumbs>
-    </Box>
+    <HeaderBox
+                backgroundImage={backgroundImage}
+                title="Annual Reports"
+                breadcrumbs={breadcrumbs}
+            />
            </div>
            <Grid container spacing={3} justifyContent="center" sx={{ padding: '20px',marginTop:'1rem' }}>
       {reports.map((report, index) => (

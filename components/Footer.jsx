@@ -24,8 +24,8 @@ import '../components/css/footer.css';
         <div className="contact1">
           <h4>CONTACT US</h4>
           <div className="contact-info" style={{ width: '100%' }}>
-            <p>📍 Bihar State Load Despatch Centre, 4th Floor, Vidyut Bhawan, Bailey Road, Patna-1</p>
-            <p>✉ feedback.biharsldc@gmail.com</p>
+            <p>📍 Bihar State Transmission Limited, 4th Floor, Vidyut Bhawan, Bailey Road, Patna-800021</p>
+            {/* <p>✉ email@gmail.com</p> */}
             <p>☎ (+91) 0612-2504442</p>
             <p>☎ (+91) 0612-2504305 (FAX)</p>
           </div>
@@ -33,10 +33,10 @@ import '../components/css/footer.css';
 
         <div className="others">
           <h4>OTHERS</h4>
-          <p><a href="#">Feedback</a></p>
+          <p><a href="#">Terms of Use</a></p>
           <p><a href="#">Disclaimer</a></p>
-          <p><a href="#">Upload Documents</a></p>
-          <p><a href="#">RTI</a></p>
+          <p><a href="#">Fact</a></p>
+          <p><a href="#">Copyright © 2024 BSPTCL</a></p>
         </div>
 
         <div id="footerMap" style={{ height: '10rem', width: '30%'}}>

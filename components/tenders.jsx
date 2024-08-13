@@ -277,7 +277,7 @@ function Tenders() {
                 <div className="details-header">
                   <h6>Regarding National Apprenticeship Training Scheme (NATS) at BSPTCL vide OO no 52 dated 19.01.2024</h6>
                   <div className="details-container">
-                    <p>Department: Human Resources</p>
+                    <p>Department: HR</p>
                     <p>Date Of Issue: Jul 24, 2024</p>
                   </div>
                 </div>
@@ -290,7 +290,7 @@ function Tenders() {
                 <div className="details-header">
                   <h6>Regarding Duty chart for SLDC Control room on the eve of Deepawali and Chhath Puja</h6>
                   <div className="details-container">
-                    <p>Department: Human Resources</p>
+                    <p>Department: HR</p>
                     <p>Date Of Issue: Jul 24, 2024</p>
                   </div>
                 </div>
@@ -303,7 +303,7 @@ function Tenders() {
                 <div className="details-header">
                   <h6>Regarding policy matters of BSPHCL vide OO no. 379 dated 11.07.2024</h6>
                   <div className="details-container">
-                    <p>Department: Human Resources</p>
+                    <p>Department: HR</p>
                     <p>Date Of Issue: Jul 24, 2024</p>
                   </div>
                 </div>
@@ -323,7 +323,7 @@ function Tenders() {
                 <div className="details-header">
                   <h6>Regarding transfer of Store employees vide Notification No 1901-1905 dated 30-07-2024</h6>
                   <div className="details-container">
-                    <p>Department: Human Resources</p>
+                    <p>Department: HR</p>
                     <p>Date Of Issue: Jul 24, 2024</p>
                   </div>
                 </div>
@@ -336,7 +336,7 @@ function Tenders() {
                 <div className="details-header">
                   <h6>Regarding posting of Sri Raushan Kumar(E12886), AEE vide Notification No 636 dated 01-03-24</h6>
                   <div className="details-container">
-                    <p>Department: Human Resources</p>
+                    <p>Department: HR</p>
                     <p>Date Of Issue: Jul 24, 2024</p>
                   </div>
                 </div>
@@ -349,7 +349,7 @@ function Tenders() {
                 <div className="details-header">
                   <h6>Regarding transfer posting of AEEs and JEEs vide Notification No 823-825 dated 15.03.2024</h6>
                   <div className="details-container">
-                    <p>Department: Human Resources</p>
+                    <p>Department: HR</p>
                     <p>Date Of Issue: Jul 24, 2024</p>
                   </div>
                 </div>
@@ -362,7 +362,7 @@ function Tenders() {
                 <div className="details-header">
                   <h6>Regarding transfer posting of CEs vide Notification No 800-801 dated 15.03.2024</h6>
                   <div className="details-container">
-                    <p>Department: Human Resources</p>
+                    <p>Department: HR</p>
                     <p>Date Of Issue: Jul 24, 2024</p>
                   </div>
                 </div>
@@ -375,7 +375,7 @@ function Tenders() {
                 <div className="details-header">
                   <h6>Regarding additional charge to Sri Ashish Kumar, E04222, AEE (O and M), TC Muzaffarpur vide Notification No 2715 dated 02-11-2023</h6>
                   <div className="details-container">
-                    <p>Department: Human Resources</p>
+                    <p>Department: HR</p>
                     <p>Date Of Issue: Jul 24, 2024</p>
                   </div>
                 </div>
@@ -394,7 +394,7 @@ function Tenders() {
                 <div className="details-header">
                   <h6>Regarding Standard Bidding Documents (SBD)- Rev 17 for turnkey projects for BSPTCL vide OO No-11 dated 08.02.2023</h6>
                   <div className="details-container">
-                    <p>Department: Human Resources</p>
+                    <p>Department: HR</p>
                     <p>Date Of Issue: Jul 24, 2024</p>
                   </div>
                 </div>
@@ -407,7 +407,7 @@ function Tenders() {
                 <div className="details-header">
                   <h6>Adoption of Cyber Crisis management Plan- 2022</h6>
                   <div className="details-container">
-                    <p>Department: Human Resources</p>
+                    <p>Department: HR</p>
                     <p>Date Of Issue: Jul 24, 2024</p>
                   </div>
                 </div>

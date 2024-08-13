@@ -3,6 +3,7 @@ import {
     Table, TableBody, TableCell, TableContainer, TableHead, TableRow, Paper, Typography, Link, Breadcrumbs, Box
   } from '@mui/material';
 import NavigationBar from '../../components/NavigationBar'
+import HeaderBox from './Header';
 import Footer from '../../components/Footer'
 import backgroundImage from '../../public/images/Switchyard at Bakhri GSS.jpg'
 
@@ -41,6 +42,12 @@ const data = [
   
 
 function OfficeOrder() {
+
+  const breadcrumbs = [
+    { label: 'Home', href: '/' },
+    { label: 'Notices', href: '#' },
+    { label: 'Office Orders' }
+];
   return (
     <>
        <div className="officeOrderContainer">
@@ -49,34 +56,11 @@ function OfficeOrder() {
         </div>
         <div className="orderContent">
            <div>
-           <Box
-      sx={{
-        position: 'relative',
-        height: '13rem',
-        backgroundImage: `url(${backgroundImage})`,
-        backgroundSize: 'cover',
-        backgroundPosition: 'center',
-        display: 'flex',
-        flexDirection: 'column',
-        justifyContent: 'center',
-        color: 'white',
-        padding: '20px',
-        textAlign: 'left'
-      }}
-    >
-      <Typography variant="h2" sx={{ fontWeight: 'bold' }}>
-        Latest News
-      </Typography>
-      <Breadcrumbs sx={{ color: 'white', marginTop: '10px' }}>
-        <Link href="/" underline="hover" sx={{ color: 'white' }}>
-          Home
-        </Link>
-        <Link href="#" underline="hover" sx={{ color: 'white' }}>
-          News
-        </Link>
-        <Typography color="white">Latest News</Typography>
-      </Breadcrumbs>
-    </Box>
+           <HeaderBox
+                backgroundImage={backgroundImage}
+                title="Office Orders"
+                breadcrumbs={breadcrumbs}
+            />
            </div>
 
            <div>

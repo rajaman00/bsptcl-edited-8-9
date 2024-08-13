@@ -40,7 +40,7 @@ function About() {
                         </div>
                         <div className='cardText'>
                             <h5 className='designationName'>Chief Minister</h5>
-                            <p className='OfficeHolderName'>Nitish Kumar</p>
+                            <p className='OfficeHolderName'>shri Nitish Kumar</p>
                         </div>
                     </div>
 
@@ -51,7 +51,7 @@ function About() {
                         </div>
                         <div className='cardText'>
                             <h5 className='designationName'>Energy Minister</h5>
-                            <p className='OfficeHolderName'> Sri Bijendra Pd. Yadav</p>
+                            <p className='OfficeHolderName'> shri Bijendra Pd. Yadav</p>
                         </div>
                     </div>
 
@@ -63,8 +63,8 @@ function About() {
                             <img src={cmd} alt="CM Image" className="cardImage" />
                         </div>
                         <div className='cardText'>
-                            <h5 className='designationName'>Chairman-cum-MD</h5>
-                            <p className='OfficeHolderName'> Sri Sandeep Poundrik</p>
+                            <h5 className='designationName'>Chairman, BSPTCL</h5>
+                            <p className='OfficeHolderName'> shri Sandeep Poundrik</p>
                         </div>
                     </div>
 
@@ -74,7 +74,7 @@ function About() {
                             <img src={md} alt="CM Image" className="cardImage" />
                         </div>
                         <div className='cardText'>
-                            <h5 className='designationName'>Managing Director</h5>
+                            <h5 className='designationName'>MD, BSPTCL</h5>
                             <p className='OfficeHolderName'> Dr. Nilesh Ramchandra Deore</p>
                         </div>
                     </div>

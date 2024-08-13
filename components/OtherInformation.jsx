@@ -33,7 +33,7 @@ const OtherInformation = () => {
     {
       icon: image3,
       data: {
-        title: "Goods and Services Tax",
+        title: "Goods & Services Tax",
         description: "GST No. :- 10AAFCB2393H1Z1"
       }
     },
