@@ -8,6 +8,8 @@
 }
 
 .parentVMV {
+  width: 100%;
+  /* background-color: rgba(127, 255, 212, 0.229); */
   position: relative;
   overflow: hidden; /* Ensures the background stays within the parent */
 }
@@ -31,11 +33,12 @@
 }
 
 .VMV {
+  width: 90%;
   display: flex; 
   border-radius: 10px;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1); 
-  padding: 2rem;
-  margin: 2rem;
+  /* padding: 2rem; */
+  margin: auto;
   position: relative; /* To ensure proper stacking context */
   z-index: 2; /* Ensure it is above the background image */
 }

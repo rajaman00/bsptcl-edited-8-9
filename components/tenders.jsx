@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 import '../components/css/tenders.css';
 
 function Tenders() {
@@ -29,7 +30,7 @@ function Tenders() {
   return (
     <div className="container1" data-aos="fade-up" data-aos-easing="ease-out-cubic"
     data-aos-duration="2000">
-      <div className="section">
+      <div className="section" id='tender'>
         <div className="button-container">
           <button
             onClick={() => handleButtonClick('left', 'ActiveTenders')}
@@ -107,7 +108,9 @@ function Tenders() {
               </div>
 
               {/* Add more content as needed */}
-              <button className="view-more-button">View More</button>
+              <Link to="/active-tenders" className="view-more-button-link">
+                <button className="view-more-button">View More</button>
+              </Link>
             </div>
           )}
           {showCancelledTendersL && (
@@ -152,7 +155,9 @@ function Tenders() {
                 </div>
               </div>
               {/* Add more content as needed */}
-              <button className="view-more-button">View More</button>
+              <Link to="/cancelled-tenders" className="view-more-button-link">
+                <button className="view-more-button">View More</button>
+              </Link>
             </div>
           )}
 
@@ -203,9 +208,161 @@ function Tenders() {
                   <img src="public/images/doc.png" alt="Document Icon" />
                 </div>
                 <div className="details-header">
-                  <h6>NIT No. 39/PR/BSPTCL/2024</h6>
+                  <h6>NIT No. 40/PR/BSPTCL/2024</h6>
                   <div className="details-container">
                     <p>Department: Project 2</p>
+                    <p>Date Of Issue: Jul 24, 2024</p>
+                  </div>
+                </div>
+              </div>
+              {/* Add more content as needed */}
+              <Link to="/archive-tenders" className="view-more-button-link">
+                <button className="view-more-button">View More</button>
+              </Link>
+            </div>
+          )}
+          
+        </div>
+      </div>
+
+      <div className="section" id='office-notification' >
+        <div className="button-container">
+          <button id='office-order'
+            onClick={() => handleButtonClick('right', 'OfficeOrders')}
+            className={`button ${activeButtonRight === 'OfficeOrders' ? 'active' : ''}`}
+          >
+            Office Orders
+          </button>
+          <button id='transfer-posting'
+            onClick={() => handleButtonClick('right', 'TransferPostings')}
+            className={`button ${activeButtonRight === 'TransferPostings' ? 'active' : ''}`}
+          >
+            Transfer Postings
+          </button>
+          <button id='circulars'
+            onClick={() => handleButtonClick('right', 'Circulars')}
+            className={`button ${activeButtonRight === 'Circulars' ? 'active' : ''}`}
+          >
+            Circulars
+          </button>
+        </div>
+        <div className="content-container">
+          {showOfficeOrdersR && (
+            <div className="content">
+              {/* Display Office Orders Content for Section B */}
+              <div className="rowData">
+                <div className="document-icon">
+                  <img src="public/images/doc.png" alt="Document Icon" />
+                </div>
+                <div className="details-header">
+                  <h6>NIT No. 29/PR/BSPTCL/2024</h6>
+                  <div className="details-container">
+                    <p>Department: Project 1</p>
+                    <p>Date Of Issue: Jul 24, 2024</p>
+                  </div>
+                </div>
+              </div>
+
+              <div className="rowData">
+                <div className="document-icon">
+                  <img src="public/images/doc.png" alt="Document Icon" />
+                </div>
+                <div className="details-header">
+                  <h6>NIT No. 30/PR/BSPTCL/2024</h6>
+                  <div className="details-container">
+                    <p>Department: Project 1</p>
+                    <p>Date Of Issue: Jul 24, 2024</p>
+                  </div>
+                </div>
+              </div>
+
+              <div className="rowData">
+                <div className="document-icon">
+                  <img src="public/images/doc.png" alt="Document Icon" />
+                </div>
+                <div className="details-header">
+                  <h6>NIT No. 34/PR/BSPTCL/2024</h6>
+                  <div className="details-container">
+                    <p>Department: Project 2</p>
+                    <p>Date Of Issue: Jul 24, 2024</p>
+                  </div>
+                </div>
+              </div>
+              {/* Add more content as needed */}
+              <Link to="/office-order" className="view-more-button-link">
+                <button className="view-more-button">View More</button>
+              </Link>
+            </div>
+          )}
+          {showTransferPostingsR && (
+            <div className="content">
+              {/* Display Transfer Postings Content for Section B */}
+              <div className="rowData">
+                <div className="document-icon">
+                  <img src="public/images/doc.png" alt="Document Icon" />
+                </div>
+                <div className="details-header">
+                  <h6>NIT No. 35/PR/BSPTCL/2024</h6>
+                  <div className="details-container">
+                    <p>Department: Project 1</p>
+                    <p>Date Of Issue: Jul 24, 2024</p>
+                  </div>
+                </div>
+              </div>
+
+              <div className="rowData">
+                <div className="document-icon">
+                  <img src="public/images/doc.png" alt="Document Icon" />
+                </div>
+                <div className="details-header">
+                  <h6>NIT No. 36/PR/BSPTCL/2024</h6>
+                  <div className="details-container">
+                    <p>Department: Project 2</p>
+                    <p>Date Of Issue: Jul 24, 2024</p>
+                  </div>
+                </div>
+              </div>
+              <div className="rowData">
+                <div className="document-icon">
+                  <img src="public/images/doc.png" alt="Document Icon" />
+                </div>
+                <div className="details-header">
+                  <h6>NIT No. 37/PR/BSPTCL/2024</h6>
+                  <div className="details-container">
+                    <p>Department: Project 1</p>
+                    <p>Date Of Issue: Jul 24, 2024</p>
+                  </div>
+                </div>
+              </div>
+              <div className="rowData">
+                <div className="document-icon">
+                  <img src="public/images/doc.png" alt="Document Icon" />
+                </div>
+                <div className="details-header">
+                  <h6>NIT No. 38/PR/BSPTCL/2024</h6>
+                  <div className="details-container">
+                    <p>Department: Project 2</p>
+                    <p>Date Of Issue: Jul 24, 2024</p>
+                  </div>
+                </div>
+              </div>
+              {/* Add more content as needed */}
+              <Link to="/more-transfer-postings" className="view-more-button-link">
+                <button className="view-more-button">View More</button>
+              </Link>
+            </div>
+          )}
+          {showCircularsR && (
+            <div className="content">
+              {/* Display Circulars Content for Section B */}
+              <div className="rowData">
+                <div className="document-icon">
+                  <img src="public/images/doc.png" alt="Document Icon" />
+                </div>
+                <div className="details-header">
+                  <h6>NIT No. 39/PR/BSPTCL/2024</h6>
+                  <div className="details-container">
+                    <p>Department: Project 1</p>
                     <p>Date Of Issue: Jul 24, 2024</p>
                   </div>
                 </div>
@@ -218,12 +375,11 @@ function Tenders() {
                 <div className="details-header">
                   <h6>NIT No. 40/PR/BSPTCL/2024</h6>
                   <div className="details-container">
-                    <p>Department: Project 2</p>
+                    <p>Department: Project 1</p>
                     <p>Date Of Issue: Jul 24, 2024</p>
                   </div>
                 </div>
               </div>
-
               <div className="rowData">
                 <div className="document-icon">
                   <img src="public/images/doc.png" alt="Document Icon" />
@@ -231,189 +387,15 @@ function Tenders() {
                 <div className="details-header">
                   <h6>NIT No. 41/PR/BSPTCL/2024</h6>
                   <div className="details-container">
-                    <p>Department: Project 2</p>
+                    <p>Department: Project 1</p>
                     <p>Date Of Issue: Jul 24, 2024</p>
                   </div>
                 </div>
               </div>
               {/* Add more content as needed */}
-              <button className="view-more-button">View More</button>
-            </div>
-          )}
-        </div>
-      </div>
-
-      <div className="separator"></div>
-
-      <div className="section">
-        <div className="button-container">
-          <button
-            onClick={() => handleButtonClick('right', 'OfficeOrders')}
-            className={`button ${activeButtonRight === 'OfficeOrders' ? 'active' : ''}`}
-          >
-            Office Orders
-          </button>
-          <button
-            onClick={() => handleButtonClick('right', 'TransferPostings')}
-            className={`button ${activeButtonRight === 'TransferPostings' ? 'active' : ''}`}
-          >
-            Transfer Postings
-          </button>
-          <button
-            onClick={() => handleButtonClick('right', 'Circulars')}
-            className={`button ${activeButtonRight === 'Circulars' ? 'active' : ''}`}
-          >
-            Circulars
-          </button>
-        </div>
-        <div className="content-container">
-          {showOfficeOrdersR && (
-            <div className="content">
-              {/* Display Tenders Content for Section B */}
-              <div className="rowData">
-                <div className="document-icon">
-                  <img src="public/images/doc.png" alt="Document Icon" />
-                </div>
-                <div className="details-header">
-                  <h6>Regarding National Apprenticeship Training Scheme (NATS) at BSPTCL vide OO no 52 dated 19.01.2024</h6>
-                  <div className="details-container">
-                    <p>Department: HR</p>
-                    <p>Date Of Issue: Jul 24, 2024</p>
-                  </div>
-                </div>
-              </div>
-
-              <div className="rowData">
-                <div className="document-icon">
-                  <img src="public/images/doc.png" alt="Document Icon" />
-                </div>
-                <div className="details-header">
-                  <h6>Regarding Duty chart for SLDC Control room on the eve of Deepawali and Chhath Puja</h6>
-                  <div className="details-container">
-                    <p>Department: HR</p>
-                    <p>Date Of Issue: Jul 24, 2024</p>
-                  </div>
-                </div>
-              </div>
-
-              <div className="rowData">
-                <div className="document-icon">
-                  <img src="public/images/doc.png" alt="Document Icon" />
-                </div>
-                <div className="details-header">
-                  <h6>Regarding policy matters of BSPHCL vide OO no. 379 dated 11.07.2024</h6>
-                  <div className="details-container">
-                    <p>Department: HR</p>
-                    <p>Date Of Issue: Jul 24, 2024</p>
-                  </div>
-                </div>
-              </div>
-
-              {/* Add more content as needed */}
-              <button className="view-more-button">View More</button>
-            </div>
-          )}
-          {showTransferPostingsR && (
-            <div className="content">
-              {/* Display Circulars Content for Section B */}
-              <div className="rowData">
-                <div className="document-icon">
-                  <img src="public/images/doc.png" alt="Document Icon" />
-                </div>
-                <div className="details-header">
-                  <h6>Regarding transfer of Store employees vide Notification No 1901-1905 dated 30-07-2024</h6>
-                  <div className="details-container">
-                    <p>Department: HR</p>
-                    <p>Date Of Issue: Jul 24, 2024</p>
-                  </div>
-                </div>
-              </div>
-
-              <div className="rowData">
-                <div className="document-icon">
-                  <img src="public/images/doc.png" alt="Document Icon" />
-                </div>
-                <div className="details-header">
-                  <h6>Regarding posting of Sri Raushan Kumar(E12886), AEE vide Notification No 636 dated 01-03-24</h6>
-                  <div className="details-container">
-                    <p>Department: HR</p>
-                    <p>Date Of Issue: Jul 24, 2024</p>
-                  </div>
-                </div>
-              </div>
-
-              <div className="rowData">
-                <div className="document-icon">
-                  <img src="public/images/doc.png" alt="Document Icon" />
-                </div>
-                <div className="details-header">
-                  <h6>Regarding transfer posting of AEEs and JEEs vide Notification No 823-825 dated 15.03.2024</h6>
-                  <div className="details-container">
-                    <p>Department: HR</p>
-                    <p>Date Of Issue: Jul 24, 2024</p>
-                  </div>
-                </div>
-              </div>
-
-              <div className="rowData">
-                <div className="document-icon">
-                  <img src="public/images/doc.png" alt="Document Icon" />
-                </div>
-                <div className="details-header">
-                  <h6>Regarding transfer posting of CEs vide Notification No 800-801 dated 15.03.2024</h6>
-                  <div className="details-container">
-                    <p>Department: HR</p>
-                    <p>Date Of Issue: Jul 24, 2024</p>
-                  </div>
-                </div>
-              </div>
-
-              <div className="rowData">
-                <div className="document-icon">
-                  <img src="public/images/doc.png" alt="Document Icon" />
-                </div>
-                <div className="details-header">
-                  <h6>Regarding additional charge to Sri Ashish Kumar, E04222, AEE (O and M), TC Muzaffarpur vide Notification No 2715 dated 02-11-2023</h6>
-                  <div className="details-container">
-                    <p>Department: HR</p>
-                    <p>Date Of Issue: Jul 24, 2024</p>
-                  </div>
-                </div>
-              </div>
-              {/* Add more content as needed */}
-              <button className="view-more-button">View More</button>
-            </div>
-          )}
-           {showCircularsR && (
-            <div className="content">
-              {/* Display Circulars Content for Section B */}
-              <div className="rowData">
-                <div className="document-icon">
-                  <img src="public/images/doc.png" alt="Document Icon" />
-                </div>
-                <div className="details-header">
-                  <h6>Regarding Standard Bidding Documents (SBD)- Rev 17 for turnkey projects for BSPTCL vide OO No-11 dated 08.02.2023</h6>
-                  <div className="details-container">
-                    <p>Department: HR</p>
-                    <p>Date Of Issue: Jul 24, 2024</p>
-                  </div>
-                </div>
-              </div>
-
-              <div className="rowData">
-                <div className="document-icon">
-                  <img src="public/images/doc.png" alt="Document Icon" />
-                </div>
-                <div className="details-header">
-                  <h6>Adoption of Cyber Crisis management Plan- 2022</h6>
-                  <div className="details-container">
-                    <p>Department: HR</p>
-                    <p>Date Of Issue: Jul 24, 2024</p>
-                  </div>
-                </div>
-              </div>
-              {/* Add more content as needed */}
-              <button className="view-more-button">View More</button>
+              <Link to="/more-circulars" className="view-more-button-link">
+                <button className="view-more-button">View More</button>
+              </Link>
             </div>
           )}
         </div>

@@ -66,7 +66,7 @@ function App() {
 
        
 
-        <div className="tenders" id='tender'>
+        <div className="tenders">
            <Tenders/>
         </div>
 

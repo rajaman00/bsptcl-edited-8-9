@@ -16,10 +16,6 @@
   z-index: 99;
   
 }
-.sliderSection{
-  /* width: 100%; */
- 
-}
 .stickyMenu{
   position: fixed;
   top: 12rem;
@@ -27,11 +23,11 @@
   z-index: 9;
 }
 .about{
-  overflow: hidden;
-  margin-top: 4rem;
-  margin-left: 5rem;
-  margin-bottom: 4rem;
-   margin-right: 5rem; 
+  
+  /* margin-top: 4rem; */
+  /* margin-left: 5rem; */
+  /* margin-bottom: 4rem; */
+   /* margin-right: 5rem;  */
 }
 .mapSection{
   margin-top: 4rem;
@@ -40,10 +36,10 @@
   margin-right: 5rem;
 }
 .tenders{
-  margin-top: 4rem;
-  margin-left: 5rem;
+  margin-top: 2rem;
+  /* margin-left: 5rem; */
   margin-bottom: 4rem;
-  margin-right: 5rem;
+  /* margin-right: 5rem; */
 }
 .OtherUtilities{
   margin-top: 4rem;
@@ -53,11 +49,11 @@
 }
 .VMVsection{
   margin-top: 5rem;
-  overflow: hidden;
+  
   /*added later on*/
-  margin-left: 5rem;
+  /* margin-left: 5rem; */
   margin-bottom: 4rem;
-  margin-right: 5rem;
+  /* margin-right: 5rem; */
 }
 
 .awardSection{

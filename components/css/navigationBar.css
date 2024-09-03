@@ -126,7 +126,7 @@
 .navLinkcolor {
     color: white !important;
     font-weight: 700 !important;
-    /* z-index: 100000; */
+    padding-left: 1.3rem;
 }
 
 

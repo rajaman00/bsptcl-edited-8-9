@@ -127,7 +127,7 @@ function NavigationBar() {
                                 <Navbar.Collapse id="responsive-navbar-nav">
                                     <Nav className="ms-auto">
                                         {/* ----About Us--- */}
-                                        <Nav.Link href="#features" className='navLinkcolor'
+                                        <li className='navLinkcolor'
                                             onMouseOver={() => setAboutHovered(true)}
                                             onMouseLeave={() => setAboutHovered(false)}>
                                             About Us<span style={{ color: '#db8204' }}><GoTriangleDown /></span>
@@ -137,20 +137,20 @@ function NavigationBar() {
                                                     <div className='triangle'><GoTriangleUp /></div>
                                                     <div className='dropDownMenu'>
                                                         < Nav.Link href="First" className='navLinkcolor' style={{ borderBottom: '1px solid black' }}>Company Overview</Nav.Link>
-                                                        < Nav.Link className='navLinkcolor' style={{ borderBottom: '1px solid black' }}>Board of Directors</Nav.Link>
+                                                        < Nav.Link href='/board-directors' className='navLinkcolor' style={{ borderBottom: '1px solid black' }}>Board of Directors</Nav.Link>
                                                         < Nav.Link className='navLinkcolor' style={{ borderBottom: '1px solid black' }}>Organization Structure</Nav.Link>
                                                         < Nav.Link className='navLinkcolor' style={{ borderBottom: '1px solid black' }}>Awards & Achievements</Nav.Link>
-                                                        < Nav.Link className='navLinkcolor' style={{ borderBottom: '1px solid black' }}>Certificates</Nav.Link>
+                                                        < Nav.Link href='/certificates' className='navLinkcolor' style={{ borderBottom: '1px solid black' }}>Certificates</Nav.Link>
                                                         < Nav.Link className='navLinkcolor' >Reports and Accounts</Nav.Link>
                                                     </div>
                                                 </div>
                                             )}
-                                        </Nav.Link>
+                                        </li>
 
                                         {/* Transmission Link and Dropdwon */}
 
 
-                                        <Nav.Link href="" className='navLinkcolor'
+                                        <li className='navLinkcolor'
                                             onMouseOver={() => setTransmissionHovered(true)}
                                             onMouseLeave={() => setTransmissionHovered(false)}
                                         >
@@ -179,7 +179,7 @@ function NavigationBar() {
                                                             className='navLinkcolor'
                                                             style={{ borderBottom: '1px solid black' }}
                                                             onClick={(e) => {
-                                                                 e.preventDefault(); // Prevent default handling
+                                                                e.preventDefault(); // Prevent default handling
                                                                 window.open("/Documents/Bihar-Power-Map.pdf", "_blank"); // Open the PDF in a new tab
                                                             }}
                                                         >
@@ -221,33 +221,34 @@ function NavigationBar() {
                                                     </div>
                                                 </div>
                                             )}
-                                        </Nav.Link>
+                                        </li>
 
                                         {/* ------------Media Section---------- */}
-                                        <Nav.Link
+                                        <li
+                                            href="/#media"
                                             className='navLinkcolor'
-                                            onMouseOver={() => setMediaHovered(true)}
+                                              onMouseOver={() => setMediaHovered(true)}
                                             onMouseLeave={() => setMediaHovered(false)}
                                         >
                                             Media <span style={{ color: '#db8204' }}><GoTriangleDown /></span>
                                             {isMediaHovered && (
-
                                                 <div className='mediaDropDown'>
                                                     <div className='triangle'><GoTriangleUp /></div>
                                                     <div className='dropDownMenu'>
-                                                        < Nav.Link href="First" className='navLinkcolor' style={{ borderBottom: '1px solid black' }}>Reports/ Compendium</Nav.Link>
-                                                        < Nav.Link className='navLinkcolor' style={{ borderBottom: '1px solid black' }}>e-Magazine</Nav.Link>
-                                                        < Nav.Link className='navLinkcolor' style={{ borderBottom: '1px solid black' }}>Photo Gallery</Nav.Link>
-                                                        < Nav.Link className='navLinkcolor' style={{ borderBottom: '1px solid black' }}>Twitter</Nav.Link>
-                                                        < Nav.Link className='navLinkcolor' >Newspaper Clippings</Nav.Link>
+                                                        <Nav.Link href='/annual-reports' className='navLinkcolor' style={{ borderBottom: '1px solid black' }}>Reports/Compendium</Nav.Link>
+                                                        <Nav.Link href='/e-magazine' className='navLinkcolor' style={{ borderBottom: '1px solid black' }}>e-Magazine</Nav.Link>
+                                                        <Nav.Link href='/photo-gallery' className='navLinkcolor' style={{ borderBottom: '1px solid black' }}>Photo Gallery</Nav.Link>
+                                                        <Nav.Link href='/twitter' className='navLinkcolor' style={{ borderBottom: '1px solid black' }}>Twitter</Nav.Link>
+                                                        <Nav.Link href='/newspaper-clippings' className='navLinkcolor'>Newspaper Clippings</Nav.Link>
                                                     </div>
                                                 </div>
                                             )}
-                                        </Nav.Link>
+                                        </li>
+
 
 
                                         {/* Procurement Section */}
-                                        <Nav.Link href="#deets"
+                                        <li
                                             className='navLinkcolor'
                                             onMouseOver={() => setProcurementHovered(true)}
                                             onMouseLeave={() => setProcurementHovered(false)}>
@@ -267,11 +268,11 @@ function NavigationBar() {
                                                     </div>
                                                 </div>
                                             )}
-                                        </Nav.Link>
+                                        </li>
 
                                         {/* STU Section */}
 
-                                        <Nav.Link href="" className='navLinkcolor'
+                                        <li className='navLinkcolor'
                                             onMouseOver={() => setSTUHovered(true)}
                                             onMouseLeave={() => setSTUHovered(false)}>
                                             STU<span style={{ color: '#db8204' }}><GoTriangleDown /></span>
@@ -302,10 +303,10 @@ function NavigationBar() {
                                                     </div>
                                                 </div>
                                             )}
-                                        </Nav.Link>
+                                        </li>
 
                                         {/* Employee Section */}
-                                        <Nav.Link href="#memes" className='navLinkcolor'
+                                        <li className='navLinkcolor'
                                             onMouseOver={() => setEmployeeHovered(true)}
                                             onMouseLeave={() => setEmployeeHovered(false)}>
                                             Employee<span style={{ color: '#db8204' }}><GoTriangleDown /></span>
@@ -314,9 +315,9 @@ function NavigationBar() {
                                                 <div className='employeeDropDown'>
                                                     <div className='triangle'><GoTriangleUp /></div>
                                                     <div className='dropDownMenu'>
-                                                        < Nav.Link href="/office-order" className='navLinkcolor' style={{ borderBottom: '1px solid black' }}>Office Order</Nav.Link>
-                                                        < Nav.Link className='navLinkcolor' style={{ borderBottom: '1px solid black' }}>Transfer/Posting</Nav.Link>
-                                                        < Nav.Link className='navLinkcolor' style={{ borderBottom: '1px solid black' }}>Circulars</Nav.Link>
+                                                        < Nav.Link href="/#office-notification" className='navLinkcolor' style={{ borderBottom: '1px solid black' }}>Office Order</Nav.Link>
+                                                        < Nav.Link href="/#office-notification" className='navLinkcolor' style={{ borderBottom: '1px solid black' }}>Transfer/Posting</Nav.Link>
+                                                        < Nav.Link href="/#office-notification" className='navLinkcolor' style={{ borderBottom: '1px solid black' }}>Circulars</Nav.Link>
                                                         < Nav.Link href="http://pay.bsphcl.org/" className='navLinkcolor' target="_blank"
                                                             rel="noopener noreferrer" style={{ borderBottom: '1px solid black' }}>Pay & Pension</Nav.Link>
                                                         < Nav.Link href="https://apar.bsphcl.co.in/" className='navLinkcolor' target="_blank"
@@ -338,7 +339,7 @@ function NavigationBar() {
                                                     </div>
                                                 </div>
                                             )}
-                                        </Nav.Link>
+                                        </li>
 
 
                                         {/*-------------------------------------Hamburger section -----------------------------------*/}

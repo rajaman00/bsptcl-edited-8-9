@@ -1,4 +1,5 @@
 .aboutSection {
+  width: 100%;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -22,7 +23,7 @@
   /* width: 80%; */
   /* box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
   border-radius: 10px; */
-  padding: 5rem;
+  padding: 3rem;  /* 5 rem for bigger screen*/
   height: 100%;
   /* Ensure each section takes the full height */
   /* background-color: aqua; */
@@ -339,8 +340,6 @@
     }
     @media (max-width: 1194px) {
       .Card {
-        /* height: 11.6rem;
-        width: 7.9rem; */
         height: 13rem;
         width: 13rem;
       }
@@ -362,7 +361,6 @@
       }
     
       .aboutSection {
-        /* height: 45rem; */
         height: auto;
         flex-direction: column;
  
@@ -385,8 +383,6 @@
         .Card {
           height: 11.6rem;
           width: 10rem;
-          /* height: 13rem;
-          width: 13rem; */
         }
       
         .aboutImage {
@@ -406,7 +402,6 @@
         }
       
         .aboutSection {
-          /* height: 45rem; */
           height: auto;
           flex-direction: column;
    
@@ -429,8 +424,6 @@
           .Card {
             height: 11.6rem;
             width: 8rem;
-            /* height: 13rem;
-            width: 13rem; */
           }
         
           .aboutImage {
@@ -450,7 +443,6 @@
           }
         
           .aboutSection {
-            /* height: 45rem; */
             height: auto;
             flex-direction: column;
      
@@ -473,8 +465,6 @@
             .Card {
               height: 13rem;
               width: 13rem;
-              /* height: 13rem;
-              width: 13rem; */
             }
           
             .aboutImage {
@@ -494,7 +484,6 @@
             }
           
             .aboutSection {
-              /* height: 45rem; */
               height: auto;
               flex-direction: column;
        
