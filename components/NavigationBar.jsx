@@ -167,8 +167,8 @@ function NavigationBar() {
                                                             {isCurInfrastructureHovered && (
                                                                 <div className='CurInfrastructureDropDown'>
                                                                     <div className='dropDownMenu'>
-                                                                        < Nav.Link className='navLinkcolor' style={{ borderBottom: '1px solid black' }}>Transmission Lines</Nav.Link>
-                                                                        < Nav.Link className='navLinkcolor' style={{ borderBottom: '1px solid black' }}>Grids</Nav.Link>
+                                                                        < Nav.Link href='/transmission-lines' className='navLinkcolor' style={{ borderBottom: '1px solid black' }}>Transmission Lines</Nav.Link>
+                                                                        < Nav.Link href='/grids'  className='navLinkcolor' style={{ borderBottom: '1px solid black' }}>Grids</Nav.Link>
                                                                     </div>
                                                                 </div>
 

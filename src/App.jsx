@@ -9,6 +9,8 @@ import Home from './Pages/Home.jsx';
 import BoardMember from './Pages/BoardMember.jsx';
 import Certificates from './Pages/Certificates.jsx';
 import CompanyOverview from './Pages/CompanyOverview.jsx';
+import TransmissionLines from './Pages/TransmissionLines.jsx';
+import Grids from './Pages/Grids.jsx';
 
 function App() {
   return (
@@ -23,6 +25,8 @@ function App() {
         <Route path="/board-directors" element={<BoardMember/>} />
         <Route path="/certificates" element={<Certificates/>} />
         <Route path="/company-overview" element={<CompanyOverview/>} />
+        <Route path="/transmission-lines" element={<TransmissionLines/>} />
+        <Route path="/grids" element={<Grids/>} />
       </Routes>
     </Router>
   );
