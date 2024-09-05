@@ -136,7 +136,7 @@ function NavigationBar() {
                                                 <div className='AboutDropDown'>
                                                     <div className='triangle'><GoTriangleUp /></div>
                                                     <div className='dropDownMenu'>
-                                                        < Nav.Link href="First" className='navLinkcolor' style={{ borderBottom: '1px solid black' }}>Company Overview</Nav.Link>
+                                                        < Nav.Link href="/company-overview" className='navLinkcolor' style={{ borderBottom: '1px solid black' }}>Company Overview</Nav.Link>
                                                         < Nav.Link href='/board-directors' className='navLinkcolor' style={{ borderBottom: '1px solid black' }}>Board of Directors</Nav.Link>
                                                         < Nav.Link className='navLinkcolor' style={{ borderBottom: '1px solid black' }}>Organization Structure</Nav.Link>
                                                         < Nav.Link className='navLinkcolor' style={{ borderBottom: '1px solid black' }}>Awards & Achievements</Nav.Link>

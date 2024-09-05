@@ -8,6 +8,7 @@ import ArchiveTenders from './Pages/ArchiveTenders.jsx';
 import Home from './Pages/Home.jsx';
 import BoardMember from './Pages/BoardMember.jsx';
 import Certificates from './Pages/Certificates.jsx';
+import CompanyOverview from './Pages/CompanyOverview.jsx';
 
 function App() {
   return (
@@ -21,6 +22,7 @@ function App() {
         <Route path="/archive-tenders" element={<ArchiveTenders />} />
         <Route path="/board-directors" element={<BoardMember/>} />
         <Route path="/certificates" element={<Certificates/>} />
+        <Route path="/company-overview" element={<CompanyOverview/>} />
       </Routes>
     </Router>
   );
