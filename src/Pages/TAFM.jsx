@@ -1,61 +1,81 @@
 import React from 'react';
 import { Table, TableBody, TableCell, TableContainer, TableHead, TableRow, Paper } from '@mui/material';
+import { styled } from '@mui/material/styles';
+import NavigationBar from '../../components/NavigationBar';
+import HeaderBox from './Header';
+import Footer from '../../components/Footer'
+import backgroundImage from '../../public/images/Switchyard at Bakhri GSS.jpg'
 
-const Grids = () => {
-  const rows = [
-    { sNo: 1, name: 'GSS A', capacity220: '200 MVA', totalCapacity220: '400 MVA', capacity132: '150 MVA', totalCapacity132: '300 MVA', transmissionCircle: 'Circle 1' },
-    { sNo: 2, name: 'GSS B', capacity220: '220 MVA', totalCapacity220: '440 MVA', capacity132: '160 MVA', totalCapacity132: '320 MVA', transmissionCircle: 'Circle 2' },
-    { sNo: 3, name: 'GSS C', capacity220: '230 MVA', totalCapacity220: '460 MVA', capacity132: '170 MVA', totalCapacity132: '340 MVA', transmissionCircle: 'Circle 3' },
-    { sNo: 4, name: 'GSS D', capacity220: '240 MVA', totalCapacity220: '480 MVA', capacity132: '180 MVA', totalCapacity132: '360 MVA', transmissionCircle: 'Circle 4' },
-    { sNo: 5, name: 'GSS E', capacity220: '250 MVA', totalCapacity220: '500 MVA', capacity132: '190 MVA', totalCapacity132: '380 MVA', transmissionCircle: 'Circle 5' },
+const StyledTableContainer = styled(TableContainer)(({ theme }) => ({
+  width: '90%',
+  margin: '20px auto', // Center the table with margin
+  boxShadow: theme.shadows[5],
+}));
+
+const StyledTableHead = styled(TableHead)(({ theme }) => ({
+  backgroundColor: theme.palette.primary.main, // Header color
+  '& .MuiTableCell-head': {
+    color: theme.palette.common.white, // Header text color
+    fontWeight: 'bold',
+  },
+}));
+
+const StyledTableRow = styled(TableRow)(({ theme }) => ({
+  '&:hover': {
+    backgroundColor: theme.palette.action.hover, // Hover effect on rows
+  },
+}));
+
+function TAFM() {
+  const tableData = [
+    { id: 1, month: 'January', kv220: 95, kv132: 92, overall: 93.5 },
+    { id: 2, month: 'February', kv220: 96, kv132: 91, overall: 93 },
+    { id: 3, month: 'March', kv220: 94, kv132: 90, overall: 92 },
+    { id: 4, month: 'April', kv220: 97, kv132: 93, overall: 95 },
+    { id: 5, month: 'May', kv220: 93, kv132: 89, overall: 91 },
+  ];
+
+  const breadcrumbs = [
+    { label: 'Home', href: '/' },
+    { label: 'Transmission N/W', href: '#' },
+    { label: 'System Parameters' }
   ];
 
   return (
-    <TableContainer component={Paper} sx={{ width: '80%', margin: 'auto', marginTop: 2 }}>
-      <Table sx={{ minWidth: 650 }}>
-        <TableHead sx={{ backgroundColor: '#f5f5f5' }}>
+    <>
+       <NavigationBar/>
+    <HeaderBox
+      backgroundImage={backgroundImage}
+      title="TAFM"
+      breadcrumbs={breadcrumbs}
+    />
+    <StyledTableContainer component={Paper}>
+      <Table aria-label="styled table">
+        <StyledTableHead>
           <TableRow>
-            <TableCell sx={{ fontWeight: 'bold', borderRight: '1px solid black', textAlign: 'center', width: '10%', verticalAlign: 'middle' }}>S.No</TableCell>
-            <TableCell sx={{ fontWeight: 'bold', borderRight: '1px solid black', textAlign: 'center', width: '15%', verticalAlign: 'middle' }} >Name of GSS</TableCell>
-            <TableCell align="center" colSpan={2} sx={{ fontWeight: 'bold', borderRight: '1px solid black', textAlign: 'center', width: '25%' }}>
-              220/132 kV
-            </TableCell>
-            <TableCell align="center" colSpan={2} sx={{ fontWeight: 'bold', borderRight: '1px solid black', textAlign: 'center', width: '25%' }}>
-              132/33 kV
-            </TableCell>
-            <TableCell sx={{ fontWeight: 'bold', textAlign: 'center', width: '25%', verticalAlign: 'middle' }}>Transmission Circle</TableCell>
+            <TableCell>S.No</TableCell>
+            <TableCell align="center">Month</TableCell>
+            <TableCell align="center">220 kV TAFM (%)</TableCell>
+            <TableCell align="center">132 kV TAFM (%)</TableCell>
+            <TableCell align="center">Overall TAFM (%)</TableCell>
           </TableRow>
-          <TableRow sx={{ backgroundColor: '#f5f5f5' }}>
-            <TableCell sx={{borderRight: '1px solid black', textAlign: 'center', verticalAlign: 'middle'}} />
-            <TableCell sx={{borderRight: '1px solid black', textAlign: 'center', verticalAlign: 'middle'}} />
-            <TableCell align="center" sx={{ borderLeft: '1px solid black', textAlign: 'center', width: '12.5%', verticalAlign: 'middle' }}>Capacity</TableCell>
-            <TableCell align="center" sx={{ borderRight: '1px solid black', textAlign: 'center', width: '12.5%', verticalAlign: 'middle' }}>Total Capacity </TableCell>
-            <TableCell align="center" sx={{ borderLeft: '1px solid black', textAlign: 'center', width: '12.5%', verticalAlign: 'middle' }}>Capacity</TableCell>
-            <TableCell align="center" sx={{ borderRight: '1px solid black', textAlign: 'center', width: '12.5%', verticalAlign: 'middle' }}>Total Capacity </TableCell>
-            <TableCell sx={{ textAlign: 'center', verticalAlign: 'middle' }} />
-          </TableRow>
-        </TableHead>
+        </StyledTableHead>
         <TableBody>
-          {rows.map((row, index) => (
-            <TableRow
-              key={index}
-              sx={{
-                '&:hover': { backgroundColor: '#f1f1f1', cursor: 'pointer' },
-              }}
-            >
-              <TableCell sx={{borderRight: '1px solid black', textAlign: 'center', verticalAlign: 'middle'}}>{row.sNo}</TableCell>
-              <TableCell sx={{borderRight: '1px solid black', textAlign: 'center', verticalAlign: 'middle'}}>{row.name}</TableCell>
-              <TableCell align="center" sx={{ borderRight: '1px solid black', textAlign: 'center', width: '12.5%', verticalAlign: 'middle' }}>{row.capacity220}</TableCell>
-              <TableCell align="center" sx={{ borderRight: '1px solid black', textAlign: 'center', width: '12.5%', verticalAlign: 'middle' }}>{row.totalCapacity220}</TableCell>
-              <TableCell align="center" sx={{ borderRight: '1px solid black', textAlign: 'center', width: '12.5%', verticalAlign: 'middle' }}>{row.capacity132}</TableCell>
-              <TableCell align="center" sx={{ borderRight: '1px solid black', textAlign: 'center', width: '12.5%', verticalAlign: 'middle' }}>{row.totalCapacity132}</TableCell>
-              <TableCell sx={{ textAlign: 'center', verticalAlign: 'middle' }}>{row.transmissionCircle}</TableCell>
-            </TableRow>
+          {tableData.map((row) => (
+            <StyledTableRow key={row.id}>
+              <TableCell component="th" scope="row">{row.id}</TableCell>
+              <TableCell align="center">{row.month}</TableCell>
+              <TableCell align="center">{row.kv220}%</TableCell>
+              <TableCell align="center">{row.kv132}%</TableCell>
+              <TableCell align="center">{row.overall}%</TableCell>
+            </StyledTableRow>
           ))}
         </TableBody>
       </Table>
-    </TableContainer>
+    </StyledTableContainer>
+    <Footer/>
+    </>
   );
-};
+}
 
-export default Grids;
+export default TAFM;

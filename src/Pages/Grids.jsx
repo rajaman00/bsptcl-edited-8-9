@@ -21,6 +21,7 @@ const Grids = () => {
   ];
 
   return (
+    
     <>
        <NavigationBar/>
     <HeaderBox
@@ -28,28 +29,43 @@ const Grids = () => {
       title="Grids"
       breadcrumbs={breadcrumbs}
     />
-    <TableContainer component={Paper} sx={{ width: '80%', margin: 'auto', marginTop: 2, marginBottom:2 }}>
+    <TableContainer component={Paper} sx={{ width: '80%', margin: 'auto', marginTop: 2, marginBottom:2}}>
       <Table sx={{ minWidth: 650 }}>
-        <TableHead sx={{ backgroundColor: '#f5f5f5' }}>
+        <TableHead sx={{ backgroundColor: '#0bafec' }}>
           <TableRow>
-            <TableCell sx={{ fontWeight: 'bold', borderRight: '1px solid black', textAlign: 'center', width: '10%' }}>S.No</TableCell>
-            <TableCell sx={{ fontWeight: 'bold', borderRight: '1px solid black', textAlign: 'center', width: '15%' }}>Name of GSS</TableCell>
-            <TableCell align="center" colSpan={2} sx={{ fontWeight: 'bold', borderRight: '1px solid black', textAlign: 'center', width: '25%' }}>
+            {/* Merge S.No */}
+            <TableCell 
+              rowSpan={2} 
+              sx={{ fontWeight: 'bold', borderRight: '1px solid black', textAlign: 'center', width: '10%', verticalAlign: 'middle' }}>
+              S.No
+            </TableCell>
+            {/* Merge Name of GSS */}
+            <TableCell 
+              rowSpan={2} 
+              sx={{ fontWeight: 'bold', borderRight: '1px solid black', textAlign: 'center', width: '15%', verticalAlign: 'middle' }}>
+              Name of GSS
+            </TableCell>
+            {/* 220/132 kV */}
+            <TableCell align="center" colSpan={2} sx={{ fontWeight: 'bold', borderRight: '1px solid black', textAlign: 'center', width: '25%' , borderBottom:'0px'}}>
               220/132 kV
             </TableCell>
-            <TableCell align="center" colSpan={2} sx={{ fontWeight: 'bold', borderRight: '1px solid black', textAlign: 'center', width: '25%' }}>
+            {/* 132/33 kV */}
+            <TableCell align="center" colSpan={2} sx={{ fontWeight: 'bold', borderRight: '1px solid black', textAlign: 'center', width: '25%',  borderBottom:'0px' }}>
               132/33 kV
             </TableCell>
-            <TableCell sx={{ fontWeight: 'bold', textAlign: 'center', width: '15%' }}>Transmission Circle</TableCell>
+            {/* Merge Transmission Circle */}
+            <TableCell 
+              rowSpan={2} 
+              sx={{ fontWeight: 'bold', textAlign: 'center', width: '25%', verticalAlign: 'middle' }}>
+              Transmission Circle
+            </TableCell>
           </TableRow>
           <TableRow sx={{ backgroundColor: '#f5f5f5' }}>
-            <TableCell sx={{ borderRight: '1px solid black', textAlign: 'center' }} />
-            <TableCell sx={{ borderRight: '1px solid black', textAlign: 'center' }} />
-            <TableCell align="center" sx={{ borderLeft: '1px solid black', textAlign: 'center', width: '12.5%' }}>Capacity</TableCell>
-            <TableCell align="center" sx={{ borderRight: '1px solid black', textAlign: 'center', width: '12.5%' }}>Total Capacity</TableCell>
-            <TableCell align="center" sx={{ borderLeft: '1px solid black', textAlign: 'center', width: '12.5%' }}>Capacity</TableCell>
-            <TableCell align="center" sx={{ borderRight: '1px solid black', textAlign: 'center', width: '12.5%' }}>Total Capacity</TableCell>
-            <TableCell sx={{ textAlign: 'center' }} />
+            {/* Sub-columns */}
+            <TableCell align="center" sx={{ borderLeft: '1px solid black', textAlign: 'center', width: '12.5%', verticalAlign: 'middle', backgroundColor:'#0bafec' }}>Capacity</TableCell>
+            <TableCell align="center" sx={{ borderRight: '1px solid black', textAlign: 'center', width: '12.5%', verticalAlign: 'middle', backgroundColor:'#0bafec'  }}>Total Capacity</TableCell>
+            <TableCell align="center" sx={{ borderLeft: '1px solid black', textAlign: 'center', width: '12.5%', verticalAlign: 'middle' , backgroundColor:'#0bafec' }}>Capacity</TableCell>
+            <TableCell align="center" sx={{ borderRight: '1px solid black', textAlign: 'center', width: '12.5%', verticalAlign: 'middle', backgroundColor:'#0bafec'  }}>Total Capacity</TableCell>
           </TableRow>
         </TableHead>
         <TableBody>
@@ -60,13 +76,13 @@ const Grids = () => {
                 '&:hover': { backgroundColor: '#f1f1f1', cursor: 'pointer' },
               }}
             >
-              <TableCell sx={{ borderRight: '1px solid black', textAlign: 'center' }}>{row.sNo}</TableCell>
-              <TableCell sx={{ borderRight: '1px solid black', textAlign: 'center' }}>{row.name}</TableCell>
-              <TableCell align="center" sx={{ borderRight: '1px solid black', textAlign: 'center', width: '12.5%' }}>{row.capacity220}</TableCell>
-              <TableCell align="center" sx={{ borderRight: '1px solid black', textAlign: 'center', width: '12.5%' }}>{row.totalCapacity220}</TableCell>
-              <TableCell align="center" sx={{ borderRight: '1px solid black', textAlign: 'center', width: '12.5%' }}>{row.capacity132}</TableCell>
-              <TableCell align="center" sx={{ borderRight: '1px solid black', textAlign: 'center', width: '12.5%' }}>{row.totalCapacity132}</TableCell>
-              <TableCell sx={{ textAlign: 'center', width: '15%' }}>{row.transmissionCircle}</TableCell>
+              <TableCell sx={{borderRight: '1px solid black', textAlign: 'center', verticalAlign: 'middle'}}>{row.sNo}</TableCell>
+              <TableCell sx={{borderRight: '1px solid black', textAlign: 'center', verticalAlign: 'middle'}}>{row.name}</TableCell>
+              <TableCell align="center" sx={{ borderRight: '1px solid black', textAlign: 'center', width: '12.5%', verticalAlign: 'middle' }}>{row.capacity220}</TableCell>
+              <TableCell align="center" sx={{ borderRight: '1px solid black', textAlign: 'center', width: '12.5%', verticalAlign: 'middle' }}>{row.totalCapacity220}</TableCell>
+              <TableCell align="center" sx={{ borderRight: '1px solid black', textAlign: 'center', width: '12.5%', verticalAlign: 'middle' }}>{row.capacity132}</TableCell>
+              <TableCell align="center" sx={{ borderRight: '1px solid black', textAlign: 'center', width: '12.5%', verticalAlign: 'middle' }}>{row.totalCapacity132}</TableCell>
+              <TableCell sx={{ textAlign: 'center', verticalAlign: 'middle' }}>{row.transmissionCircle}</TableCell>
             </TableRow>
           ))}
         </TableBody>
