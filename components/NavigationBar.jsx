@@ -71,7 +71,7 @@ function NavigationBar() {
             {/* ---------utility link--------------- */}
             <div className='utilityLink'>
                 <div className="leftSideDisplay">
-                    <a href="">An ISO 270001:2013 Company</a>
+                    <a href="">An ISO 27001:2013 Company</a>
                 </div>
                 <div className="rightSideDisplay">
                     <a href="/" style={{ borderRight: '1px solid gray' }}>Skip to Main Content</a>
