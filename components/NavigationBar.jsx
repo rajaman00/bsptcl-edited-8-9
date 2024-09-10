@@ -260,7 +260,7 @@ function NavigationBar() {
                                                     <div className='dropDownMenu'>
                                                         < Nav.Link href="First" className='navLinkcolor' style={{ borderBottom: '1px solid black' }}>Schedule of Rate</Nav.Link>
                                                         < Nav.Link className='navLinkcolor' style={{ borderBottom: '1px solid black' }}>Policy</Nav.Link>
-                                                        < Nav.Link href='#tender' className='navLinkcolor' style={{ borderBottom: '1px solid black' }}>Tenders</Nav.Link>
+                                                        < Nav.Link href='/#tender' className='navLinkcolor' style={{ borderBottom: '1px solid black' }}>Tenders</Nav.Link>
                                                         < Nav.Link href="https://eproc2.bihar.gov.in/EPSV2Web/" className='navLinkcolor' target="_blank"
                                                             rel="noopener noreferrer" style={{ borderBottom: '1px solid black' }}>e-Procurement</Nav.Link>
                                                         < Nav.Link href="https://gem.gov.in/" className='navLinkcolor' target="_blank"
