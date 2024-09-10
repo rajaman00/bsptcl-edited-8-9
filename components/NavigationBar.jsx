@@ -74,7 +74,7 @@ function NavigationBar() {
                     <a href="">An ISO 270001:2013 Company</a>
                 </div>
                 <div className="rightSideDisplay">
-                    <a href="" style={{ borderRight: '1px solid gray' }}>Skip to Main Content</a>
+                    <a href="/" style={{ borderRight: '1px solid gray' }}>Skip to Main Content</a>
                     <hr />
                     <a href="" style={{ borderRight: '1px solid gray' }}>Screen Reader</a>
                     <a href="" >A-</a>
@@ -93,8 +93,8 @@ function NavigationBar() {
             <div className='parent'>
                 <div className="logoAndLink">
                     {/* ------------Company Logo ----------------------*/}
-                    <div className='companyLogo'>
-                        <Image src={logo} loop="1" alt='BSPTCL' className='logoImage' />
+                    <div  className='companyLogo'>
+                        <a href="/"><Image  src={logo} loop="1" alt='BSPTCL' className='logoImage' /></a>
                     </div>
 
                     {/* -------------------Main Link----------------- */}
