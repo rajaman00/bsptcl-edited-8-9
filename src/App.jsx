@@ -11,6 +11,7 @@ import Certificates from './Pages/Certificates.jsx';
 import CompanyOverview from './Pages/CompanyOverview.jsx';
 import TransmissionLines from './Pages/TransmissionLines.jsx';
 import Grids from './Pages/Grids.jsx';
+import TAFM from './Pages/TAFM.jsx';
 
 function App() {
   return (
@@ -27,6 +28,7 @@ function App() {
         <Route path="/company-overview" element={<CompanyOverview/>} />
         <Route path="/transmission-lines" element={<TransmissionLines/>} />
         <Route path="/grids" element={<Grids/>} />
+        <Route path="/TAFM" element={<TAFM/>} />
       </Routes>
     </Router>
   );

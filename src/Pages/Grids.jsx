@@ -1,5 +1,9 @@
 import React from 'react';
 import { Table, TableBody, TableCell, TableContainer, TableHead, TableRow, Paper } from '@mui/material';
+import NavigationBar from '../../components/NavigationBar';
+import HeaderBox from './Header';
+import Footer from '../../components/Footer'
+import backgroundImage from '../../public/images/Switchyard at Bakhri GSS.jpg'
 
 const Grids = () => {
   const rows = [
@@ -10,25 +14,42 @@ const Grids = () => {
     { sNo: 5, name: 'GSS E', capacity220: '250 MVA', totalCapacity220: '500 MVA', capacity132: '190 MVA', totalCapacity132: '380 MVA', transmissionCircle: 'Circle 5' },
   ];
 
+  const breadcrumbs = [
+    { label: 'Home', href: '/' },
+    { label: 'Transmission N/W', href: '#' },
+    { label: 'Current Infrastructure' }
+  ];
+
   return (
-    <TableContainer component={Paper} sx={{ width: '80%', margin: 'auto', marginTop: 2 }}>
+    <>
+       <NavigationBar/>
+    <HeaderBox
+      backgroundImage={backgroundImage}
+      title="Grids"
+      breadcrumbs={breadcrumbs}
+    />
+    <TableContainer component={Paper} sx={{ width: '80%', margin: 'auto', marginTop: 2, marginBottom:2 }}>
       <Table sx={{ minWidth: 650 }}>
         <TableHead sx={{ backgroundColor: '#f5f5f5' }}>
           <TableRow>
-            <TableCell sx={{ fontWeight: 'bold' }}>S.No</TableCell>
-            <TableCell sx={{ fontWeight: 'bold' }}>Name of GSS</TableCell>
-            <TableCell sx={{ fontWeight: 'bold' }} colSpan={2} align="center">220/132 KV</TableCell>
-            <TableCell sx={{ fontWeight: 'bold' }} colSpan={2} align="center">132/33 KV</TableCell>
-            <TableCell sx={{ fontWeight: 'bold' }}>Transmission Circle</TableCell>
+            <TableCell sx={{ fontWeight: 'bold', borderRight: '1px solid black', textAlign: 'center', width: '10%' }}>S.No</TableCell>
+            <TableCell sx={{ fontWeight: 'bold', borderRight: '1px solid black', textAlign: 'center', width: '15%' }}>Name of GSS</TableCell>
+            <TableCell align="center" colSpan={2} sx={{ fontWeight: 'bold', borderRight: '1px solid black', textAlign: 'center', width: '25%' }}>
+              220/132 kV
+            </TableCell>
+            <TableCell align="center" colSpan={2} sx={{ fontWeight: 'bold', borderRight: '1px solid black', textAlign: 'center', width: '25%' }}>
+              132/33 kV
+            </TableCell>
+            <TableCell sx={{ fontWeight: 'bold', textAlign: 'center', width: '15%' }}>Transmission Circle</TableCell>
           </TableRow>
-          <TableRow>
-            <TableCell></TableCell>
-            <TableCell></TableCell>
-            <TableCell align="center">Capacity</TableCell>
-            <TableCell align="center">Total Capacity</TableCell>
-            <TableCell align="center">Capacity</TableCell>
-            <TableCell align="center">Total Capacity (MVA)</TableCell>
-            <TableCell></TableCell>
+          <TableRow sx={{ backgroundColor: '#f5f5f5' }}>
+            <TableCell sx={{ borderRight: '1px solid black', textAlign: 'center' }} />
+            <TableCell sx={{ borderRight: '1px solid black', textAlign: 'center' }} />
+            <TableCell align="center" sx={{ borderLeft: '1px solid black', textAlign: 'center', width: '12.5%' }}>Capacity</TableCell>
+            <TableCell align="center" sx={{ borderRight: '1px solid black', textAlign: 'center', width: '12.5%' }}>Total Capacity</TableCell>
+            <TableCell align="center" sx={{ borderLeft: '1px solid black', textAlign: 'center', width: '12.5%' }}>Capacity</TableCell>
+            <TableCell align="center" sx={{ borderRight: '1px solid black', textAlign: 'center', width: '12.5%' }}>Total Capacity</TableCell>
+            <TableCell sx={{ textAlign: 'center' }} />
           </TableRow>
         </TableHead>
         <TableBody>
@@ -39,18 +60,20 @@ const Grids = () => {
                 '&:hover': { backgroundColor: '#f1f1f1', cursor: 'pointer' },
               }}
             >
-              <TableCell>{row.sNo}</TableCell>
-              <TableCell>{row.name}</TableCell>
-              <TableCell align="center">{row.capacity220}</TableCell>
-              <TableCell align="center">{row.totalCapacity220}</TableCell>
-              <TableCell align="center">{row.capacity132}</TableCell>
-              <TableCell align="center">{row.totalCapacity132}</TableCell>
-              <TableCell>{row.transmissionCircle}</TableCell>
+              <TableCell sx={{ borderRight: '1px solid black', textAlign: 'center' }}>{row.sNo}</TableCell>
+              <TableCell sx={{ borderRight: '1px solid black', textAlign: 'center' }}>{row.name}</TableCell>
+              <TableCell align="center" sx={{ borderRight: '1px solid black', textAlign: 'center', width: '12.5%' }}>{row.capacity220}</TableCell>
+              <TableCell align="center" sx={{ borderRight: '1px solid black', textAlign: 'center', width: '12.5%' }}>{row.totalCapacity220}</TableCell>
+              <TableCell align="center" sx={{ borderRight: '1px solid black', textAlign: 'center', width: '12.5%' }}>{row.capacity132}</TableCell>
+              <TableCell align="center" sx={{ borderRight: '1px solid black', textAlign: 'center', width: '12.5%' }}>{row.totalCapacity132}</TableCell>
+              <TableCell sx={{ textAlign: 'center', width: '15%' }}>{row.transmissionCircle}</TableCell>
             </TableRow>
           ))}
         </TableBody>
       </Table>
     </TableContainer>
+    <Footer/>
+    </>
   );
 };
 

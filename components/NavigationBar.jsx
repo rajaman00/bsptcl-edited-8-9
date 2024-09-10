@@ -185,14 +185,14 @@ function NavigationBar() {
                                                         >
                                                             Power Map
                                                         </Nav.Link>
-                                                        < Nav.Link className='navLinkcolor' style={{ borderBottom: '1px solid black' }}
+                                                        <li className='navLinkcolor' style={{ borderBottom: '1px solid black',paddingLeft:'0.6rem' }}
                                                             onMouseOver={() => setSysParametersHovered(true)}
                                                             onMouseLeave={() => setSysParametersHovered(false)}>
                                                             <div style={{ display: 'flex', justifyContent: 'space-between' }}> System Parameters<span style={{ color: '#db8204' }}><GoTriangleRight /></span></div>
                                                             {isSysParametersHovered && (
                                                                 <div className='SysParametersDropDown'>
                                                                     <div className='dropDownMenu'>
-                                                                        < Nav.Link className='navLinkcolor' style={{ borderBottom: '1px solid black' }}>TAFM</Nav.Link>
+                                                                        < Nav.Link href ='/TAFM' className='navLinkcolor' style={{ borderBottom: '1px solid black' }}>TAFM</Nav.Link>
                                                                         < Nav.Link className='navLinkcolor' style={{ borderBottom: '1px solid black' }}>ATC/TTC</Nav.Link>
                                                                         < Nav.Link className='navLinkcolor' style={{ borderBottom: '1px solid black' }}>Peak Demand Met</Nav.Link>
                                                                         < Nav.Link className='navLinkcolor' style={{ borderBottom: '1px solid black' }}>Load Pattern</Nav.Link>
@@ -202,7 +202,7 @@ function NavigationBar() {
 
                                                             )}
 
-                                                        </Nav.Link>
+                                                        </li>
                                                         < Nav.Link className='navLinkcolor' style={{ borderBottom: '1px solid black' }}>Transmission Loss</Nav.Link>
                                                         < Nav.Link className='navLinkcolor'
                                                             onMouseOver={() => setUpcomInfrastructureHovered(true)}
