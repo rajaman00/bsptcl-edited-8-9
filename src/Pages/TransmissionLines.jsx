@@ -3,7 +3,7 @@ import { Table, TableBody, TableCell, TableContainer, TableHead, TableRow, Paper
 import NavigationBar from '../../components/NavigationBar';
 import HeaderBox from './Header';
 import Footer from '../../components/Footer'
-import backgroundImage from '../../public/images/Switchyard at Bakhri GSS.jpg'
+import backgroundImage from '../../public/images/Switchyard at Bakhri GSS.jpg';
 
 const TransmissionLines = () => {
   const rows = [
@@ -19,48 +19,50 @@ const TransmissionLines = () => {
     { label: 'Transmission N/W', href: '#' },
     { label: 'Current Infrastructure' }
   ];
+
   return (
     <>
-        <NavigationBar/>
-    <HeaderBox
-      backgroundImage={backgroundImage}
-      title="Transmission Lines"
-      breadcrumbs={breadcrumbs}
-    />
-    <TableContainer component={Paper} sx={{ width: '80%', margin: 'auto', marginTop: 2, marginBottom: 2 }}>
-      <Table sx={{ minWidth: 650 }}>
-        <TableHead sx={{ backgroundColor: '#0bafec' }}>
-          <TableRow>
-            <TableCell sx={{ fontWeight: 'bold' }}>S.No</TableCell>
-            <TableCell sx={{ fontWeight: 'bold' }}>Name of Line</TableCell>
-            <TableCell sx={{ fontWeight: 'bold' }}>Circuit</TableCell>
-            <TableCell sx={{ fontWeight: 'bold' }}>Route Length</TableCell>
-            <TableCell sx={{ fontWeight: 'bold' }}>Total Length</TableCell>
-            <TableCell sx={{ fontWeight: 'bold' }}>Conductor Type</TableCell>
-          </TableRow>
-        </TableHead>
-        <TableBody>
-          {rows.map((row, index) => (
-            <TableRow
-              key={index}
-              sx={{
-                '&:hover': { backgroundColor: '#f1f1f1', cursor: 'pointer' },
-              }}
-            >
-              <TableCell sx={{ padding: '16px' }}>{row.sNo}</TableCell>
-              <TableCell sx={{ padding: '16px' }}>{row.name}</TableCell>
-              <TableCell sx={{ padding: '16px' }}>{row.circuit}</TableCell>
-              <TableCell sx={{ padding: '16px' }}>{row.routeLength}</TableCell>
-              <TableCell sx={{ padding: '16px' }}>{row.totalLength}</TableCell>
-              <TableCell sx={{ padding: '16px' }}>{row.conductorType}</TableCell>
+      <NavigationBar />
+      <HeaderBox
+        backgroundImage={backgroundImage}
+        title="Transmission Lines"
+        breadcrumbs={breadcrumbs}
+      />
+      <TableContainer component={Paper} sx={{ width: '80%', margin: 'auto', marginTop: 2, marginBottom: 2 }}>
+        <Table sx={{ minWidth: 650 }}>
+          <TableHead sx={{ backgroundColor: '#0bafec' }}>
+            <TableRow>
+              {/* Applying equal width, center alignment, and border */}
+              <TableCell sx={{ fontWeight: 'bold', textAlign: 'center', width: '16.66%', border: '1px solid black' }}>S.No</TableCell>
+              <TableCell sx={{ fontWeight: 'bold', textAlign: 'center', width: '16.66%', border: '1px solid black' }}>Name of Line</TableCell>
+              <TableCell sx={{ fontWeight: 'bold', textAlign: 'center', width: '16.66%', border: '1px solid black' }}>Circuit</TableCell>
+              <TableCell sx={{ fontWeight: 'bold', textAlign: 'center', width: '16.66%', border: '1px solid black' }}>Route Length</TableCell>
+              <TableCell sx={{ fontWeight: 'bold', textAlign: 'center', width: '16.66%', border: '1px solid black' }}>Total Length</TableCell>
+              <TableCell sx={{ fontWeight: 'bold', textAlign: 'center', width: '16.66%', border: '1px solid black' }}>Conductor Type</TableCell>
             </TableRow>
-          ))}
-        </TableBody>
-      </Table>
-    </TableContainer>
-    <Footer/>
+          </TableHead>
+          <TableBody>
+            {rows.map((row, index) => (
+              <TableRow
+                key={index}
+                sx={{
+                  '&:hover': { backgroundColor: '#f1f1f1', cursor: 'pointer' },
+                }}
+              >
+                {/* Center-aligned content with border */}
+                <TableCell sx={{ textAlign: 'center', padding: '16px', border: '1px solid black' }}>{row.sNo}</TableCell>
+                <TableCell sx={{ textAlign: 'center', padding: '16px', border: '1px solid black' }}>{row.name}</TableCell>
+                <TableCell sx={{ textAlign: 'center', padding: '16px', border: '1px solid black' }}>{row.circuit}</TableCell>
+                <TableCell sx={{ textAlign: 'center', padding: '16px', border: '1px solid black' }}>{row.routeLength}</TableCell>
+                <TableCell sx={{ textAlign: 'center', padding: '16px', border: '1px solid black' }}>{row.totalLength}</TableCell>
+                <TableCell sx={{ textAlign: 'center', padding: '16px', border: '1px solid black' }}>{row.conductorType}</TableCell>
+              </TableRow>
+            ))}
+          </TableBody>
+        </Table>
+      </TableContainer>
+      <Footer />
     </>
-
   );
 };
 
