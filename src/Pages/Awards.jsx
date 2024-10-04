@@ -42,7 +42,7 @@ const Certificates = () => {
   const breadcrumbs = [
     { label: 'Home', href: '/' },
     { label: 'About Us', href: '#' },
-    { label: 'Certificates' }
+    { label: 'Awards and Achievements' }
 ];
   return (
     <>
@@ -50,7 +50,7 @@ const Certificates = () => {
     <div>
     <HeaderBox
                 backgroundImage={backgroundImage}
-                title="Certificates"
+                title="Awards"
                 breadcrumbs={breadcrumbs}
             />
            </div>

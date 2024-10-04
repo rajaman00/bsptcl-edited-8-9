@@ -4,13 +4,13 @@ import HeaderBox from './Header';
 import NavigationBar from '../../components/NavigationBar';
 import Footer from '../../components/Footer'
 import backgroundImage from '../../public/images/Switchyard at Bakhri GSS.jpg'
-import { left } from '@popperjs/core';
+
 
 const ProfileCard = () => {
   const breadcrumbs = [
     { label: 'Home', href: '/' },
     { label: 'About Us', href: '#' },
-    { label: 'Board Members' }
+    { label: 'Board Of Directors' }
   ];
 
   // State to manage if the card is expanded or not
@@ -25,7 +25,7 @@ const ProfileCard = () => {
       <NavigationBar />
       <HeaderBox
         backgroundImage={backgroundImage}
-        title="Board Members"
+        title="Board Of Directors"
         breadcrumbs={breadcrumbs}
       />
 

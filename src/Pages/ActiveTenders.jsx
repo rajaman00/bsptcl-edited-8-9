@@ -1,9 +1,10 @@
 import React from 'react';
 import { Card, CardContent, Typography, List, ListItem, ListItemText, Link, Box, Breadcrumbs } from '@mui/material';
 import FiberManualRecordIcon from '@mui/icons-material/FiberManualRecord';
-import backgroundImage from '../../public/images/Switchyard at Bakhri GSS.jpg'
+import HeaderBox from './Header';
 import NavigationBar from '../../components/NavigationBar';
-import Footer from '../../components/Footer';
+import Footer from '../../components/Footer'
+import backgroundImage from '../../public/images/Switchyard at Bakhri GSS.jpg'
 
 const tenders = [
   { id: 1, text: 'NIT No. 04/PR/TRZ-PAT/2024', link: 'https://example.com/tender1' },
@@ -16,38 +17,20 @@ const tenders = [
 ];
 
 const ActiveTenders = () => {
+  const breadcrumbs = [
+    { label: 'Home', href: '/' },
+    { label: 'Procurements', href: '#' },
+    { label: 'Tenders' },
+    { label: 'Active Tenders' }
+  ];
   return (
     <>
-    <NavigationBar/>
-    <Box
-      sx={{
-        position: 'relative',
-        height: '13rem',
-        backgroundImage: `url(${backgroundImage})`,
-        backgroundSize: 'cover',
-        backgroundPosition: 'center',
-        display: 'flex',
-        flexDirection: 'column',
-        justifyContent: 'center',
-        color: 'white',
-        padding: '20px',
-        textAlign: 'left',
-        backgroundColor:''
-      }}
-    >
-      <Typography variant="h2" sx={{ fontWeight: 'bold' }}>
-        Active Tenders
-      </Typography>
-      <Breadcrumbs sx={{ color: 'white', marginTop: '10px' }}>
-        <Link href="/" underline="hover" sx={{ color: 'white' }}>
-          Home
-        </Link>
-        <Link href="#" underline="hover" sx={{ color: 'white' }}>
-          Tenders
-        </Link>
-        <Typography color="white">Active Tenders</Typography>
-      </Breadcrumbs>
-    </Box>
+    <NavigationBar />
+      <HeaderBox
+        backgroundImage={backgroundImage}
+        title="Active Tenders"
+        breadcrumbs={breadcrumbs}
+      />
 
     <Card sx={{ maxWidth: 800, margin: '20px auto', padding: '10px', boxShadow: 3 }}>
       <CardContent>

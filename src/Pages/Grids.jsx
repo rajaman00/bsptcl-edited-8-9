@@ -1,9 +1,9 @@
 import React from 'react';
-import { Table, TableBody, TableCell, TableContainer, TableHead, TableRow, Paper } from '@mui/material';
+import { Table, TableBody, TableCell, TableContainer, TableHead, TableRow, Paper, Typography } from '@mui/material';
 import NavigationBar from '../../components/NavigationBar';
 import HeaderBox from './Header';
-import Footer from '../../components/Footer'
-import backgroundImage from '../../public/images/Switchyard at Bakhri GSS.jpg'
+import Footer from '../../components/Footer';
+import backgroundImage from '../../public/images/Switchyard at Bakhri GSS.jpg';
 
 const Grids = () => {
   const rows = [
@@ -17,78 +17,136 @@ const Grids = () => {
   const breadcrumbs = [
     { label: 'Home', href: '/' },
     { label: 'Transmission N/W', href: '#' },
-    { label: 'Current Infrastructure' }
+    { label: 'Current Infrastructure' },
+    { label: 'Grids' },
   ];
 
   return (
-    
     <>
-       <NavigationBar/>
-    <HeaderBox
-      backgroundImage={backgroundImage}
-      title="Grids"
-      breadcrumbs={breadcrumbs}
-    />
-    <TableContainer component={Paper} sx={{ width: '80%', margin: 'auto', marginTop: 2, marginBottom:2}}>
-      <Table sx={{ minWidth: 650 }}>
-        <TableHead sx={{ backgroundColor: '#0bafec' }}>
-          <TableRow>
-            {/* Merge S.No */}
-            <TableCell 
-              rowSpan={2} 
-              sx={{ fontWeight: 'bold', borderRight: '1px solid black', textAlign: 'center', width: '10%', verticalAlign: 'middle' }}>
-              S.No
-            </TableCell>
-            {/* Merge Name of GSS */}
-            <TableCell 
-              rowSpan={2} 
-              sx={{ fontWeight: 'bold', borderRight: '1px solid black', textAlign: 'center', width: '15%', verticalAlign: 'middle' }}>
-              Name of GSS
-            </TableCell>
-            {/* 220/132 kV */}
-            <TableCell align="center" colSpan={2} sx={{ fontWeight: 'bold', borderRight: '1px solid black', textAlign: 'center', width: '25%' , borderBottom:'0px'}}>
-              220/132 kV
-            </TableCell>
-            {/* 132/33 kV */}
-            <TableCell align="center" colSpan={2} sx={{ fontWeight: 'bold', borderRight: '1px solid black', textAlign: 'center', width: '25%',  borderBottom:'0px' }}>
-              132/33 kV
-            </TableCell>
-            {/* Merge Transmission Circle */}
-            <TableCell 
-              rowSpan={2} 
-              sx={{ fontWeight: 'bold', textAlign: 'center', width: '25%', verticalAlign: 'middle' }}>
-              Transmission Circle
-            </TableCell>
-          </TableRow>
-          <TableRow sx={{ backgroundColor: '#f5f5f5' }}>
-            {/* Sub-columns */}
-            <TableCell align="center" sx={{ borderLeft: '1px solid black', textAlign: 'center', width: '12.5%', verticalAlign: 'middle', backgroundColor:'#0bafec' }}>Capacity</TableCell>
-            <TableCell align="center" sx={{ borderRight: '1px solid black', textAlign: 'center', width: '12.5%', verticalAlign: 'middle', backgroundColor:'#0bafec'  }}>Total Capacity</TableCell>
-            <TableCell align="center" sx={{ borderLeft: '1px solid black', textAlign: 'center', width: '12.5%', verticalAlign: 'middle' , backgroundColor:'#0bafec' }}>Capacity</TableCell>
-            <TableCell align="center" sx={{ borderRight: '1px solid black', textAlign: 'center', width: '12.5%', verticalAlign: 'middle', backgroundColor:'#0bafec'  }}>Total Capacity</TableCell>
-          </TableRow>
-        </TableHead>
-        <TableBody>
-          {rows.map((row, index) => (
-            <TableRow
-              key={index}
-              sx={{
-                '&:hover': { backgroundColor: '#f1f1f1', cursor: 'pointer' },
-              }}
-            >
-              <TableCell sx={{borderRight: '1px solid black', textAlign: 'center', verticalAlign: 'middle'}}>{row.sNo}</TableCell>
-              <TableCell sx={{borderRight: '1px solid black', textAlign: 'center', verticalAlign: 'middle'}}>{row.name}</TableCell>
-              <TableCell align="center" sx={{ borderRight: '1px solid black', textAlign: 'center', width: '12.5%', verticalAlign: 'middle' }}>{row.capacity220}</TableCell>
-              <TableCell align="center" sx={{ borderRight: '1px solid black', textAlign: 'center', width: '12.5%', verticalAlign: 'middle' }}>{row.totalCapacity220}</TableCell>
-              <TableCell align="center" sx={{ borderRight: '1px solid black', textAlign: 'center', width: '12.5%', verticalAlign: 'middle' }}>{row.capacity132}</TableCell>
-              <TableCell align="center" sx={{ borderRight: '1px solid black', textAlign: 'center', width: '12.5%', verticalAlign: 'middle' }}>{row.totalCapacity132}</TableCell>
-              <TableCell sx={{ textAlign: 'center', verticalAlign: 'middle' }}>{row.transmissionCircle}</TableCell>
+      <NavigationBar />
+      <HeaderBox backgroundImage={backgroundImage} title="Grids" breadcrumbs={breadcrumbs} />
+
+      {/* Centrally aligned heading with hover effect */}
+      <Typography
+        variant="h3"
+        sx={{
+          textAlign: 'center',
+          marginTop: 5,
+          marginBottom: 5,
+          fontWeight: 'bold',
+          color: '#0bafec',
+          transition: 'color 0.3s, transform 0.3s',
+          '&:hover': {
+            color: '#ff5722',
+            
+          },
+        }}
+      >
+        Grids
+      </Typography>
+
+      <TableContainer component={Paper} sx={{ width: '80%', margin: 'auto', marginTop: 10, marginBottom: 10 }}>
+        <Table sx={{ minWidth: 650 }}>
+          <TableHead sx={{ backgroundColor: '#0bafec' }}>
+            <TableRow>
+              {/* Merge S.No */}
+              <TableCell
+                rowSpan={2}
+                sx={{ fontWeight: 'bold', border: '1px solid black', textAlign: 'center', width: '10%', verticalAlign: 'middle', fontSize: '1.2rem' }}
+              >
+                Sl.No
+              </TableCell>
+              {/* Merge Name of GSS */}
+              <TableCell
+                rowSpan={2}
+                sx={{ fontWeight: 'bold', border: '1px solid black', textAlign: 'center', width: '15%', verticalAlign: 'middle', fontSize: '1.05rem' }}
+              >
+                Name of GSS
+              </TableCell>
+              {/* 220/132 kV */}
+              <TableCell
+                align="center"
+                colSpan={2}
+                sx={{ fontWeight: 'bold', borderRight: '1px solid black', textAlign: 'center', width: '25%', border: '1px solid black', fontSize: '1.05rem' }}
+              >
+                220/132 kV
+              </TableCell>
+              {/* 132/33 kV */}
+              <TableCell
+                align="center"
+                colSpan={2}
+                sx={{ fontWeight: 'bold', borderRight: '1px solid black', textAlign: 'center', width: '25%', border: '1px solid black', fontSize: '1.05rem' }}
+              >
+                132/33 kV
+              </TableCell>
+              {/* Merge Transmission Circle */}
+              <TableCell
+                rowSpan={2}
+                sx={{ fontWeight: 'bold', textAlign: 'center', width: '25%', verticalAlign: 'middle', border: '1px solid black', fontSize: '1.05rem' }}
+              >
+                Transmission Circle
+              </TableCell>
             </TableRow>
-          ))}
-        </TableBody>
-      </Table>
-    </TableContainer>
-    <Footer/>
+            <TableRow sx={{ backgroundColor: '#f5f5f5' }}>
+              {/* Sub-columns */}
+              <TableCell
+                align="center"
+                sx={{ border: '1px solid black', textAlign: 'center', width: '12.5%', verticalAlign: 'middle', backgroundColor: '#0bafec', fontWeight: 'bold', fontSize: '1.05rem' }}
+              >
+                Capacity
+              </TableCell>
+              <TableCell
+                align="center"
+                sx={{ border: '1px solid black', textAlign: 'center', width: '12.5%', verticalAlign: 'middle', backgroundColor: '#0bafec', fontWeight: 'bold', fontSize: '1.05rem' }}
+              >
+                Total Capacity
+              </TableCell>
+              <TableCell
+                align="center"
+                sx={{ border: '1px solid black', textAlign: 'center', width: '12.5%', verticalAlign: 'middle', backgroundColor: '#0bafec', fontWeight: 'bold', fontSize: '1.05rem' }}
+              >
+                Capacity
+              </TableCell>
+              <TableCell
+                align="center"
+                sx={{ border: '1px solid black', textAlign: 'center', width: '12.5%', verticalAlign: 'middle', backgroundColor: '#0bafec', fontWeight: 'bold', fontSize: '1.05rem' }}
+              >
+                Total Capacity
+              </TableCell>
+            </TableRow>
+          </TableHead>
+          <TableBody>
+  {rows.map((row, index) => (
+    <TableRow
+      key={index}
+      sx={{
+        backgroundColor: index % 2 === 0 ? '#f9f9f9' : '#ffffff', // Alternate row colors
+        '&:hover': { backgroundColor: '#f1f1f1', cursor: 'pointer' },
+      }}
+    >
+      <TableCell sx={{ border: '1px solid black', textAlign: 'center', verticalAlign: 'middle' }}>{row.sNo}</TableCell>
+      <TableCell sx={{ border: '1px solid black', textAlign: 'center', verticalAlign: 'middle' }}>{row.name}</TableCell>
+      <TableCell align="center" sx={{ border: '1px solid black', textAlign: 'center', width: '12.5%', verticalAlign: 'middle' }}>
+        {row.capacity220}
+      </TableCell>
+      <TableCell align="center" sx={{ border: '1px solid black', textAlign: 'center', width: '12.5%', verticalAlign: 'middle' }}>
+        {row.totalCapacity220}
+      </TableCell>
+      <TableCell align="center" sx={{ border: '1px solid black', textAlign: 'center', width: '12.5%', verticalAlign: 'middle' }}>
+        {row.capacity132}
+      </TableCell>
+      <TableCell align="center" sx={{ border: '1px solid black', textAlign: 'center', width: '12.5%', verticalAlign: 'middle' }}>
+        {row.totalCapacity132}
+      </TableCell>
+      <TableCell sx={{ textAlign: 'center', verticalAlign: 'middle', border: '1px solid black' }}>{row.transmissionCircle}</TableCell>
+    </TableRow>
+  ))}
+</TableBody>
+
+        </Table>
+      </TableContainer>
+
+      <Footer />
     </>
   );
 };

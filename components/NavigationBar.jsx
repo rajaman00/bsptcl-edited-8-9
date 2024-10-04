@@ -1,4 +1,5 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
+import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
 import { Nav, Navbar, Offcanvas, Button, OverlayTrigger, Tooltip, Image } from 'react-bootstrap';
 import { RxHamburgerMenu } from "react-icons/rx";
 import { MdSunny } from "react-icons/md";
@@ -10,8 +11,9 @@ import logo from '../public/images/BSPTCL Logo & Name.gif';
 import { GoTriangleDown } from "react-icons/go";
 import { GoTriangleUp } from "react-icons/go";
 import { FaMicrophone } from "react-icons/fa";
-
+import { useTranslation } from 'react-i18next';
 import { GoTriangleRight } from "react-icons/go";
+
 
 
 //overlay
@@ -66,25 +68,83 @@ function NavigationBar() {
         recognition.start();
     }
 
+    //Text translation
+    const { i18n } = useTranslation();
+
+    const changeLanguage = (language) => {
+      i18n.changeLanguage(language);
+    };
+
+    const { t } = useTranslation();
+
+
+
+    const [theme, setTheme] = useState('day'); // Initial theme state
+
+    // Load theme from localStorage when the component mounts
+    useEffect(() => {
+        const savedTheme = localStorage.getItem('theme') || 'day'; // default to 'day'
+        setTheme(savedTheme);
+        document.body.classList.add(`${savedTheme}-theme`);
+    }, []);
+
+    // Function to toggle the theme
+    const toggleTheme = () => {
+        const newTheme = theme === 'day' ? 'night' : 'day';
+        setTheme(newTheme);
+
+        // Remove the previous theme class from body and add the new one
+        document.body.classList.remove(`${theme}-theme`);
+        document.body.classList.add(`${newTheme}-theme`);
+
+        // Save the new theme in localStorage
+        localStorage.setItem('theme', newTheme);
+    };
+
+    // Function to change font size
+    const [fontSize, setFontSize] = useState(100); // Default size in percentage (100%)
+
+    const increaseFontSize = () => {
+        if (fontSize < 110) { // Set max limit (e.g. 150%)
+            setFontSize(fontSize + 10);
+        }
+    };
+
+    const decreaseFontSize = () => {
+        if (fontSize > 70) { // Set min limit (e.g. 70%)
+            setFontSize(fontSize - 10);
+        }
+    };
+
+    const resetFontSize = () => {
+        setFontSize(100); // Reset to default (100%)
+    };
+
+    // Apply font size to html element
+    useEffect(() => {
+        document.documentElement.style.setProperty('font-size', `${fontSize}%`);
+    }, [fontSize]);
+
     return (
         <>
             {/* ---------utility link--------------- */}
             <div className='utilityLink'>
                 <div className="leftSideDisplay">
-                    <a href="">An ISO 27001:2013 Company</a>
+                    <a to="">An ISO 27001:2013 Company</a>
                 </div>
                 <div className="rightSideDisplay">
-                    <a href="/" style={{ borderRight: '1px solid gray' }}>Skip to Main Content</a>
+                    <Link to="/" style={{ borderRight: '1px solid gray' }}>{t('Skip to Main Content')}</Link>
                     <hr />
-                    <a href="" style={{ borderRight: '1px solid gray' }}>Screen Reader</a>
-                    <a href="" >A-</a>
-                    <a href="" >A</a>
-                    <a href="" style={{ borderRight: '1px solid gray' }}>A+</a>
-                    <a href="" ><MdSunny /></a>
-                    <a href="" style={{ borderRight: '1px solid gray' }}><FaMoon /></a>
-                    <a href="" ><RiEnglishInput /></a>
-                    <a href="" style={{ borderRight: '1px solid gray' }}>हि</a>
-                    <a href=""><FaSitemap /></a>
+                    <Link to="/screen-reader" style={{ borderRight: '1px solid gray' }}>Screen Reader</Link>
+                    <button onClick={decreaseFontSize} style={{ cursor: 'pointer' }}>A-</button>
+                    <button onClick={resetFontSize} style={{ cursor: 'pointer' }}>A</button>
+                    <button onClick={increaseFontSize} style={{ cursor: 'pointer', borderRight: '1px solid gray' }}>A+</button>
+                    <button onClick={toggleTheme}>
+                        {theme === 'day' ? <FaMoon /> : <MdSunny />}
+                    </button>
+                    <button onClick={() => changeLanguage('en')}><RiEnglishInput /></button>
+                    <button style={{ borderRight: '1px solid gray' }}  onClick={() => changeLanguage('hi')}>हि</button>
+                    <Link to="/"><FaSitemap /></Link>
                 </div>
 
             </div>
@@ -94,7 +154,7 @@ function NavigationBar() {
                 <div className="logoAndLink">
                     {/* ------------Company Logo ----------------------*/}
                     <div  className='companyLogo'>
-                        <a href="/"><Image  src={logo} loop="1" alt='BSPTCL' className='logoImage' /></a>
+                        <Link to="/"><Image  src={logo} loop="1" alt='BSPTCL' className='logoImage' /></Link>
                     </div>
 
                     {/* -------------------Main Link----------------- */}
@@ -130,18 +190,18 @@ function NavigationBar() {
                                         <li className='navLinkcolor'
                                             onMouseOver={() => setAboutHovered(true)}
                                             onMouseLeave={() => setAboutHovered(false)}>
-                                            About Us<span style={{ color: '#db8204' }}><GoTriangleDown /></span>
+                                            {t('about')}<span style={{ color: '#db8204' }}><GoTriangleDown /></span>
                                             {isAboutHovered && (
 
                                                 <div className='AboutDropDown'>
                                                     <div className='triangle'><GoTriangleUp /></div>
                                                     <div className='dropDownMenu'>
-                                                        < Nav.Link href="/company-overview" className='navLinkcolor' style={{ borderBottom: '1px solid black' }}>Company Overview</Nav.Link>
-                                                        < Nav.Link href='/board-directors' className='navLinkcolor' style={{ borderBottom: '1px solid black' }}>Board of Directors</Nav.Link>
-                                                        < Nav.Link className='navLinkcolor' style={{ borderBottom: '1px solid black' }}>Organization Structure</Nav.Link>
-                                                        < Nav.Link className='navLinkcolor' style={{ borderBottom: '1px solid black' }}>Awards & Achievements</Nav.Link>
-                                                        < Nav.Link href='/certificates' className='navLinkcolor' style={{ borderBottom: '1px solid black' }}>Certificates</Nav.Link>
-                                                        < Nav.Link className='navLinkcolor' >Reports and Accounts</Nav.Link>
+                                                        < Link to="/company-overview" className='navLinkcolor' style={{ borderBottom: '1px solid black',width:'100%' }}>{t('overview')}</Link>
+                                                        < Link to='/board-directors' className='navLinkcolor' style={{ borderBottom: '1px solid black' }}>{t('directors')}</Link>
+                                                        < Link to='/organization-structure' className='navLinkcolor' style={{ borderBottom: '1px solid black' }}>{t('org_strct')}</Link>
+                                                        < Link to='/awards-achievements' className='navLinkcolor' style={{ borderBottom: '1px solid black' }}>Awards & Achievements</Link>
+                                                        < Link to='/certificates' className='navLinkcolor' style={{ borderBottom: '1px solid black' }}>Certificates</Link>
+                                                        < Link className='navLinkcolor' >Reports and Accounts</Link>
                                                     </div>
                                                 </div>
                                             )}
@@ -160,22 +220,22 @@ function NavigationBar() {
                                                 <div className='transmissionDropDown'>
                                                     <div className='triangle'><GoTriangleUp /></div>
                                                     <div className='dropDownMenu'>
-                                                        < Nav.Link href="First" className='navLinkcolor' style={{ borderBottom: '1px solid black' }}
+                                                        < Link to="First" className='navLinkcolor' style={{ borderBottom: '1px solid black' }}
                                                             onMouseOver={() => setCurInfrastructureHovered(true)}
                                                             onMouseLeave={() => setCurInfrastructureHovered(false)}>
                                                             <div style={{ display: 'flex', justifyContent: 'space-between' }}>Current Infrastructure<span style={{ color: '#db8204' }}><GoTriangleRight /></span></div>
                                                             {isCurInfrastructureHovered && (
                                                                 <div className='CurInfrastructureDropDown'>
                                                                     <div className='dropDownMenu'>
-                                                                        < Nav.Link href='/transmission-lines' className='navLinkcolor' style={{ borderBottom: '1px solid black' }}>Transmission Lines</Nav.Link>
-                                                                        < Nav.Link href='/grids'  className='navLinkcolor' style={{ borderBottom: '1px solid black' }}>Grids</Nav.Link>
+                                                                        < Link to='/transmission-lines' className='navLinkcolor' style={{ borderBottom: '1px solid black' }}>Transmission Lines</Link>
+                                                                        < Link to='/grids'  className='navLinkcolor' style={{ borderBottom: '1px solid black' }}>Grids</Link>
                                                                     </div>
                                                                 </div>
 
                                                             )}
-                                                        </Nav.Link>
-                                                        <Nav.Link
-                                                            href="public/Documents/Bihar-Power-Map.pdf"
+                                                        </Link>
+                                                        <Link
+                                                            to="public/Documents/Bihar-Power-Map.pdf"
                                                             className='navLinkcolor'
                                                             style={{ borderBottom: '1px solid black' }}
                                                             onClick={(e) => {
@@ -184,40 +244,40 @@ function NavigationBar() {
                                                             }}
                                                         >
                                                             Power Map
-                                                        </Nav.Link>
-                                                        <li className='navLinkcolor' style={{ borderBottom: '1px solid black',paddingLeft:'0.6rem' }}
+                                                        </Link>
+                                                        <div className='navLinkcolor' style={{ borderBottom: '1px solid black',paddingLeft:'0.6rem' }}
                                                             onMouseOver={() => setSysParametersHovered(true)}
                                                             onMouseLeave={() => setSysParametersHovered(false)}>
                                                             <div style={{ display: 'flex', justifyContent: 'space-between' }}> System Parameters<span style={{ color: '#db8204' }}><GoTriangleRight /></span></div>
                                                             {isSysParametersHovered && (
                                                                 <div className='SysParametersDropDown'>
                                                                     <div className='dropDownMenu'>
-                                                                        < Nav.Link href ='/TAFM' className='navLinkcolor' style={{ borderBottom: '1px solid black' }}>TAFM</Nav.Link>
-                                                                        < Nav.Link className='navLinkcolor' style={{ borderBottom: '1px solid black' }}>ATC/TTC</Nav.Link>
-                                                                        < Nav.Link className='navLinkcolor' style={{ borderBottom: '1px solid black' }}>Peak Demand Met</Nav.Link>
-                                                                        < Nav.Link className='navLinkcolor' style={{ borderBottom: '1px solid black' }}>Load Pattern</Nav.Link>
-                                                                        < Nav.Link className='navLinkcolor' style={{ borderBottom: '1px solid black' }}>ARR</Nav.Link>
+                                                                        < Link to ='/TAFM' className='navLinkcolor' style={{ borderBottom: '1px solid black' }}>TAFM</Link>
+                                                                        < Link to='/atc-ttc' className='navLinkcolor' style={{ borderBottom: '1px solid black' }}>ATC/TTC</Link>
+                                                                        < Link to='/peak-demand-met' className='navLinkcolor' style={{ borderBottom: '1px solid black' }}>Peak Demand Met</Link>
+                                                                        < Link className='navLinkcolor' style={{ borderBottom: '1px solid black' }}>Load Pattern</Link>
+                                                                        < Link className='navLinkcolor' style={{ borderBottom: '1px solid black' }}>ARR</Link>
                                                                     </div>
                                                                 </div>
 
                                                             )}
 
-                                                        </li>
-                                                        < Nav.Link className='navLinkcolor' style={{ borderBottom: '1px solid black' }}>Transmission Loss</Nav.Link>
-                                                        < Nav.Link className='navLinkcolor'
+                                                        </div>
+                                                        < Link className='navLinkcolor' style={{ borderBottom: '1px solid black' }}>Transmission Loss</Link>
+                                                        < Link className='navLinkcolor'
                                                             onMouseOver={() => setUpcomInfrastructureHovered(true)}
                                                             onMouseLeave={() => setUpcomInfrastructureHovered(false)}>
                                                             Upcoming Infrastructure<span style={{ color: '#db8204' }}><GoTriangleRight /></span>
                                                             {isUpcomInfrastructureHovered && (
                                                                 <div className='UpcomInfrastructureDropDown'>
                                                                     <div className='dropDownMenu'>
-                                                                        < Nav.Link className='navLinkcolor' style={{ borderBottom: '1px solid black' }}>Transmission Lines</Nav.Link>
-                                                                        < Nav.Link className='navLinkcolor' style={{ borderBottom: '1px solid black' }}>Grids</Nav.Link>
+                                                                        < Link className='navLinkcolor' style={{ borderBottom: '1px solid black' }}>Transmission Lines</Link>
+                                                                        < Link className='navLinkcolor' style={{ borderBottom: '1px solid black' }}>Grids</Link>
                                                                     </div>
                                                                 </div>
 
                                                             )}
-                                                        </Nav.Link>
+                                                        </Link>
                                                     </div>
                                                 </div>
                                             )}
@@ -225,7 +285,7 @@ function NavigationBar() {
 
                                         {/* ------------Media Section---------- */}
                                         <li
-                                            href="/#media"
+                                            to="/#media"
                                             className='navLinkcolor'
                                               onMouseOver={() => setMediaHovered(true)}
                                             onMouseLeave={() => setMediaHovered(false)}
@@ -235,11 +295,11 @@ function NavigationBar() {
                                                 <div className='mediaDropDown'>
                                                     <div className='triangle'><GoTriangleUp /></div>
                                                     <div className='dropDownMenu'>
-                                                        <Nav.Link href='/annual-reports' className='navLinkcolor' style={{ borderBottom: '1px solid black' }}>Reports/Compendium</Nav.Link>
-                                                        <Nav.Link href='/e-magazine' className='navLinkcolor' style={{ borderBottom: '1px solid black' }}>e-Magazine</Nav.Link>
-                                                        <Nav.Link href='/photo-gallery' className='navLinkcolor' style={{ borderBottom: '1px solid black' }}>Photo Gallery</Nav.Link>
-                                                        <Nav.Link href='/twitter' className='navLinkcolor' style={{ borderBottom: '1px solid black' }}>Twitter</Nav.Link>
-                                                        <Nav.Link href='/newspaper-clippings' className='navLinkcolor'>Newspaper Clippings</Nav.Link>
+                                                        <Link to='/annual-reports' className='navLinkcolor' style={{ borderBottom: '1px solid black' }}>Reports/Compendium</Link>
+                                                        <Link to='/e-magazine' className='navLinkcolor' style={{ borderBottom: '1px solid black' }}>e-Magazine</Link>
+                                                        <Link to='/photo-gallery' className='navLinkcolor' style={{ borderBottom: '1px solid black' }}>Photo Gallery</Link>
+                                                        <Link to='/twitter' className='navLinkcolor' style={{ borderBottom: '1px solid black' }}>Twitter</Link>
+                                                        <Link to='/newspaper-clippings' className='navLinkcolor'>Newspaper Clippings</Link>
                                                     </div>
                                                 </div>
                                             )}
@@ -258,13 +318,13 @@ function NavigationBar() {
                                                 <div className='procurementDropDown'>
                                                     <div className='triangle'><GoTriangleUp /></div>
                                                     <div className='dropDownMenu'>
-                                                        < Nav.Link href="First" className='navLinkcolor' style={{ borderBottom: '1px solid black' }}>Schedule of Rate</Nav.Link>
-                                                        < Nav.Link className='navLinkcolor' style={{ borderBottom: '1px solid black' }}>Policy</Nav.Link>
-                                                        < Nav.Link href='/#tender' className='navLinkcolor' style={{ borderBottom: '1px solid black' }}>Tenders</Nav.Link>
-                                                        < Nav.Link href="https://eproc2.bihar.gov.in/EPSV2Web/" className='navLinkcolor' target="_blank"
-                                                            rel="noopener noreferrer" style={{ borderBottom: '1px solid black' }}>e-Procurement</Nav.Link>
-                                                        < Nav.Link href="https://gem.gov.in/" className='navLinkcolor' target="_blank"
-                                                            rel="noopener noreferrer" >GeM</Nav.Link>
+                                                        < Link to="First" className='navLinkcolor' style={{ borderBottom: '1px solid black' }}>Schedule of Rate</Link>
+                                                        < Link className='navLinkcolor' style={{ borderBottom: '1px solid black' }}>Policy</Link>
+                                                        < Link to='/#tender' className='navLinkcolor' style={{ borderBottom: '1px solid black' }}>Tenders</Link>
+                                                        < Link to="https://eproc2.bihar.gov.in/EPSV2Web/" className='navLinkcolor' target="_blank"
+                                                            rel="noopener noreferrer" style={{ borderBottom: '1px solid black' }}>e-Procurement</Link>
+                                                        < Link to="https://gem.gov.in/" className='navLinkcolor' target="_blank"
+                                                            rel="noopener noreferrer" >GeM</Link>
                                                     </div>
                                                 </div>
                                             )}
@@ -281,25 +341,25 @@ function NavigationBar() {
                                                 <div className='stuDropDown'>
                                                     <div className='triangle'><GoTriangleUp /></div>
                                                     <div className='dropDownMenu'>
-                                                        < Nav.Link href="First" className='navLinkcolor' style={{ borderBottom: '1px solid black' }}
+                                                        < Link to="First" className='navLinkcolor' style={{ borderBottom: '1px solid black' }}
                                                             onMouseOver={() => setRegulationsHovered(true)}
                                                             onMouseLeave={() => setRegulationsHovered(false)}>
                                                             Regulations<span style={{ color: '#db8204' }}><GoTriangleRight /></span>
                                                             {isRegulationsHovered && (
                                                                 <div className='RegulationsDropDown'>
                                                                     <div className='dropDownMenu'>
-                                                                        < Nav.Link className='navLinkcolor' style={{ borderBottom: '1px solid black' }}>Grid Code of Bihar</Nav.Link>
-                                                                        < Nav.Link className='navLinkcolor' style={{ borderBottom: '1px solid black' }}>Grid Code of India</Nav.Link>
-                                                                        < Nav.Link className='navLinkcolor' style={{ borderBottom: '1px solid black' }}>Electricity Act, 2003</Nav.Link>
-                                                                        < Nav.Link className='navLinkcolor' style={{ borderBottom: '1px solid black' }}>other regulation 1</Nav.Link>
-                                                                        < Nav.Link className='navLinkcolor' style={{ borderBottom: '1px solid black' }}>other regulation 2</Nav.Link>
+                                                                        < Link className='navLinkcolor' style={{ borderBottom: '1px solid black' }}>Grid Code of Bihar</Link>
+                                                                        < Link className='navLinkcolor' style={{ borderBottom: '1px solid black' }}>Grid Code of India</Link>
+                                                                        < Link className='navLinkcolor' style={{ borderBottom: '1px solid black' }}>Electricity Act, 2003</Link>
+                                                                        < Link className='navLinkcolor' style={{ borderBottom: '1px solid black' }}>other regulation 1</Link>
+                                                                        < Link className='navLinkcolor' style={{ borderBottom: '1px solid black' }}>other regulation 2</Link>
                                                                     </div>
                                                                 </div>
 
                                                             )}
-                                                        </Nav.Link>
-                                                        < Nav.Link className='navLinkcolor' style={{ borderBottom: '1px solid black' }}>Tariff Petitons</Nav.Link>
-                                                        < Nav.Link className='navLinkcolor' >Open Access</Nav.Link>
+                                                        </Link>
+                                                        < Link to="/tariff-petitons" className='navLinkcolor' style={{ borderBottom: '1px solid black' }}>Tariff Petitons</Link>
+                                                        < Link className='navLinkcolor' >Open Access</Link>
                                                     </div>
                                                 </div>
                                             )}
@@ -315,27 +375,27 @@ function NavigationBar() {
                                                 <div className='employeeDropDown'>
                                                     <div className='triangle'><GoTriangleUp /></div>
                                                     <div className='dropDownMenu'>
-                                                        < Nav.Link href="/#office-notification" className='navLinkcolor' style={{ borderBottom: '1px solid black' }}>Office Order</Nav.Link>
-                                                        < Nav.Link href="/#office-notification" className='navLinkcolor' style={{ borderBottom: '1px solid black' }}>Transfer/Posting</Nav.Link>
-                                                        < Nav.Link href="/#office-notification" className='navLinkcolor' style={{ borderBottom: '1px solid black' }}>Circulars</Nav.Link>
-                                                        < Nav.Link href="http://pay.bsphcl.org/" className='navLinkcolor' target="_blank"
-                                                            rel="noopener noreferrer" style={{ borderBottom: '1px solid black' }}>Pay & Pension</Nav.Link>
-                                                        < Nav.Link href="https://apar.bsphcl.co.in/" className='navLinkcolor' target="_blank"
-                                                            rel="noopener noreferrer" style={{ borderBottom: '1px solid black' }}>APAR</Nav.Link>
-                                                        < Nav.Link href="https://medical.bsphcl.co.in/" className='navLinkcolor' target="_blank"
-                                                            rel="noopener noreferrer" style={{ borderBottom: '1px solid black' }}>Mediclaim</Nav.Link>
-                                                        < Nav.Link href="https://ess.bihar.gov.in:44300/irj/portal" className='navLinkcolor' target="_blank"
-                                                            rel="noopener noreferrer" style={{ borderBottom: '1px solid black' }}>ESS\MSS</Nav.Link>
-                                                        < Nav.Link href="http://125.16.220.20:8077/Form16" className='navLinkcolor' target="_blank"
-                                                            rel="noopener noreferrer" style={{ borderBottom: '1px solid black' }}>Form 16</Nav.Link>
-                                                        <Nav.Link
-                                                            href="https://www.google.com"
+                                                        < Link to="/#office-notification" className='navLinkcolor' style={{ borderBottom: '1px solid black' }}>Office Order</Link>
+                                                        < Link to="/#office-notification" className='navLinkcolor' style={{ borderBottom: '1px solid black' }}>Transfer/Posting</Link>
+                                                        < Link to="/#office-notification" className='navLinkcolor' style={{ borderBottom: '1px solid black' }}>Circulars</Link>
+                                                        < Link to="http://pay.bsphcl.org/" className='navLinkcolor' target="_blank"
+                                                            rel="noopener noreferrer" style={{ borderBottom: '1px solid black' }}>Pay & Pension</Link>
+                                                        < Link to="https://apar.bsphcl.co.in/" className='navLinkcolor' target="_blank"
+                                                            rel="noopener noreferrer" style={{ borderBottom: '1px solid black' }}>APAR</Link>
+                                                        < Link to="https://medical.bsphcl.co.in/" className='navLinkcolor' target="_blank"
+                                                            rel="noopener noreferrer" style={{ borderBottom: '1px solid black' }}>Mediclaim</Link>
+                                                        < Link to="https://ess.bihar.gov.in:44300/irj/portal" className='navLinkcolor' target="_blank"
+                                                            rel="noopener noreferrer" style={{ borderBottom: '1px solid black' }}>ESS\MSS</Link>
+                                                        < Link to="http://125.16.220.20:8077/Form16" className='navLinkcolor' target="_blank"
+                                                            rel="noopener noreferrer" style={{ borderBottom: '1px solid black' }}>Form 16</Link>
+                                                        <Link
+                                                            to="https://www.google.com"
                                                             className='navLinkcolor'
                                                             target="_blank"
                                                             rel="noopener noreferrer"
                                                         >
                                                             ERP
-                                                        </Nav.Link>
+                                                        </Link>
                                                     </div>
                                                 </div>
                                             )}
@@ -343,7 +403,7 @@ function NavigationBar() {
 
 
                                         {/*-------------------------------------Hamburger section -----------------------------------*/}
-                                        <Nav.Link href="#" className='navLinkcolor'>
+                                        <Link to="#" className='navLinkcolor'>
                                             <RxHamburgerMenu onClick={handleShow} />
                                             <Offcanvas show={show} onHide={handleClose} style={{ background: 'linear-gradient(to right, #243B55, #141E30)', color: 'white' }}>
                                                 <Offcanvas.Header closeButton>
@@ -387,7 +447,7 @@ function NavigationBar() {
                                                     </div>
                                                 </Offcanvas.Body>
                                             </Offcanvas>
-                                        </Nav.Link>
+                                        </Link>
                                     </Nav>
                                 </Navbar.Collapse>
                             </Navbar>

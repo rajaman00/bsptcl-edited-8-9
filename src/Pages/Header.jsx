@@ -12,7 +12,7 @@ const HeaderBox = ({ backgroundImage, title, breadcrumbs }) => {
         backgroundPosition: 'center',
         display: 'flex',
         flexDirection: 'column',
-        justifyContent: 'center',
+        justifyContent: 'flex-end',
         padding: '20px',
         textAlign: 'left',
         color: 'white',
@@ -30,20 +30,21 @@ const HeaderBox = ({ backgroundImage, title, breadcrumbs }) => {
         zIndex: 2, // Ensure the content is above the shadow
       }}
     >
-      <Typography variant="h2" sx={{ fontWeight: 'bold', zIndex: 3, position: 'relative' }}>
+      <Typography variant="h3" sx={{ fontWeight: 'bold', zIndex: 3, position: 'relative', marginLeft:5, fontFamily:'Times New Roman', }}>
         {title}
       </Typography>
-      <Breadcrumbs sx={{ color: 'white', marginTop: '10px', zIndex: 3, position: 'relative' }}>
+      <Breadcrumbs  sx={{ color: 'white', marginTop: '10px', zIndex: 3, position: 'relative',fontSize:'1.2rem',marginLeft:5, fontFamily:'Times New Roman', }}>
         {breadcrumbs.map((breadcrumb, index) =>
           breadcrumb.href ? (
             <Link key={index} href={breadcrumb.href} underline="hover" sx={{ color: 'white' }}>
               {breadcrumb.label}
             </Link>
           ) : (
-            <Typography key={index} color="white">
+            <Typography key={index} color="white" sx={{fontSize:'1.2rem', fontFamily:'Times New Roman',}}>
               {breadcrumb.label}
             </Typography>
-          )
+            
+          ) 
         )}
       </Breadcrumbs>
     </Box>

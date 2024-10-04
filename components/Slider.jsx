@@ -3,7 +3,6 @@ import Carousel from 'react-bootstrap/Carousel';
 import './css/slider.css';
 import sliderImg1 from '../public/images/Control Room at Mahnar.jpg';
 import sliderImg2 from '../public/images/Switchyard at Areraj.jpg';
-
 import sliderImg3 from '../public/images/Switchyard at Bhabhua.jpg';
 
 

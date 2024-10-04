@@ -23,11 +23,12 @@
  
 }
 
-.utilityLink a {
+.utilityLink a , button {
     text-decoration: none;
     padding: 10px;
     font-size: x-small;
     color: rgb(87, 79, 79);
+    border: 0px;
 }
 
 @media (max-width: 768px) {
@@ -124,6 +125,7 @@
 }
 
 .navLinkcolor {
+    text-decoration: none;
     color: white !important;
     font-weight: 700 !important;
     padding-left: 1.3rem;
@@ -189,6 +191,8 @@
     background-color: #0bafec;
     border-radius: 5px;
     width: 225px;
+    display: flex;
+    flex-direction: column;
     
     /* height: 5rem; */
 
@@ -536,6 +540,42 @@
     background-color: #b30057;
     border-color: #4eb300;
 }
+
+
+
+
+/* navigationBar.css */
+/* navigationBar.css */
+
+
+
+
+
+/* Define the base font size variable */
+html {
+    font-size: 16px; /* Default base size */
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+}
+
+/* Adjust the relative size of headings, paragraphs, and links */
+h1, h2, h3, h4, h5, h6 {
+    font-size: 1.5em;
+}
+
+p, a {
+    font-size: 1em;
+}
+
+/* Ensure other text elements inherit size */
+a {
+    text-decoration: none;
+}
+
+
+
 
 
 

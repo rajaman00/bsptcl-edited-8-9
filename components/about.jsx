@@ -24,7 +24,6 @@ function About() {
                     data-aos-duration="2000">
 
                     <h3 className="decorative-heading">About Us</h3>
-                    {/* <h3 style={{ textAlign: 'center', fontStyle: 'italic', fontSize: '3rem', fontFamily: 'Brush Script MT, cursive' }}>About Us </h3> */}
 
                     <p style={{ textAlign: 'justify' }}>Bihar State Power Transmission Company Limited, a subsidiary company of Bihar State Power (Holding) Company Limited, is a Government of Bihar wholly owned corporate entity incorporated under the Companies Act 1956 on 1st Nov, 2012 after restructuring of erstwhile Bihar State Electricity Board. It carries out intra-state transmission and wheeling of electricity under license issued by the Bihar Electricity Regulatory Commission. It also discharges the functions of State Load Despatch Centre (SLDC) of Bihar.               </p>
                     <br /><br /><button className="view-more-button">View More</button>
