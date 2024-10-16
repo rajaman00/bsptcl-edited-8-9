@@ -19,7 +19,7 @@ function About() {
         <>
             {/* about section start */}
 
-            <div className="aboutSection">
+            <div className="aboutSection" id="main-content">
                 <div className="aboutText" data-aos="fade-up" data-aos-easing="ease-out-cubic"
                     data-aos-duration="2000">
 

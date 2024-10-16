@@ -33,7 +33,7 @@ function App() {
           <Slider/>
         </div>
         
-        <div className='about'>
+        <div className='about'  >
           <About/>
         </div>
 

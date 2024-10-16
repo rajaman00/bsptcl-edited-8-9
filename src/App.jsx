@@ -18,6 +18,7 @@ import OrganizationStructure from './Pages/OrganizationStructure.jsx';
 import PeakDemand from './Pages/PeakDemand.jsx';
 import NewsPaper_Clipping from './Pages/NewsPaper_Clipping.jsx';
 import ScreenReader from './Pages/ScreenReader.jsx';
+import Sitemap from './Pages/SiteMap.jsx';
 
 
 function App() {
@@ -26,6 +27,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/screen-reader" element={<ScreenReader/>} />
+        <Route path="/sitemap" element={<Sitemap/> } />
         <Route path="/office-order" element={<OfficeOrder />} />
         <Route path="/annual-reports" element={<AnnualReport />} />
         <Route path="/active-tenders" element={<ActiveTenders />} />

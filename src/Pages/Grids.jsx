@@ -42,7 +42,7 @@ const Grids = () => {
           },
         }}
       >
-        Grids
+        Operational Grids
       </Typography>
 
       <TableContainer component={Paper} sx={{ width: '80%', margin: 'auto', marginTop: 10, marginBottom: 10 }}>

@@ -23,7 +23,14 @@
  
 }
 
-.utilityLink a , button {
+.utilityLink  button {
+    text-decoration: none;
+    padding: 10px;
+    font-size: x-small;
+    color: rgb(87, 79, 79);
+    border: 0px;
+}
+.utilityLink  a {
     text-decoration: none;
     padding: 10px;
     font-size: x-small;

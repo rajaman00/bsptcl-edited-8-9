@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route, Link, useNavigate, useLocation } from 'react-router-dom';
 import { Nav, Navbar, Offcanvas, Button, OverlayTrigger, Tooltip, Image } from 'react-bootstrap';
 import { RxHamburgerMenu } from "react-icons/rx";
 import { MdSunny } from "react-icons/md";
@@ -111,7 +111,7 @@ function NavigationBar() {
     };
 
     const decreaseFontSize = () => {
-        if (fontSize > 70) { // Set min limit (e.g. 70%)
+        if (fontSize > 90) { // Set min limit (e.g. 70%)
             setFontSize(fontSize - 10);
         }
     };
@@ -125,15 +125,58 @@ function NavigationBar() {
         document.documentElement.style.setProperty('font-size', `${fontSize}%`);
     }, [fontSize]);
 
+
+    //Skip to main content
+    const navigate = useNavigate();
+    const location = useLocation();
+    // Function to handle scroll with an offset
+const skipToMainContent = () => {
+    if (location.pathname === '/') {
+        // If already on the homepage, scroll to the content section
+        const mainContent = document.getElementById('main-content');
+        if (mainContent) {
+            const offset = 80; // Adjust this value based on your navigation bar height
+            const elementPosition = mainContent.getBoundingClientRect().top;
+            const offsetPosition = elementPosition + window.pageYOffset - offset;
+
+            window.scrollTo({
+                top: offsetPosition,
+                behavior: 'smooth'
+            });
+        }
+    } else {
+        // Navigate to the homepage and scroll to the content
+        navigate('/', { state: { skipToMain: true } });
+    }
+};
+
+// Use this logic after navigation
+useEffect(() => {
+    if (location.state?.skipToMain) {
+        const mainContent = document.getElementById('main-content');
+        if (mainContent) {
+            const offset = 80; // Adjust this value based on your navigation bar height
+            const elementPosition = mainContent.getBoundingClientRect().top;
+            const offsetPosition = elementPosition + window.pageYOffset - offset;
+
+            window.scrollTo({
+                top: offsetPosition,
+                behavior: 'smooth'
+            });
+        }
+    }
+}, [location]);
+
+
     return (
         <>
             {/* ---------utility link--------------- */}
             <div className='utilityLink'>
                 <div className="leftSideDisplay">
-                    <a to="">An ISO 27001:2013 Company</a>
+                    <Link to="">An ISO 27001:2013 Company</Link>
                 </div>
                 <div className="rightSideDisplay">
-                    <Link to="/" style={{ borderRight: '1px solid gray' }}>{t('Skip to Main Content')}</Link>
+                <button onClick={skipToMainContent} style={{ cursor: 'pointer', borderRight: '1px solid gray' }}>{t('Skip to Main Content')}</button>
                     <hr />
                     <Link to="/screen-reader" style={{ borderRight: '1px solid gray' }}>Screen Reader</Link>
                     <button onClick={decreaseFontSize} style={{ cursor: 'pointer' }}>A-</button>
@@ -144,7 +187,7 @@ function NavigationBar() {
                     </button>
                     <button onClick={() => changeLanguage('en')}><RiEnglishInput /></button>
                     <button style={{ borderRight: '1px solid gray' }}  onClick={() => changeLanguage('hi')}>हि</button>
-                    <Link to="/"><FaSitemap /></Link>
+                    <Link to="/sitemap"><FaSitemap /></Link>
                 </div>
 
             </div>

@@ -28,6 +28,26 @@ const TransmissionLines = () => {
         title="Transmission Lines"
         breadcrumbs={breadcrumbs}
       />
+
+<Typography
+        variant="h3"
+        sx={{
+          textAlign: 'center',
+          marginTop: 5,
+          marginBottom: 5,
+          fontWeight: 'bold',
+          color: '#0bafec',
+          transition: 'color 0.3s, transform 0.3s',
+          '&:hover': {
+            color: '#ff5722',
+            
+          },
+        }}
+      >
+        Operational Grids
+      </Typography>
+
+
       <TableContainer component={Paper} sx={{ width: '80%', margin: 'auto', marginTop: 2, marginBottom: 2 }}>
         <Table sx={{ minWidth: 650 }}>
           <TableHead sx={{ backgroundColor: '#0bafec' }}>

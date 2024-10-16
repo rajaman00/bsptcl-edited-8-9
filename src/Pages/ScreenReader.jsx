@@ -1,4 +1,8 @@
 import React from 'react';
+import NavigationBar from '../../components/NavigationBar'
+import HeaderBox from './Header';
+import Footer from '../../components/Footer'
+import backgroundImage from '../../public/images/Switchyard at Bakhri GSS.jpg'
 import {
   Table,
   TableBody,
@@ -20,7 +24,21 @@ const screenReaders = [
 ];
 
 const ScreenReader = () => {
+  const breadcrumbs = [
+    { label: 'Home', href: '/' },
+    { label: 'Screen Reader', href: '#' },
+    
+  ];
   return (
+
+    <>
+     <NavigationBar />
+      <HeaderBox
+        backgroundImage={backgroundImage}
+        title="Screen Reader"
+        breadcrumbs={breadcrumbs}
+      />
+
     <TableContainer component={Paper}>
       <Typography variant="h5" style={{ padding: '16px', fontWeight: 'bold' }}>
         Various Screen Readers to choose from
@@ -48,6 +66,7 @@ const ScreenReader = () => {
         </TableBody>
       </Table>
     </TableContainer>
+    </>
   );
 };
 
