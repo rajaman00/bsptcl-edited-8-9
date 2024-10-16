@@ -19,8 +19,9 @@ function VMVsection() {
             <h4 className='text-header'>Vision</h4>
           </div>
           <div className="text-content">
-            To deliver excellence in service, innovation, efficiency, and sustainability for driving the growth and development of communities and industries, while ensuring environmental stewardship and maximizing value for the people of the state.
-          </div>
+            <ul><li>
+              To deliver excellence in service, innovation, efficiency, and sustainability for driving the growth and development of communities and industries, while ensuring environmental stewardship and maximizing value for the people of the state.
+            </li> </ul> </div>
         </div>
 
         {/* Mission Div */}

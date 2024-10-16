@@ -135,7 +135,7 @@ const skipToMainContent = () => {
         // If already on the homepage, scroll to the content section
         const mainContent = document.getElementById('main-content');
         if (mainContent) {
-            const offset = 80; // Adjust this value based on your navigation bar height
+            const offset = 90; // Adjust this value based on your navigation bar height
             const elementPosition = mainContent.getBoundingClientRect().top;
             const offsetPosition = elementPosition + window.pageYOffset - offset;
 
@@ -155,7 +155,7 @@ useEffect(() => {
     if (location.state?.skipToMain) {
         const mainContent = document.getElementById('main-content');
         if (mainContent) {
-            const offset = 80; // Adjust this value based on your navigation bar height
+            const offset = 90; // Adjust this value based on your navigation bar height
             const elementPosition = mainContent.getBoundingClientRect().top;
             const offsetPosition = elementPosition + window.pageYOffset - offset;
 
@@ -166,6 +166,33 @@ useEffect(() => {
         }
     }
 }, [location]);
+// for tender scrolling
+const TenderScroll = () => {
+    const section = document.getElementById('tender');
+    const offset = 150; // Adjust this value based on your navbar height
+    const yOffset = section.getBoundingClientRect().top + window.pageYOffset - offset;
+  
+    window.scrollTo({ top: yOffset, behavior: 'smooth' });
+  };
+  
+
+  const Tenderlocation = useLocation();
+
+  useEffect(() => {
+    if (Tenderlocation.hash === '#tender') {
+      // Scroll only after a small delay to let the page load first
+      setTimeout(() => {
+        const section = document.getElementById('tender');
+        if (section) {
+          const offset = 150; // Adjust based on navbar height
+          const yOffset = section.getBoundingClientRect().top + window.pageYOffset - offset;
+          window.scrollTo({ top: yOffset, behavior: 'smooth' });
+        }
+      }, 0);  // Small timeout to wait for the page render
+    }
+  }, [Tenderlocation]);
+  
+  
 
 
     return (
@@ -182,7 +209,7 @@ useEffect(() => {
                     <button onClick={decreaseFontSize} style={{ cursor: 'pointer' }}>A-</button>
                     <button onClick={resetFontSize} style={{ cursor: 'pointer' }}>A</button>
                     <button onClick={increaseFontSize} style={{ cursor: 'pointer', borderRight: '1px solid gray' }}>A+</button>
-                    <button onClick={toggleTheme}>
+                    <button onClick={toggleTheme} style={{ cursor: 'pointer', borderRight: '1px solid gray' }}>
                         {theme === 'day' ? <FaMoon /> : <MdSunny />}
                     </button>
                     <button onClick={() => changeLanguage('en')}><RiEnglishInput /></button>
@@ -363,7 +390,13 @@ useEffect(() => {
                                                     <div className='dropDownMenu'>
                                                         < Link to="First" className='navLinkcolor' style={{ borderBottom: '1px solid black' }}>Schedule of Rate</Link>
                                                         < Link className='navLinkcolor' style={{ borderBottom: '1px solid black' }}>Policy</Link>
-                                                        < Link to='/#tender' className='navLinkcolor' style={{ borderBottom: '1px solid black' }}>Tenders</Link>
+                                                        <Link to="/#tender" href="#"
+  onClick={(e) => {
+    e.preventDefault();
+    TenderScroll();
+  }} className="navLinkcolor" style={{ borderBottom: '1px solid black' }}>
+        Tenders
+      </Link>
                                                         < Link to="https://eproc2.bihar.gov.in/EPSV2Web/" className='navLinkcolor' target="_blank"
                                                             rel="noopener noreferrer" style={{ borderBottom: '1px solid black' }}>e-Procurement</Link>
                                                         < Link to="https://gem.gov.in/" className='navLinkcolor' target="_blank"

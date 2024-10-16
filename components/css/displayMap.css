@@ -2,11 +2,10 @@
   display: flex;
   position: relative;
 
-
 }
 
 .map-container {
-  width: 50%;
+  width: 45%;
   overflow: hidden;
   /* background-color: #58af6e; */
 }
@@ -23,7 +22,6 @@
   font-weight: bold;
   font-size: 10px;
   text-anchor: middle;
-
 }
 
 .hover-group {
@@ -143,85 +141,100 @@
 }
 
 .secondPart {
-  width: 50%;
-  padding: 2rem;
+  width: 55%;
+  /* padding: 2rem; */
   transition: all 0.3s ease;
-  /* Smooth transition for layout changes */
   /* background-color: aquamarine; */
   display: flex;
   flex-direction: column;
   align-items: center; 
   justify-content: center; 
   position: relative;
+  /* overflow: hidden; */
  
 }
 
 ul.imagesList .criteriaImage {
-  width: 7rem;
-  height: 7rem;
+    /* border: #af7158 2px solid; */
+    width: 5rem;  /* Fixed width for uniform size */
+  height: 5rem; /* Fixed height for uniform size */
+  /* object-fit: cover;  */
 }
+.imagesList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: center;
+
+}
+
+
+
+.ImageAndDetailsContainer{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  /* border: #f5570d 2px solid;  */
+  /* padding: 15px; */
+  box-sizing: border-box;
+  width: 7rem; /* Fixed width for uniformity */
+  /* padding: 0.5rem;  */
+  margin: 1rem;
+
+}
+
+
+.imagesList li span {
+  font-size: 15px;
+  font-weight: bold;
+  text-align: center;
+  /* display: flex;
+  flex-wrap: wrap;  */
+  margin-top: 5px; /* Add spacing between image and text */
+  /* border: #58af5c 2px solid; */
+  height: 2rem;
+}
+
 ul.zoneImagesList .zoneCriteriaImage {
-  width: 7rem;
-  height: 7rem;
+  width: 5rem;
+  height: 5rem;
   
 }
 
-.secondPart.default .imagesList {
-  flex-wrap: wrap;
+.zoneImagesList{
+  display:flex;
+  /* flex-direction: row; */
+  list-style-type: none;
+  justify-content: center;
+  align-items: center;
+  /* padding: 1rem; */
+  margin: auto;
 }
-
-.secondPart.default .imagesList li {
-  /* flex: 1 1 inherit; */
-  /* 3 items per row */
-  /* padding: 10px; */
-}
-
-
-.secondPart.show-zone-data .imagesList {
-
-
-  /* flex-wrap: nowrap;
+.zoneImageAndDetailsContainer{
   display: flex;
-  flex-direction: row;
-  overflow-x: auto;
-
-
-  margin-top: -8rem; 
-  transition: margin-top 0.3s ease;  */
-
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 0.5rem 0.5rem;
+  /* border: #58af5c 2px solid; */
 }
+
 .secondPart.show-zone-data .headerAndImages {
-
-
+  flex: 1;
   flex-wrap: nowrap;
   display: flex;
   flex-direction: column;
-  overflow-x: auto;
-
-
-  margin-top: -19rem; /* Adjust this value as needed to move the imagesList up */
-  transition: margin-top 0.3s ease; /* Smooth transition for the movement */
+  /* overflow-x: auto; */
+  /* margin-top: -17rem;  */
+  margin-top: 0;
+  transition: margin-top 0.3s ease; 
   /* border-bottom: 2px solid #ddd; */
-
-
-
 }
 
-.secondPart.show-zone-data .imagesList li {
 
-  /* flex: 1 1 auto; */
-  /* Make items stretch across the row */
-}
-
-.secondPart.show-zone-data .imagesList li img {
-  /* width: 50px;
-  height: 50px; */
-}
-
-.secondPart.show-zone-data .imagesList li span {
-  /* font-size: 10px; */
-
-  }
 .zoneHeaderName{
   text-align: center;
   /* font-style: italic; */
@@ -230,51 +243,39 @@ ul.zoneImagesList .zoneCriteriaImage {
   font-family: "Times New Roman", Times, serif;
   position: relative;
   /* Required for absolute positioning of pseudo-elements */
-  margin: 1rem 0;
+  /* margin: 1rem 0; */
   color: #2f2963; 
-}
-
-
-
-.imagesList {
-  list-style: none;
-  padding: 0;
   margin: 0;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  align-items: center;
 }
-
-.imagesList li {
-  margin: 10px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-.imagesList li img {
-
-  margin-bottom: 5px;
-}
-
-.imagesList li span {
+.zoneImagesList li span {
   font-size: 15px;
   font-weight: bold;
   text-align: center;
+
+  margin-top: 3px; 
+  /* border: #58af5c 2px solid; */
+  height: 2rem;
+  height: 1rem;
+  flex-wrap:nowrap;
+  white-space: nowrap;
+  
 }
+
+
+
 
 .zone-popup {
   position: absolute;
   display: flex;
   flex-direction: column;
 
-  top: 70%;  /* Center vertically */
-  left: 75%; /* Center horizontally */
-  transform: translate(-50%, -50%); /* Adjust the positioning to account for the popup's size */
-  /* bottom: 4rem; */
+  top: 70%;
+  left: 50%;
+  transform: translate(-50%, -50%); 
+
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
   border-radius: 10px;
+margin: 0;
 
 }
 
@@ -293,8 +294,8 @@ ul.zoneImagesList .zoneCriteriaImage {
   font-family: "Times New Roman", Times, serif;
   position: relative;
   /* Required for absolute positioning of pseudo-elements */
-  margin: 1rem 0;
-  margin-bottom: 3rem;
+  /* margin: 1rem 0; */
+  /* margin-bottom: 3rem; */
   color: #2f2963; 
 }
 .map-decorative-heading::before,
@@ -302,15 +303,12 @@ ul.zoneImagesList .zoneCriteriaImage {
   content: '';
   position: absolute;
   top: 50%;
-  width: 15%;
+  width: 14%;
   height: 1px;
   /* Line thickness */
   background: #2f2963;
   /* Line color */
-  transform: translateY(-50%);
-
-  
-
+  transform: translateY(-50%); 
 }
 
 .map-decorative-heading::before {
@@ -326,98 +324,188 @@ ul.zoneImagesList .zoneCriteriaImage {
 
 .lastUpdatedText{
 position:absolute;
-bottom: 1rem;
+bottom: 0;
 }
 /*---------------------------------------------------------------------------Responsive code----------------------------------------------------------------------*/
 
 /* For desktop screens */
-@media only screen and (min-width: 1280px) and (max-width: 1400px) {
-  .mapBox {
-    flex-direction: row;
+@media (max-width:1660px){
+  .imagesList li span {
+    font-size: 13px;
   }
 
-  .map-container {
-    width: 50%;
-  }
+ 
 
-  .secondPart {
-    width: 50%;
-  }
-
-  .zone-popup {
-
-    bottom: 0rem;
-
-  }
+.map-decorative-heading {
+  font-size: 2.5rem;
+ margin: 0;
+}
+.imagesList li span {
+  line-height: 1;
+}
+.map-decorative-heading::before,
+.map-decorative-heading::after {
+  width: 18%; 
 }
 
-/* For laptop screens */
-@media only screen and (min-width: 992px) and (max-width: 1280px) {
-
-  .map-container {
-    width: 55%;
-  }
-
-  .secondPart {
-    width: 45%;
-  }
-
-  .zone-popup {
-
-    bottom: -5rem;
-
-  }
+}
+/*----------------------------------------------------------------------------------------------------*/
+@media (max-width:1504px){
+.map-decorative-heading {
+  font-size: 2rem;
+ margin: 0;
 }
 
-/* For tablet screens */
-@media only screen and (min-width: 768px) and (max-width: 991px) {
-  .mapBox {
+.zoneHeaderName{
+  font-size: 1.5rem;  
+}
+.ImageAndDetailsContainer{ 
+  width: 5rem; 
+  height: 5rem;
+}
+
+}
+/*----------------------------------------------------------------------------------------------------*/
+@media (max-width:1355px){
+  .map-decorative-heading {
+    font-size: 1.5rem;
+   margin: 0;
+  }
+  
+  .zoneHeaderName{
+    font-size: 1.2rem;  
+  }
+  
+  .zone-popup {  
+    top: 73%;
+  }
+  .map-decorative-heading::before,
+.map-decorative-heading::after {
+  width: 25%; 
+}
+  }
+  /*----------------------------------------------------------------------------------------------------*/
+@media (max-width:1214px){  
+  .mapBox {  
+  flex-direction: column;  
+
+  }
+  .map-container {
+    width: 100%;  
+  }
+  .secondPart {
+    width: 100%;
+    height: 25rem;
+  }
+  .ImageAndDetailsContainer{
+    width: 7rem; 
+    margin: 1rem;  
+  }
+  ul.imagesList .criteriaImage {
+    width: 5rem; 
+}
+.map-decorative-heading {
+  font-size: 2rem;
+  margin-top: 0;
+}
+.zoneHeaderName{
+  font-size: 1.5rem;
+}
+.map-decorative-heading::before,
+.map-decorative-heading::after {
+  width: 20%; 
+}
+}
+/*-----------------------------------------------------------------------------------------------------------*/
+@media (max-width:900px){  
+
+  .ImageAndDetailsContainer{
+    width: 5rem; 
+    margin: 1rem;  
+  }
+
+}
+/*-----------------------------------------------------------------------------------------------------------*/
+@media (max-width:740px){  
+
+  .ImageAndDetailsContainer{
+    width: 3rem; 
+    margin: 1rem;  
+  }
+  .map-decorative-heading::before,
+  .map-decorative-heading::after {
+    width: 7%; 
+  }
+}
+@media (max-width:625px){ 
+  .mapSection{
+    margin-right: .5rem;
+  }
+
+
+}
+/*-----------------------------------------------------------------------------------------------------------*/
+@media (max-width:580px){  
+  .secondPart {
+    width: 100%;
+    height: auto;
+    padding-bottom: 2rem;
+  }
+  .ImageAndDetailsContainer{
+    width: 3rem; 
+    margin: 1rem;  
+  }
+  .map-decorative-heading::before,
+  .map-decorative-heading::after {
+    width: 7%; 
+  }
+  .ImageAndDetailsContainer{
+    width: 7rem; 
+    margin: 2rem;  
+  } 
+  .zoneImageAndDetailsContainer{
     flex-direction: column;
-    height: 150vh;
+   flex-wrap:wrap;
+    white-space: wrap;
   }
-
-  .map-container {
-    width: 100%;
-  }
-
-  .secondPart {
-    width: 100%;
-  }
-
   .zone-popup {
-    bottom: 0;
-    right: 50%;
-
+    position: static; 
+    margin: 1rem 0; 
+    width: 100%; 
+    box-sizing: border-box;
+    transform: none; 
+  }
+  .secondPart.show-zone-data .headerAndImages {
+      flex-wrap: wrap;
+      flex-direction: column;    
+      margin-bottom: 2rem;      
+    }  
+    .zoneImagesList div {
+      display: flex;
+      flex-wrap: wrap; 
+      justify-content: center;
+      align-items: center;
+    }
+    .imagesList {
+      margin-bottom: 2rem;
+     }
+    
+  
+}
+@media (max-width:565px){  
+  .map-decorative-heading::before,
+  .map-decorative-heading::after {
+    width: 5%; 
   }
 }
-
-/* For mobile screens */
-@media only screen and (max-width: 767px) {
-  .mapBox {
-    flex-direction: column;
+@media (max-width:545px){  
+  .map-decorative-heading::before,
+  .map-decorative-heading::after {
+    width: 3%; 
   }
-
-  .map-container {
-    width: 100%;
-  }
-
-  .secondPart {
-    width: 100%;
-    height: 150vh;
-  }
-
-  .imagesList {
-    flex-direction: 2 1 column;
-  }
-
-  .imagesList li {
-    margin: 20px;
-  }
-
-  .zone-popup {
-
-    bottom: 0rem;
-
-    right: 10%;
-  }
+}
+@media (max-width:545px){ 
+.imagesList {
+  margin-bottom: 3rem;
+ }
 }

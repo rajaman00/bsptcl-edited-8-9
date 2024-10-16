@@ -1,5 +1,4 @@
 .aboutSection {
-  width: 100%;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -13,21 +12,30 @@
 }
 
 .aboutText {
+
   flex: 1.8;
   color: #333;
   font-size: 1.2rem;
   line-height: 1.5;
-
   font-family: "Times New Roman", Times, serif;
-  /* border-right: 2px solid #ddd; */
-  /* width: 80%; */
-  /* box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
-  border-radius: 10px; */
-  padding: 3rem;  /* 5 rem for bigger screen*/
+  padding: 5rem;
   height: 100%;
-  /* Ensure each section takes the full height */
-  /* background-color: aqua; */
-
+  position: relative;
+  z-index: 1;
+}
+.aboutText::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: url('/images/AboutImages/aboutUs.jpg');
+  /* background-size: cover; */
+  background-position: center;
+  opacity: 0.6; 
+  filter: blur(3px); /* Adjust the blur amount */
+  z-index: -1; /* Ensure the background is behind the content */
 }
 
 .decorative-heading {
@@ -43,7 +51,7 @@
   /* Text color */
   /* background-color: #e7f70e; */
 
-  color: #2f2963; 
+  color: #2f2963;
 }
 
 .decorative-heading::before,
@@ -194,6 +202,7 @@
   height: 100%;
 }
 
+/************************************************     Responsive code     **********************************************************/
 @media (max-width: 1735px) {
 
   .Card {
@@ -234,8 +243,6 @@
 
 
 }
-
-
 
 @media (max-width: 1382px) {
   .Card {
@@ -302,204 +309,256 @@
     margin-bottom: 0.5rem;
 
   }
-   
+
+}
+
+@media (max-width: 1203px) {
+  .Card {
+    height: 11.6rem;
+    width: 7.9rem;
   }
 
-  @media (max-width: 1203px) {
-    .Card {
-      height: 11.6rem;
-      width: 7.9rem;
-    }
-  
-    .aboutImage {
-      margin: 0.125rem;
-      padding: 0.25rem;
-    }
-  
-    .designationName {
-      font-size: small;
-    }
-  
-    .OfficeHolderName {
-      font-size: smaller;
-    }
-  
-    .aboutSection {
-      height: 34rem;
-    }
-  
-    .aboutText {
-      font-size: 1.199rem;
-    }
-  
-    .view-more-button {
-      margin-bottom: 0.5rem;
-  
-    }
-     
-    }
-    @media (max-width: 1194px) {
-      .Card {
-        height: 13rem;
-        width: 13rem;
-      }
-    
-      .aboutImage {
-        margin: 0.125rem;
-        padding: 0.25rem;
-        margin-top: 1rem;
-        width: 100%;
-        gap:1rem;
-      }
-    
-      .designationName {
-        font-size: large;
-      }
-    
-      .OfficeHolderName {
-        font-size: medium;
-      }
-    
-      .aboutSection {
-        height: auto;
-        flex-direction: column;
- 
+  .aboutImage {
+    margin: 0.125rem;
+    padding: 0.25rem;
+  }
 
-      }
-    
-      .aboutText {
-        font-size: 1.199rem;
-        margin: 0;
-        padding: 1rem;
-      }
-    
-      .view-more-button {
-        margin-bottom: 0.5rem;
-    
-      }
-       
-      }
-      @media (max-width: 1176px) {
-        .Card {
-          height: 11.6rem;
-          width: 10rem;
-        }
-      
-        .aboutImage {
-          margin: 0.125rem;
-          padding: 0.25rem;
-          margin-top: 1rem;
-          width: 100%;
-          gap:1rem;
-        }
-      
-        .designationName {
-          font-size: small;
-        }
-      
-        .OfficeHolderName {
-          font-size: small;
-        }
-      
-        .aboutSection {
-          height: auto;
-          flex-direction: column;
-   
-  
-        }
-      
-        .aboutText {
-          font-size: 1.199rem;
-          margin: 0;
-          padding: 1rem;
-        }
-      
-        .view-more-button {
-          margin-bottom: 0.5rem;
-      
-        }
-         
-        }
-        @media (max-width: 984px) {
-          .Card {
-            height: 11.6rem;
-            width: 8rem;
-          }
-        
-          .aboutImage {
-            margin: 0.125rem;
-            padding: 0.25rem;
-            margin-top: 1rem;
-            width: 100%;
-            gap:1rem;
-          }
-        
-          .designationName {
-            font-size: small;
-          }
-        
-          .OfficeHolderName {
-            font-size: small;
-          }
-        
-          .aboutSection {
-            height: auto;
-            flex-direction: column;
-     
-    
-          }
-        
-          .aboutText {
-            font-size: 1.199rem;
-            margin: 0;
-            padding: 1rem;
-          }
-        
-          .view-more-button {
-            margin-bottom: 0.5rem;
-        
-          }
-           
-          }
-          @media (max-width: 856px) {
-            .Card {
-              height: 13rem;
-              width: 13rem;
-            }
-          
-            .aboutImage {
-              margin: 0.125rem;
-              padding: 0.25rem;
-              margin-top: 1rem;
-              width: 100%;
-              gap:1rem;
-            }
-          
-            .designationName {
-              font-size: large;
-            }
-          
-            .OfficeHolderName {
-              font-size: medium;
-            }
-          
-            .aboutSection {
-              height: auto;
-              flex-direction: column;
-       
-      
-            }
-          
-            .aboutText {
-              font-size: 1.199rem;
-              margin: 0;
-              padding: 1rem;
-            }
-          
-            .view-more-button {
-              margin-bottom: 0.5rem;
-          
-            }
-             
-            }
-          
+  .designationName {
+    font-size: small;
+  }
+
+  .OfficeHolderName {
+    font-size: smaller;
+  }
+
+  .aboutSection {
+    height: 34rem;
+  }
+
+  .aboutText {
+    font-size: 1.199rem;
+  }
+
+  .view-more-button {
+    margin-bottom: 0.5rem;
+
+  }
+
+}
+
+@media (max-width: 1194px) {
+  .Card {
+    /* height: 11.6rem;
+        width: 7.9rem; */
+    height: 13rem;
+    width: 13rem;
+  }
+
+  .aboutImage {
+    margin: 0.125rem;
+    padding: 0.25rem;
+    margin-top: 1rem;
+    width: 100%;
+    gap: 1rem;
+  }
+
+  .designationName {
+    font-size: large;
+  }
+
+  .OfficeHolderName {
+    font-size: medium;
+  }
+
+  .aboutSection {
+    /* height: 45rem; */
+    height: auto;
+    flex-direction: column;
+
+
+  }
+
+  .aboutText {
+    font-size: 1.199rem;
+    margin: 0;
+    padding: 1rem;
+  }
+
+  .view-more-button {
+    margin-bottom: 0.5rem;
+
+  }
+
+}
+
+@media (max-width: 1176px) {
+  .Card {
+    height: 11.6rem;
+    width: 10rem;
+    /* height: 13rem;
+          width: 13rem; */
+  }
+
+  .aboutImage {
+    margin: 0.125rem;
+    padding: 0.25rem;
+    margin-top: 1rem;
+    width: 100%;
+    gap: 1rem;
+  }
+
+  .designationName {
+    font-size: small;
+  }
+
+  .OfficeHolderName {
+    font-size: small;
+  }
+
+  .aboutSection {
+    /* height: 45rem; */
+    height: auto;
+    flex-direction: column;
+
+
+  }
+
+  .aboutText {
+    font-size: 1.199rem;
+    margin: 0;
+    padding: 1rem;
+  }
+
+  .view-more-button {
+    margin-bottom: 0.5rem;
+
+  }
+
+}
+
+@media (max-width: 984px) {
+  .Card {
+    height: 11.6rem;
+    width: 8rem;
+    /* height: 13rem;
+            width: 13rem; */
+  }
+
+  .aboutImage {
+    margin: 0.125rem;
+    padding: 0.25rem;
+    margin-top: 1rem;
+    width: 100%;
+    gap: 1rem;
+  }
+
+  .designationName {
+    font-size: small;
+  }
+
+  .OfficeHolderName {
+    font-size: small;
+  }
+
+  .aboutSection {
+    /* height: 45rem; */
+    height: auto;
+    flex-direction: column;
+
+
+  }
+
+  .aboutText {
+    font-size: 1.199rem;
+    margin: 0;
+    padding: 1rem;
+  }
+
+  .view-more-button {
+    margin-bottom: 0.5rem;
+
+  }
+
+}
+
+@media (max-width: 856px) {
+  .Card {
+    height: 13rem;
+    width: 13rem;
+    /* height: 13rem;
+              width: 13rem; */
+  }
+
+  .aboutImage {
+    margin: 0.125rem;
+    padding: 0.25rem;
+    margin-top: 1rem;
+    width: 100%;
+    gap: 1rem;
+  }
+
+  .designationName {
+    font-size: large;
+  }
+
+  .OfficeHolderName {
+    font-size: medium;
+  }
+
+  .aboutSection {
+    /* height: 45rem; */
+    height: auto;
+    flex-direction: column;
+
+
+  }
+
+  .aboutText {
+    font-size: 1.199rem;
+    margin: 0;
+    padding: 1rem;
+  }
+
+  .view-more-button {
+    margin-bottom: 0.5rem;
+
+  }
+}
+@media (max-width:775px){
+  .decorative-heading::before,
+  .decorative-heading::after {   
+    width: 25%; 
+  } 
+}
+@media (max-width:625px){ 
+    .about{
+    margin-top: 5rem;
+    overflow: hidden;
+    /*added later on*/
+    margin-left: 2rem;
+    margin-bottom: 4rem;
+    margin-right: .5rem;  
+}
+.aboutSection {
+  padding: 0;
+  padding-left: 1.8rem;
+}
+.aboutText{
+padding: 2rem;
+
+}
+
+}
+
+ @media (max-width:455px){
+  .decorative-heading::before,
+  .decorative-heading::after {   
+    width: 23%; 
+  } 
+}
+@media (max-width:425px){
+  .decorative-heading::before,
+  .decorative-heading::after {   
+    width: 0%; 
+  } 
+}

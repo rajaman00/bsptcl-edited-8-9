@@ -19,6 +19,7 @@ import PeakDemand from './Pages/PeakDemand.jsx';
 import NewsPaper_Clipping from './Pages/NewsPaper_Clipping.jsx';
 import ScreenReader from './Pages/ScreenReader.jsx';
 import Sitemap from './Pages/SiteMap.jsx';
+import UpcomingTransmissionLines from './Pages/UpcomingTransmissionLines.jsx';
 
 
 function App() {
@@ -43,6 +44,7 @@ function App() {
         <Route path="/TAFM" element={<TAFM/>} />
         <Route path="/atc-ttc" element={<ATC_TTC/> } />
         <Route path="/peak-demand-met" element={<PeakDemand/> } />
+        <Route path="/upcoming-transmission-lines" element={<UpcomingTransmissionLines/> } />
 
         <Route path="/newspaper-clippings" element={<NewsPaper_Clipping/> } />
       </Routes>

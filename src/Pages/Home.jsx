@@ -60,13 +60,7 @@ function App() {
           <OtherInformation/>
         </div>
 
-        
-
-        
-
-       
-
-        <div className="tenders">
+        <div className="tenders" id='tender'>
            <Tenders/>
         </div>
 
