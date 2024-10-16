@@ -1,5 +1,5 @@
 import React from 'react';
-import { Table, TableBody, TableCell, TableContainer, TableHead, TableRow, Paper } from '@mui/material';
+import { Table, TableBody, TableCell, TableContainer, TableHead, TableRow, Paper, Typography } from '@mui/material';
 import NavigationBar from '../../components/NavigationBar';
 import HeaderBox from './Header';
 import Footer from '../../components/Footer'
@@ -44,7 +44,7 @@ const TransmissionLines = () => {
           },
         }}
       >
-        Operational Grids
+        Operational Transmission Lines
       </Typography>
 
 
