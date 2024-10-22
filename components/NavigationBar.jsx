@@ -169,7 +169,7 @@ useEffect(() => {
 // for tender scrolling
 const TenderScroll = () => {
     const section = document.getElementById('tender');
-    const offset = 150; // Adjust this value based on your navbar height
+    const offset = 120; // Adjust this value based on your navbar height
     const yOffset = section.getBoundingClientRect().top + window.pageYOffset - offset;
   
     window.scrollTo({ top: yOffset, behavior: 'smooth' });
@@ -184,7 +184,7 @@ const TenderScroll = () => {
       setTimeout(() => {
         const section = document.getElementById('tender');
         if (section) {
-          const offset = 150; // Adjust based on navbar height
+          const offset = 120; // Adjust based on navbar height
           const yOffset = section.getBoundingClientRect().top + window.pageYOffset - offset;
           window.scrollTo({ top: yOffset, behavior: 'smooth' });
         }
@@ -280,7 +280,7 @@ const TenderScroll = () => {
                                         {/* Transmission Link and Dropdwon */}
 
 
-                                        <li className='navLinkcolor'
+                                        <div className='navLinkcolor'
                                             onMouseOver={() => setTransmissionHovered(true)}
                                             onMouseLeave={() => setTransmissionHovered(false)}
                                         >
@@ -290,7 +290,7 @@ const TenderScroll = () => {
                                                 <div className='transmissionDropDown'>
                                                     <div className='triangle'><GoTriangleUp /></div>
                                                     <div className='dropDownMenu'>
-                                                        < Link to="First" className='navLinkcolor' style={{ borderBottom: '1px solid black' }}
+                                                        <li className='navLinkcolor' style={{ borderBottom: '1px solid black' }}
                                                             onMouseOver={() => setCurInfrastructureHovered(true)}
                                                             onMouseLeave={() => setCurInfrastructureHovered(false)}>
                                                             <div style={{ display: 'flex', justifyContent: 'space-between' }}>Current Infrastructure<span style={{ color: '#db8204' }}><GoTriangleRight /></span></div>
@@ -303,7 +303,7 @@ const TenderScroll = () => {
                                                                 </div>
 
                                                             )}
-                                                        </Link>
+                                                        </li>
                                                         <Link
                                                             to="public/Documents/Bihar-Power-Map.pdf"
                                                             className='navLinkcolor'
@@ -315,7 +315,7 @@ const TenderScroll = () => {
                                                         >
                                                             Power Map
                                                         </Link>
-                                                        <div className='navLinkcolor' style={{ borderBottom: '1px solid black',paddingLeft:'0.6rem' }}
+                                                        <li className='navLinkcolor' style={{ borderBottom: '1px solid black',paddingLeft:'0.6rem' }}
                                                             onMouseOver={() => setSysParametersHovered(true)}
                                                             onMouseLeave={() => setSysParametersHovered(false)}>
                                                             <div style={{ display: 'flex', justifyContent: 'space-between' }}> System Parameters<span style={{ color: '#db8204' }}><GoTriangleRight /></span></div>
@@ -332,30 +332,30 @@ const TenderScroll = () => {
 
                                                             )}
 
-                                                        </div>
+                                                        </li>
                                                         < Link className='navLinkcolor' style={{ borderBottom: '1px solid black' }}>Transmission Loss</Link>
-                                                        < Link className='navLinkcolor'
+                                                        < li className='navLinkcolor'
                                                             onMouseOver={() => setUpcomInfrastructureHovered(true)}
                                                             onMouseLeave={() => setUpcomInfrastructureHovered(false)}>
                                                             Upcoming Infrastructure<span style={{ color: '#db8204' }}><GoTriangleRight /></span>
                                                             {isUpcomInfrastructureHovered && (
                                                                 <div className='UpcomInfrastructureDropDown'>
                                                                     <div className='dropDownMenu'>
-                                                                        < Link className='navLinkcolor' style={{ borderBottom: '1px solid black' }}>Transmission Lines</Link>
-                                                                        < Link className='navLinkcolor' style={{ borderBottom: '1px solid black' }}>Grids</Link>
+                                                                        < Link to='/upcoming-transmission-lines' className='navLinkcolor' style={{ borderBottom: '1px solid black' }}>Transmission Lines</Link>
+                                                                        < Link to='/upcoming-grids' className='navLinkcolor' style={{ borderBottom: '1px solid black' }}>Grids</Link>
                                                                     </div>
                                                                 </div>
 
                                                             )}
-                                                        </Link>
+                                                        </li>
                                                     </div>
                                                 </div>
                                             )}
-                                        </li>
+                                        </div>
 
                                         {/* ------------Media Section---------- */}
                                         <li
-                                            to="/#media"
+                                            
                                             className='navLinkcolor'
                                               onMouseOver={() => setMediaHovered(true)}
                                             onMouseLeave={() => setMediaHovered(false)}
@@ -392,7 +392,6 @@ const TenderScroll = () => {
                                                         < Link className='navLinkcolor' style={{ borderBottom: '1px solid black' }}>Policy</Link>
                                                         <Link to="/#tender" href="#"
   onClick={(e) => {
-    e.preventDefault();
     TenderScroll();
   }} className="navLinkcolor" style={{ borderBottom: '1px solid black' }}>
         Tenders

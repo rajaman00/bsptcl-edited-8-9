@@ -20,6 +20,7 @@ import NewsPaper_Clipping from './Pages/NewsPaper_Clipping.jsx';
 import ScreenReader from './Pages/ScreenReader.jsx';
 import Sitemap from './Pages/SiteMap.jsx';
 import UpcomingTransmissionLines from './Pages/UpcomingTransmissionLines.jsx';
+import UpcomingGrids from './Pages/UpcomingGrids.jsx';
 
 
 function App() {
@@ -45,7 +46,7 @@ function App() {
         <Route path="/atc-ttc" element={<ATC_TTC/> } />
         <Route path="/peak-demand-met" element={<PeakDemand/> } />
         <Route path="/upcoming-transmission-lines" element={<UpcomingTransmissionLines/> } />
-
+        <Route path="/upcoming-grids" element={<UpcomingGrids/> } />
         <Route path="/newspaper-clippings" element={<NewsPaper_Clipping/> } />
       </Routes>
     </Router>
