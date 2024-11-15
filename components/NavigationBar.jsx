@@ -8,12 +8,11 @@ import { RiEnglishInput } from "react-icons/ri";
 import { FaSitemap, FaSearch } from "react-icons/fa";
 import './css/navigationBar.css';
 import logo from '../public/images/BSPTCL Logo & Name.gif';
-import { GoTriangleDown } from "react-icons/go";
-import { GoTriangleUp } from "react-icons/go";
 import { FaMicrophone } from "react-icons/fa";
 import { useTranslation } from 'react-i18next';
 import { GoTriangleRight } from "react-icons/go";
-
+// import triangleImage from "../public/images/UpTriangle.png";
+import triangleImage from "../public/images/d1.png";
 
 
 //overlay
@@ -72,7 +71,7 @@ function NavigationBar() {
     const { i18n } = useTranslation();
 
     const changeLanguage = (language) => {
-      i18n.changeLanguage(language);
+        i18n.changeLanguage(language);
     };
 
     const { t } = useTranslation();
@@ -130,69 +129,69 @@ function NavigationBar() {
     const navigate = useNavigate();
     const location = useLocation();
     // Function to handle scroll with an offset
-const skipToMainContent = () => {
-    if (location.pathname === '/') {
-        // If already on the homepage, scroll to the content section
-        const mainContent = document.getElementById('main-content');
-        if (mainContent) {
-            const offset = 90; // Adjust this value based on your navigation bar height
-            const elementPosition = mainContent.getBoundingClientRect().top;
-            const offsetPosition = elementPosition + window.pageYOffset - offset;
+    const skipToMainContent = () => {
+        if (location.pathname === '/') {
+            // If already on the homepage, scroll to the content section
+            const mainContent = document.getElementById('main-content');
+            if (mainContent) {
+                const offset = 90; // Adjust this value based on your navigation bar height
+                const elementPosition = mainContent.getBoundingClientRect().top;
+                const offsetPosition = elementPosition + window.pageYOffset - offset;
 
-            window.scrollTo({
-                top: offsetPosition,
-                behavior: 'smooth'
-            });
+                window.scrollTo({
+                    top: offsetPosition,
+                    behavior: 'smooth'
+                });
+            }
+        } else {
+            // Navigate to the homepage and scroll to the content
+            navigate('/', { state: { skipToMain: true } });
         }
-    } else {
-        // Navigate to the homepage and scroll to the content
-        navigate('/', { state: { skipToMain: true } });
-    }
-};
+    };
 
-// Use this logic after navigation
-useEffect(() => {
-    if (location.state?.skipToMain) {
-        const mainContent = document.getElementById('main-content');
-        if (mainContent) {
-            const offset = 90; // Adjust this value based on your navigation bar height
-            const elementPosition = mainContent.getBoundingClientRect().top;
-            const offsetPosition = elementPosition + window.pageYOffset - offset;
+    // Use this logic after navigation
+    useEffect(() => {
+        if (location.state?.skipToMain) {
+            const mainContent = document.getElementById('main-content');
+            if (mainContent) {
+                const offset = 90; // Adjust this value based on your navigation bar height
+                const elementPosition = mainContent.getBoundingClientRect().top;
+                const offsetPosition = elementPosition + window.pageYOffset - offset;
 
-            window.scrollTo({
-                top: offsetPosition,
-                behavior: 'smooth'
-            });
+                window.scrollTo({
+                    top: offsetPosition,
+                    behavior: 'smooth'
+                });
+            }
         }
-    }
-}, [location]);
-// for tender scrolling
-const TenderScroll = () => {
-    const section = document.getElementById('tender');
-    const offset = 120; // Adjust this value based on your navbar height
-    const yOffset = section.getBoundingClientRect().top + window.pageYOffset - offset;
-  
-    window.scrollTo({ top: yOffset, behavior: 'smooth' });
-  };
-  
-
-  const Tenderlocation = useLocation();
-
-  useEffect(() => {
-    if (Tenderlocation.hash === '#tender') {
-      // Scroll only after a small delay to let the page load first
-      setTimeout(() => {
+    }, [location]);
+    // for tender scrolling
+    const TenderScroll = () => {
         const section = document.getElementById('tender');
-        if (section) {
-          const offset = 120; // Adjust based on navbar height
-          const yOffset = section.getBoundingClientRect().top + window.pageYOffset - offset;
-          window.scrollTo({ top: yOffset, behavior: 'smooth' });
+        const offset = 150; // Adjust this value based on your navbar height
+        const yOffset = section.getBoundingClientRect().top + window.pageYOffset - offset;
+
+        window.scrollTo({ top: yOffset, behavior: 'smooth' });
+    };
+
+
+    const Tenderlocation = useLocation();
+
+    useEffect(() => {
+        if (Tenderlocation.hash === '#tender') {
+            // Scroll only after a small delay to let the page load first
+            setTimeout(() => {
+                const section = document.getElementById('tender');
+                if (section) {
+                    const offset = 150; // Adjust based on navbar height
+                    const yOffset = section.getBoundingClientRect().top + window.pageYOffset - offset;
+                    window.scrollTo({ top: yOffset, behavior: 'smooth' });
+                }
+            }, 0);  // Small timeout to wait for the page render
         }
-      }, 0);  // Small timeout to wait for the page render
-    }
-  }, [Tenderlocation]);
-  
-  
+    }, [Tenderlocation]);
+
+
 
 
     return (
@@ -203,7 +202,7 @@ const TenderScroll = () => {
                     <Link to="">An ISO 27001:2013 Company</Link>
                 </div>
                 <div className="rightSideDisplay">
-                <button onClick={skipToMainContent} style={{ cursor: 'pointer', borderRight: '1px solid gray' }}>{t('Skip to Main Content')}</button>
+                    <button onClick={skipToMainContent} style={{ cursor: 'pointer', borderRight: '1px solid gray' }}>{t('Skip to Main Content')}</button>
                     <hr />
                     <Link to="/screen-reader" style={{ borderRight: '1px solid gray' }}>Screen Reader</Link>
                     <button onClick={decreaseFontSize} style={{ cursor: 'pointer' }}>A-</button>
@@ -213,7 +212,7 @@ const TenderScroll = () => {
                         {theme === 'day' ? <FaMoon /> : <MdSunny />}
                     </button>
                     <button onClick={() => changeLanguage('en')}><RiEnglishInput /></button>
-                    <button style={{ borderRight: '1px solid gray' }}  onClick={() => changeLanguage('hi')}>हि</button>
+                    <button style={{ borderRight: '1px solid gray' }} onClick={() => changeLanguage('hi')}>हि</button>
                     <Link to="/sitemap"><FaSitemap /></Link>
                 </div>
 
@@ -223,8 +222,8 @@ const TenderScroll = () => {
             <div className='parent'>
                 <div className="logoAndLink">
                     {/* ------------Company Logo ----------------------*/}
-                    <div  className='companyLogo'>
-                        <Link to="/"><Image  src={logo} loop="1" alt='BSPTCL' className='logoImage' /></Link>
+                    <div className='companyLogo'>
+                        <Link to="/"><Image src={logo} loop="1" alt='BSPTCL' className='logoImage' /></Link>
                     </div>
 
                     {/* -------------------Main Link----------------- */}
@@ -257,57 +256,52 @@ const TenderScroll = () => {
                                 <Navbar.Collapse id="responsive-navbar-nav">
                                     <Nav className="ms-auto">
                                         {/* ----About Us--- */}
-                                        <li className='navLinkcolor'
+                                        <li className='navLink'
                                             onMouseOver={() => setAboutHovered(true)}
                                             onMouseLeave={() => setAboutHovered(false)}>
-                                            {t('about')}<span style={{ color: '#db8204' }}><GoTriangleDown /></span>
+                                            {t('about')}<span style={{ color: '#db8204' }}></span>
                                             {isAboutHovered && (
 
-                                                <div className='AboutDropDown'>
-                                                    <div className='triangle'><GoTriangleUp /></div>
+                                                <div className='AboutDropDown'><div style={{height:'1rem', width:'100%', flexOrder:'1'}}></div>
+                                                    <div className='triangle AboutTrianglePosition' ><img className='triangleImage' src={triangleImage} alt="" /></div>
                                                     <div className='dropDownMenu'>
-                                                        < Link to="/company-overview" className='navLinkcolor' style={{ borderBottom: '1px solid black',width:'100%' }}>{t('overview')}</Link>
-                                                        < Link to='/board-directors' className='navLinkcolor' style={{ borderBottom: '1px solid black' }}>{t('directors')}</Link>
-                                                        < Link to='/organization-structure' className='navLinkcolor' style={{ borderBottom: '1px solid black' }}>{t('org_strct')}</Link>
-                                                        < Link to='/awards-achievements' className='navLinkcolor' style={{ borderBottom: '1px solid black' }}>Awards & Achievements</Link>
-                                                        < Link to='/certificates' className='navLinkcolor' style={{ borderBottom: '1px solid black' }}>Certificates</Link>
-                                                        < Link className='navLinkcolor' >Reports and Accounts</Link>
+                                                        < Link to="/company-overview" className='dropdownMenuText' >{t('overview')}</Link>
+                                                        < Link to='/board-directors' className='dropdownMenuText' >{t('directors')}</Link>
+                                                        < Link to='/organization-structure' className='dropdownMenuText'>{t('org_strct')}</Link>
+                                                        < Link to='/awards-achievements' className='dropdownMenuText' >Awards & Achievements</Link>
+                                                        < Link to='/certificates' className='dropdownMenuText' >Certificates</Link>
+                                                        < Link className='dropdownMenuText' >Reports and Accounts</Link>
                                                     </div>
                                                 </div>
                                             )}
                                         </li>
 
                                         {/* Transmission Link and Dropdwon */}
-
-
-                                        <div className='navLinkcolor'
+                                        <li className='navLink'
                                             onMouseOver={() => setTransmissionHovered(true)}
                                             onMouseLeave={() => setTransmissionHovered(false)}
                                         >
-                                            Transmission N/W<span style={{ color: '#db8204' }}><GoTriangleDown /></span>
+                                            Transmission N/W
                                             {isTransmissionHovered && (
-
-                                                <div className='transmissionDropDown'>
-                                                    <div className='triangle'><GoTriangleUp /></div>
+                                                <div className='transmissionDropDown'><div style={{height:'1rem', width:'100%', flexOrder:'1'}}></div>
+                                                     <div className='triangle transmissionTrianglePosition'><img className='triangleImage' src={triangleImage} alt="" /></div>
                                                     <div className='dropDownMenu'>
-                                                        <li className='navLinkcolor' style={{ borderBottom: '1px solid black' }}
+                                                        < Link to="First" className='dropdownMenuText'
                                                             onMouseOver={() => setCurInfrastructureHovered(true)}
                                                             onMouseLeave={() => setCurInfrastructureHovered(false)}>
-                                                            <div style={{ display: 'flex', justifyContent: 'space-between' }}>Current Infrastructure<span style={{ color: '#db8204' }}><GoTriangleRight /></span></div>
+                                                            <div style={{ display: 'flex', justifyContent: 'space-between' }}>Current Infrastructure<span style={{ color: '#db8204', fontSize: '18px' }}><GoTriangleRight /></span></div>
                                                             {isCurInfrastructureHovered && (
                                                                 <div className='CurInfrastructureDropDown'>
                                                                     <div className='dropDownMenu'>
-                                                                        < Link to='/transmission-lines' className='navLinkcolor' style={{ borderBottom: '1px solid black' }}>Transmission Lines</Link>
-                                                                        < Link to='/grids'  className='navLinkcolor' style={{ borderBottom: '1px solid black' }}>Grids</Link>
+                                                                        < Link to='/transmission-lines' className='dropdownMenuText'>Transmission Lines</Link>
+                                                                        < Link to='/grids' className='dropdownMenuText'>Grids</Link>
                                                                     </div>
                                                                 </div>
-
                                                             )}
-                                                        </li>
+                                                        </Link>
                                                         <Link
                                                             to="public/Documents/Bihar-Power-Map.pdf"
-                                                            className='navLinkcolor'
-                                                            style={{ borderBottom: '1px solid black' }}
+                                                           className='dropdownMenuText'            
                                                             onClick={(e) => {
                                                                 e.preventDefault(); // Prevent default handling
                                                                 window.open("/Documents/Bihar-Power-Map.pdf", "_blank"); // Open the PDF in a new tab
@@ -315,61 +309,61 @@ const TenderScroll = () => {
                                                         >
                                                             Power Map
                                                         </Link>
-                                                        <li className='navLinkcolor' style={{ borderBottom: '1px solid black',paddingLeft:'0.6rem' }}
+                                                        <div className='dropdownMenuText' 
                                                             onMouseOver={() => setSysParametersHovered(true)}
                                                             onMouseLeave={() => setSysParametersHovered(false)}>
-                                                            <div style={{ display: 'flex', justifyContent: 'space-between' }}> System Parameters<span style={{ color: '#db8204' }}><GoTriangleRight /></span></div>
+                                                            <div style={{ display: 'flex', justifyContent: 'space-between' }}> System Parameters<span style={{ color: '#db8204', fontSize: '18px' }}><GoTriangleRight /></span></div>
                                                             {isSysParametersHovered && (
                                                                 <div className='SysParametersDropDown'>
                                                                     <div className='dropDownMenu'>
-                                                                        < Link to ='/TAFM' className='navLinkcolor' style={{ borderBottom: '1px solid black' }}>TAFM</Link>
-                                                                        < Link to='/atc-ttc' className='navLinkcolor' style={{ borderBottom: '1px solid black' }}>ATC/TTC</Link>
-                                                                        < Link to='/peak-demand-met' className='navLinkcolor' style={{ borderBottom: '1px solid black' }}>Peak Demand Met</Link>
-                                                                        < Link className='navLinkcolor' style={{ borderBottom: '1px solid black' }}>Load Pattern</Link>
-                                                                        < Link className='navLinkcolor' style={{ borderBottom: '1px solid black' }}>ARR</Link>
+                                                                        < Link to='/TAFM'className='dropdownMenuText'>TAFM</Link>
+                                                                        < Link to='/atc-ttc' className='dropdownMenuText'>ATC/TTC</Link>
+                                                                        < Link to='/peak-demand-met' className='dropdownMenuText'>Peak Demand Met</Link>
+                                                                        < Link className='dropdownMenuText'>Load Pattern</Link>
+                                                                        < Link className='dropdownMenuText'>ARR</Link>
                                                                     </div>
                                                                 </div>
 
                                                             )}
 
-                                                        </li>
-                                                        < Link className='navLinkcolor' style={{ borderBottom: '1px solid black' }}>Transmission Loss</Link>
-                                                        < li className='navLinkcolor'
+                                                        </div>
+                                                        < Link className='dropdownMenuText'>Transmission Loss</Link>
+                                                        < Link className='dropdownMenuText'
                                                             onMouseOver={() => setUpcomInfrastructureHovered(true)}
                                                             onMouseLeave={() => setUpcomInfrastructureHovered(false)}>
-                                                            Upcoming Infrastructure<span style={{ color: '#db8204' }}><GoTriangleRight /></span>
+                                                            <div style={{ display: 'flex', justifyContent: 'space-between' }}>Upcoming Infrastructure<span style={{ color: '#db8204' , fontSize: '18px'}}><GoTriangleRight /></span></div>
                                                             {isUpcomInfrastructureHovered && (
                                                                 <div className='UpcomInfrastructureDropDown'>
                                                                     <div className='dropDownMenu'>
-                                                                        < Link to='/upcoming-transmission-lines' className='navLinkcolor' style={{ borderBottom: '1px solid black' }}>Transmission Lines</Link>
-                                                                        < Link to='/upcoming-grids' className='navLinkcolor' style={{ borderBottom: '1px solid black' }}>Grids</Link>
+                                                                        < Link className='dropdownMenuText'>Transmission Lines</Link>
+                                                                        < Link className='dropdownMenuText'>Grids</Link>
                                                                     </div>
                                                                 </div>
 
                                                             )}
-                                                        </li>
+                                                        </Link>
                                                     </div>
                                                 </div>
                                             )}
-                                        </div>
+                                        </li>
 
                                         {/* ------------Media Section---------- */}
                                         <li
-                                            
-                                            className='navLinkcolor'
-                                              onMouseOver={() => setMediaHovered(true)}
+                                            to="/#media"
+                                            className='navLink'
+                                            onMouseOver={() => setMediaHovered(true)}
                                             onMouseLeave={() => setMediaHovered(false)}
                                         >
-                                            Media <span style={{ color: '#db8204' }}><GoTriangleDown /></span>
+                                            Media <span style={{ color: '#db8204' }}></span>
                                             {isMediaHovered && (
-                                                <div className='mediaDropDown'>
-                                                    <div className='triangle'><GoTriangleUp /></div>
+                                                <div className='mediaDropDown'><div style={{height:'1rem', width:'100%', flexOrder:'1'}}></div>
+                                                     <div className='triangle mediaTrianglePosition'><img className='triangleImage' src={triangleImage} alt="" /></div>
                                                     <div className='dropDownMenu'>
-                                                        <Link to='/annual-reports' className='navLinkcolor' style={{ borderBottom: '1px solid black' }}>Reports/Compendium</Link>
-                                                        <Link to='/e-magazine' className='navLinkcolor' style={{ borderBottom: '1px solid black' }}>e-Magazine</Link>
-                                                        <Link to='/photo-gallery' className='navLinkcolor' style={{ borderBottom: '1px solid black' }}>Photo Gallery</Link>
-                                                        <Link to='/twitter' className='navLinkcolor' style={{ borderBottom: '1px solid black' }}>Twitter</Link>
-                                                        <Link to='/newspaper-clippings' className='navLinkcolor'>Newspaper Clippings</Link>
+                                                        <Link to='/annual-reports' className='dropdownMenuText'>Reports/Compendium</Link>
+                                                        <Link to='/e-magazine' className='dropdownMenuText'>e-Magazine</Link>
+                                                        <Link to='/photo-gallery' className='dropdownMenuText'>Photo Gallery</Link>
+                                                        <Link to='/twitter' className='dropdownMenuText'>Twitter</Link>
+                                                        <Link to='/newspaper-clippings' className='dropdownMenuText'>Newspaper Clippings</Link>
                                                     </div>
                                                 </div>
                                             )}
@@ -379,26 +373,27 @@ const TenderScroll = () => {
 
                                         {/* Procurement Section */}
                                         <li
-                                            className='navLinkcolor'
+                                            className='navLink'
                                             onMouseOver={() => setProcurementHovered(true)}
                                             onMouseLeave={() => setProcurementHovered(false)}>
-                                            Procurement<span style={{ color: '#db8204' }}><GoTriangleDown /></span>
+                                            Procurement<span style={{ color: '#db8204' }}></span>
                                             {isProcurementHovered && (
 
-                                                <div className='procurementDropDown'>
-                                                    <div className='triangle'><GoTriangleUp /></div>
+                                                <div className='procurementDropDown'><div style={{height:'1rem', width:'100%', flexOrder:'1'}}></div>
+                                                   <div className='triangle procurementTrianglePosition'><img className='triangleImage' src={triangleImage} alt="" /></div>
                                                     <div className='dropDownMenu'>
-                                                        < Link to="First" className='navLinkcolor' style={{ borderBottom: '1px solid black' }}>Schedule of Rate</Link>
-                                                        < Link className='navLinkcolor' style={{ borderBottom: '1px solid black' }}>Policy</Link>
+                                                        < Link to="First" className='dropdownMenuText'>Schedule of Rate</Link>
+                                                        < Link className='dropdownMenuText'>Policy</Link>
                                                         <Link to="/#tender" href="#"
-  onClick={(e) => {
-    TenderScroll();
-  }} className="navLinkcolor" style={{ borderBottom: '1px solid black' }}>
-        Tenders
-      </Link>
-                                                        < Link to="https://eproc2.bihar.gov.in/EPSV2Web/" className='navLinkcolor' target="_blank"
-                                                            rel="noopener noreferrer" style={{ borderBottom: '1px solid black' }}>e-Procurement</Link>
-                                                        < Link to="https://gem.gov.in/" className='navLinkcolor' target="_blank"
+                                                            onClick={(e) => {
+                                                                e.preventDefault();
+                                                                TenderScroll();
+                                                            }} className='dropdownMenuText'>
+                                                            Tenders
+                                                        </Link>
+                                                        < Link to="https://eproc2.bihar.gov.in/EPSV2Web/" className='dropdownMenuText' target="_blank"
+                                                            rel="noopener noreferrer" >e-Procurement</Link>
+                                                        < Link to="https://gem.gov.in/" className='dropdownMenuText' target="_blank"
                                                             rel="noopener noreferrer" >GeM</Link>
                                                     </div>
                                                 </div>
@@ -407,65 +402,65 @@ const TenderScroll = () => {
 
                                         {/* STU Section */}
 
-                                        <li className='navLinkcolor'
+                                        <li className='navLink'
                                             onMouseOver={() => setSTUHovered(true)}
                                             onMouseLeave={() => setSTUHovered(false)}>
-                                            STU<span style={{ color: '#db8204' }}><GoTriangleDown /></span>
+                                            STU<span style={{ color: '#db8204' }}></span>
                                             {isSTUHovered && (
 
-                                                <div className='stuDropDown'>
-                                                    <div className='triangle'><GoTriangleUp /></div>
+                                                <div className='stuDropDown'><div style={{height:'1rem', width:'100%', flexOrder:'1'}}></div>
+                                                    <div className='triangle stuTrianglePosition'><img className='triangleImage' src={triangleImage} alt="" /></div>
                                                     <div className='dropDownMenu'>
-                                                        < Link to="First" className='navLinkcolor' style={{ borderBottom: '1px solid black' }}
+                                                        < Link to="First" className='dropdownMenuText'
                                                             onMouseOver={() => setRegulationsHovered(true)}
                                                             onMouseLeave={() => setRegulationsHovered(false)}>
                                                             Regulations<span style={{ color: '#db8204' }}><GoTriangleRight /></span>
                                                             {isRegulationsHovered && (
                                                                 <div className='RegulationsDropDown'>
                                                                     <div className='dropDownMenu'>
-                                                                        < Link className='navLinkcolor' style={{ borderBottom: '1px solid black' }}>Grid Code of Bihar</Link>
-                                                                        < Link className='navLinkcolor' style={{ borderBottom: '1px solid black' }}>Grid Code of India</Link>
-                                                                        < Link className='navLinkcolor' style={{ borderBottom: '1px solid black' }}>Electricity Act, 2003</Link>
-                                                                        < Link className='navLinkcolor' style={{ borderBottom: '1px solid black' }}>other regulation 1</Link>
-                                                                        < Link className='navLinkcolor' style={{ borderBottom: '1px solid black' }}>other regulation 2</Link>
+                                                                        < Link className='dropdownMenuText'>Grid Code of Bihar</Link>
+                                                                        < Link className='dropdownMenuText'>Grid Code of India</Link>
+                                                                        < Link className='dropdownMenuText'>Electricity Act, 2003</Link>
+                                                                        < Link className='dropdownMenuText'>Other regulation 1</Link>
+                                                                        < Link className='dropdownMenuText'>Other regulation 2</Link>
                                                                     </div>
                                                                 </div>
 
                                                             )}
                                                         </Link>
-                                                        < Link to="/tariff-petitons" className='navLinkcolor' style={{ borderBottom: '1px solid black' }}>Tariff Petitons</Link>
-                                                        < Link className='navLinkcolor' >Open Access</Link>
+                                                        < Link to="/tariff-petitons" className='dropdownMenuText'>Tariff Petitions</Link>
+                                                        < Link className='dropdownMenuText' >Open Access</Link>
                                                     </div>
                                                 </div>
                                             )}
                                         </li>
 
                                         {/* Employee Section */}
-                                        <li className='navLinkcolor'
+                                        <li className='navLink'
                                             onMouseOver={() => setEmployeeHovered(true)}
                                             onMouseLeave={() => setEmployeeHovered(false)}>
-                                            Employee<span style={{ color: '#db8204' }}><GoTriangleDown /></span>
+                                            Employee<span style={{ color: '#db8204' }}></span>
                                             {isEmployeeHovered && (
 
-                                                <div className='employeeDropDown'>
-                                                    <div className='triangle'><GoTriangleUp /></div>
+                                                <div className='employeeDropDown'><div style={{height:'1rem', width:'100%', flexOrder:'1'}}></div>
+                                                   <div className='triangle employeeTrianglePosition'><img className='triangleImage' src={triangleImage} alt="" /></div>
                                                     <div className='dropDownMenu'>
-                                                        < Link to="/#office-notification" className='navLinkcolor' style={{ borderBottom: '1px solid black' }}>Office Order</Link>
-                                                        < Link to="/#office-notification" className='navLinkcolor' style={{ borderBottom: '1px solid black' }}>Transfer/Posting</Link>
-                                                        < Link to="/#office-notification" className='navLinkcolor' style={{ borderBottom: '1px solid black' }}>Circulars</Link>
-                                                        < Link to="http://pay.bsphcl.org/" className='navLinkcolor' target="_blank"
-                                                            rel="noopener noreferrer" style={{ borderBottom: '1px solid black' }}>Pay & Pension</Link>
-                                                        < Link to="https://apar.bsphcl.co.in/" className='navLinkcolor' target="_blank"
-                                                            rel="noopener noreferrer" style={{ borderBottom: '1px solid black' }}>APAR</Link>
-                                                        < Link to="https://medical.bsphcl.co.in/" className='navLinkcolor' target="_blank"
-                                                            rel="noopener noreferrer" style={{ borderBottom: '1px solid black' }}>Mediclaim</Link>
-                                                        < Link to="https://ess.bihar.gov.in:44300/irj/portal" className='navLinkcolor' target="_blank"
-                                                            rel="noopener noreferrer" style={{ borderBottom: '1px solid black' }}>ESS\MSS</Link>
-                                                        < Link to="http://125.16.220.20:8077/Form16" className='navLinkcolor' target="_blank"
-                                                            rel="noopener noreferrer" style={{ borderBottom: '1px solid black' }}>Form 16</Link>
+                                                        < Link to="/#office-notification" className='dropdownMenuText'>Office Order</Link>
+                                                        < Link to="/#office-notification" className='dropdownMenuText'>Transfer/Posting</Link>
+                                                        < Link to="/#office-notification" className='dropdownMenuText'>Circulars</Link>
+                                                        < Link to="http://pay.bsphcl.org/" className='dropdownMenuText' target="_blank"
+                                                            rel="noopener noreferrer" >Pay & Pension</Link>
+                                                        < Link to="https://apar.bsphcl.co.in/" className='dropdownMenuText' target="_blank"
+                                                            rel="noopener noreferrer" >APAR</Link>
+                                                        < Link to="https://medical.bsphcl.co.in/" className='dropdownMenuText' target="_blank"
+                                                            rel="noopener noreferrer" >Mediclaim</Link>
+                                                        < Link to="https://ess.bihar.gov.in:44300/irj/portal" className='dropdownMenuText' target="_blank"
+                                                            rel="noopener noreferrer" >ESS/MSS</Link>
+                                                        < Link to="http://125.16.220.20:8077/Form16" className='dropdownMenuText' target="_blank"
+                                                            rel="noopener noreferrer" >Form 16</Link>
                                                         <Link
                                                             to="https://www.google.com"
-                                                            className='navLinkcolor'
+                                                           className='dropdownMenuText'
                                                             target="_blank"
                                                             rel="noopener noreferrer"
                                                         >
@@ -478,51 +473,77 @@ const TenderScroll = () => {
 
 
                                         {/*-------------------------------------Hamburger section -----------------------------------*/}
-                                        <Link to="#" className='navLinkcolor'>
-                                            <RxHamburgerMenu onClick={handleShow} />
-                                            <Offcanvas show={show} onHide={handleClose} style={{ background: 'linear-gradient(to right, #243B55, #141E30)', color: 'white' }}>
-                                                <Offcanvas.Header closeButton>
-                                                    <Offcanvas.Title>UTILITY LINK</Offcanvas.Title>
-                                                </Offcanvas.Header>
-                                                <Offcanvas.Body style={{ backgroundColor: 'gray' }}>
-                                                    <div className="button-container">
-                                                        <div className="row mb-2">
-                                                            <div className="col">
-                                                                <Button className="btn">Button 1</Button>
+                                        <Link to="#" className='navLink hamburgerMenu1'>
+
+                                            <div>
+                                                {/* Link with the hamburger menu */}
+                                                <Link to="#" className='navLink'>
+                                                        <RxHamburgerMenu onClick={handleShow} />
+                                                </Link>
+
+                                                {/* Dark overlay when the Offcanvas is open */}
+                                                {show && <div className="overlay" onClick={handleClose}></div>}
+
+                                                {/* Offcanvas Popup with placement on the right and custom height */}
+                                                <Offcanvas
+                                                    show={show}
+                                                    onHide={handleClose}
+                                                    placement="end"
+                                                    className="custom-offcanvas"
+                                                >
+
+                                                    <Offcanvas.Body>
+                                                        {/* Custom Close Button */}
+                                                        <button
+                                                            onClick={handleClose}
+                                                            className="custom-close-btn"
+                                                            aria-label="Close"
+                                                        >
+                                                            &times; {/* Or use an icon component if preferred */}
+                                                        </button>
+
+                                                        {/* Buttons container */}
+                                                        <div className="button-container1">
+                                                            <div className="row mb-3">
+                                                                <div className="col">
+                                                                    <Button className="custom-button">Career</Button>
+                                                                </div>
+                                                                <div className="col">
+                                                                    <Button className="custom-button">IT Initiatives</Button>
+                                                                </div>
+                                                                <div className="col">
+                                                                    <Button className="custom-button">Power Map</Button>
+                                                                </div>
                                                             </div>
-                                                            <div className="col">
-                                                                <Button className="custom-button">Button 2</Button>
+                                                            <div className="row mb-3">
+                                                                <div className="col">
+                                                                    <Button className="custom-button">Upcoming Infrastructure</Button>
+                                                                </div>
+                                                                <div className="col">
+                                                                    <Button className="custom-button">e-Magazine</Button>
+                                                                </div>
+                                                                <div className="col">
+                                                                    <Button className="custom-button">Photo Gallery</Button>
+                                                                </div>
                                                             </div>
-                                                            <div className="col">
-                                                                <Button className="custom-button">Button 3</Button>
+                                                            <div className="row mb-3">
+                                                                <div className="col">
+                                                                    <Button className="custom-button">Policy</Button>
+                                                                </div>
+                                                                <div className="col">
+                                                                    <Button className="custom-button">Tenders</Button>
+                                                                </div>
+                                                                <div className="col">
+                                                                    <Button className="custom-button">GeM</Button>
+                                                                </div>
                                                             </div>
                                                         </div>
-                                                        <div className="row mb-2">
-                                                            <div className="col">
-                                                                <Button className="custom-button">Button 4</Button>
-                                                            </div>
-                                                            <div className="col">
-                                                                <Button className="custom-button">Button 5</Button>
-                                                            </div>
-                                                            <div className="col">
-                                                                <Button className="custom-button">Button 6</Button>
-                                                            </div>
-                                                        </div>
-                                                        <div className="row mb-2">
-                                                            <div className="col">
-                                                                <Button className="custom-button">Button 7</Button>
-                                                            </div>
-                                                            <div className="col">
-                                                                <Button className="custom-button">Button 8</Button>
-                                                            </div>
-                                                            <div className="col">
-                                                                <Button className="custom-button">Button 9</Button>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </Offcanvas.Body>
-                                            </Offcanvas>
+                                                    </Offcanvas.Body>
+                                                </Offcanvas>
+                                            </div>
+
                                         </Link>
+                                        {/*-------------------------------------Hamburger section -----------------------------------*/}
                                     </Nav>
                                 </Navbar.Collapse>
                             </Navbar>

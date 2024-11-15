@@ -121,23 +121,44 @@
 
 .mainLink {
     width: 100%;
+    height: 2.5rem;
     position: absolute;
-    font-size: 1rem;
+    font-size: 1 rem;
     bottom: 0;
     right: 0;
     background-color: #2f2963;
     z-index: 3;
     padding-bottom: 0 !important;
-    border-top-left-radius: 15px;
+    border-top-left-radius: 15px;    
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    margin-bottom: 0;
+}
+.navbar {
+    padding: 0 !important;
 }
 
-.navLinkcolor {
+.navLink {
     text-decoration: none;
     color: white !important;
     font-weight: 700 !important;
     padding-left: 1.3rem;
+    padding-right: 0.4rem;
+    height: 100%;
+}
+.dropdownMenuText{
+    color: #2f2963;
+    text-decoration: none;
+    padding-left: 1.3rem;
+    padding: 0.5rem;
+    border-bottom: 1px solid #504d68;
 }
 
+.navLink.hamburgerMenu1 {
+    padding-right: 1rem;
+    padding-left: 0 ;
+}
 
 .crossEffect {
 
@@ -176,7 +197,7 @@
         top: 0;
     }
 
-    .navLinkcolor{
+    .navLink{
         color: black !important;
     }
     .crossEffect {
@@ -195,15 +216,20 @@
 
 /* -------------------------Dropdowns CSS-------------------- */
 .dropDownMenu {
-    background-color: #0bafec;
+    /* background-color: #0bafec; */
+    background-color: white;
     border-radius: 5px;
     width: 225px;
     display: flex;
     flex-direction: column;
-    
-    
-    /* height: 5rem; */
+    color: black ;
+   z-index: 100;
+  
 
+}
+Navbar , Nav{
+    width: 100%;
+    height: 100%;
 }
 
 @media (max-width:990px){
@@ -221,11 +247,52 @@
     justify-items: flex-end;
     position: absolute;
     font-size: medium !important;
-    right: 38.35rem;
+    right: 35rem;
     padding: 0;
-    top: 0.9rem;
+    top: 1.2rem;
+    box-shadow: 
+        0 5px 5px rgba(194, 197, 233, 0.411), /* Bottom shadow */
+        -5px 3px 5px -10px rgba(194, 197, 233, 0.411), /* Left shadow starting after 2px */
+        5px 3px 5px -20px rgba(194, 197, 233, 0.411); /* Right shadow starting after 2px */
+    z-index: 1;
+    border-radius: 0 !important;
+
+}
+.triangle {
+    font-weight: 900 !important; 
+    font-size: 1.3rem !important;
+    /* margin-left: auto; */   
+    /* height: min-content; */
+    display: flex;
+    align-items: center;
+    /* justify-content: center; */
+    padding: 0;   
+}
+.AboutTrianglePosition{
+    margin-left: 9rem;
+}
+.transmissionTrianglePosition
+{
+    margin-left: 9rem;
+}
+.mediaTrianglePosition
+{
+    margin-left: 5rem;
+}
+.procurementTrianglePosition{
+    margin-left: 7rem;
+}
+.stuTrianglePosition{
+    margin-left: 10rem;
+}
+.employeeTrianglePosition{
+    margin-left: 9rem;
 }
 
+.triangleImage{
+  height: 0.6rem;
+    width: 1.3rem;
+}
 
 @media (max-width:1140px) {
     .AboutDropDown {
@@ -250,8 +317,14 @@
     justify-items: flex-end;
     position: absolute;
     font-size: medium !important;
-    right: 27.5rem;
-    top: 0.9rem;
+    right: 25rem;
+    top: 1.2rem;
+    box-shadow: 
+    0 5px 5px rgba(194, 197, 233, 0.411), /* Bottom shadow */
+    -5px 3px 5px -10px rgba(194, 197, 233, 0.411), /* Left shadow starting after 2px */
+    5px 3px 5px -20px rgba(194, 197, 233, 0.411); /* Right shadow starting after 2px */
+z-index: 1;
+
 }
 
 @media (max-width:1140px) {
@@ -281,7 +354,15 @@
     position: absolute;
     font-size: medium !important;
     left: 14.1rem;
-    top: 1.95rem;
+    top: 1.7rem;
+    box-shadow: 
+    0 5px 5px rgba(194, 197, 233, 0.411), /* Bottom shadow */
+    -5px 3px 5px -10px rgba(194, 197, 233, 0.411), /* Left shadow */
+    5px 3px 5px -20px rgba(194, 197, 233, 0.411), /* Right shadow */
+    0 -5px 5px rgba(194, 197, 233, 0.411); /* Top shadow */
+z-index: 1;
+
+    
 }
 
 @media (max-width:1140px) {
@@ -310,7 +391,14 @@
     position: absolute;
     font-size: medium !important;
     left: 14.1rem;
-    top:5.055rem;
+    top:7rem;
+    box-shadow: 
+    0 5px 5px rgba(194, 197, 233, 0.411), /* Bottom shadow */
+    -5px 3px 5px -10px rgba(194, 197, 233, 0.411), /* Left shadow */
+    5px 3px 5px -20px rgba(194, 197, 233, 0.411), /* Right shadow */
+    0 -5px 5px rgba(194, 197, 233, 0.411); /* Top shadow */
+z-index: 1;
+
 }
 
 @media (max-width:1140px) {
@@ -339,7 +427,15 @@
     position: absolute;
     font-size: medium !important;
     left: 14.1rem;
-    top: 8.1rem;
+    top: 12.2rem;
+    box-shadow: 
+    0 5px 5px rgba(194, 197, 233, 0.411), /* Bottom shadow */
+    -5px 3px 5px -10px rgba(194, 197, 233, 0.411), /* Left shadow */
+    5px 3px 5px -20px rgba(194, 197, 233, 0.411), /* Right shadow */
+    0 -5px 5px rgba(194, 197, 233, 0.411); /* Top shadow */
+z-index: 1;
+
+
 }
 
 @media (max-width:1140px) {
@@ -367,9 +463,14 @@
     justify-items: flex-end;
     position: absolute;
     font-size: medium !important;
-    right: 22rem;
+    right: 15rem;
     padding: 0;
-    top: 0.9rem;
+    top: 1.2rem;
+    box-shadow: 
+    0 5px 5px rgba(194, 197, 233, 0.411), /* Bottom shadow */
+    -5px 3px 5px -10px rgba(194, 197, 233, 0.411), /* Left shadow starting after 2px */
+    5px 3px 5px -20px rgba(194, 197, 233, 0.411); /* Right shadow starting after 2px */
+z-index: 1;
 }
 
 
@@ -395,9 +496,14 @@
     justify-items: flex-end;
     position: absolute;
     font-size: medium !important;
-    right: 13.7rem;
+    right: 11rem;
     padding: 0;
-    top: 0.9rem;
+    top: 1.2rem;
+    box-shadow: 
+    0 5px 5px rgba(194, 197, 233, 0.411), /* Bottom shadow */
+    -5px 3px 5px -10px rgba(194, 197, 233, 0.411), /* Left shadow starting after 2px */
+    5px 3px 5px -20px rgba(194, 197, 233, 0.411); /* Right shadow starting after 2px */
+z-index: 1;
 }
 
 
@@ -422,9 +528,14 @@
     justify-items: flex-end;
     position: absolute;
     font-size: medium !important;
-    right: 9.59rem;
+    right: 8rem;
     padding: 0;
-    top: 0.9rem;
+    top: 1.2rem;
+    box-shadow: 
+    0 5px 5px rgba(194, 197, 233, 0.411), /* Bottom shadow */
+    -5px 3px 5px -10px rgba(194, 197, 233, 0.411), /* Left shadow starting after 2px */
+    5px 3px 5px -20px rgba(194, 197, 233, 0.411); /* Right shadow starting after 2px */
+z-index: 1;
 }
 
 
@@ -450,7 +561,13 @@
     position: absolute;
     font-size: medium !important;
     right: 14.1rem;
-    top: 1.95rem;
+    top: 1.7rem;
+    box-shadow: 
+    0 5px 5px rgba(194, 197, 233, 0.411), /* Bottom shadow */
+    -5px 3px 5px -10px rgba(194, 197, 233, 0.411), /* Left shadow */
+    5px 3px 5px -20px rgba(194, 197, 233, 0.411), /* Right shadow */
+    0 -5px 5px rgba(194, 197, 233, 0.411); /* Top shadow */
+z-index: 1;
 }
 
 
@@ -477,7 +594,12 @@
     font-size: medium !important;
     right: 2.7rem;
     padding: 0;
-    top: 0.9rem;
+    top:1.1rem;
+    box-shadow: 
+    0 5px 5px rgba(194, 197, 233, 0.411), /* Bottom shadow */
+    -5px 3px 5px -10px rgba(194, 197, 233, 0.411), /* Left shadow starting after 2px */
+    5px 3px 5px -20px rgba(194, 197, 233, 0.411); /* Right shadow starting after 2px */
+z-index: 1;
 }
 
 
@@ -494,14 +616,6 @@
     }
 }
 
-.triangle {
-    color: #db8204;
-    font-weight: 900 !important;
-    font-size: 1.3rem !important;
-    position: relative;
-    margin-left: auto;
-
-}
 
 @media(max-width:1200px) {
     .AboutDropDown{
@@ -521,41 +635,11 @@
           top: 0.4rem;
     }
 }
-.dropDownMenu .navLinkcolor:hover {
-    background-color: #0ca663; /* Change to the color you want */
-    
-}
-
-
-
-
-
-
-
-
-
-/* offcanvas button design */
-.btn {
-    width: 100%;
-    background-color: #c9722b54;
-    border-color: #007bff77;
+.dropDownMenu .dropdownMenuText:hover {
+    /* background-color: #0ca663;  */
+    background-color: #0bafec;
     color: white;
-    border-radius: 5px;
-    transition: background-color 0.3s ease;
 }
-
-.custom-button:hover {
-    background-color: #b30057;
-    border-color: #4eb300;
-}
-
-
-
-
-/* navigationBar.css */
-/* navigationBar.css */
-
-
 
 
 
@@ -582,9 +666,71 @@ a {
     text-decoration: none;
 }
 
+.overlay {
+    position: fixed;
+    top: 0;
+    /* left: 0; */
+   
+    background: rgba(0, 0, 0, 0.5); /* Slightly dark background */
+    z-index: 1040; /* Make sure it's behind the Offcanvas */
+    overflow: hidden; 
+}
+
+.custom-offcanvas {
+    width: fit-content !important; 
+    max-height: fit-content; 
+    /* height: auto;  */
+    background: linear-gradient(to right, #243B55, #141E30);
+    color: white;
+    border-radius: 8px; /* Optional: gives rounded corners */
+    padding: 20px;
+    margin-top: 145px; /* Adjust this value to the height of your navbar */
+    position: relative; /* Makes sure it positions itself relative to its container */
+    border-top: none; /* Removes any default border that might appear on top */
+    z-index: 1050; /* Ensure it appears above overlay */
+    overflow: hidden; 
+    right:20px !important;
+}
+.button-container1 {
+    padding: 10px; /* Adds padding to the button container for better appearance */
+    display: flex; /* Allows buttons to wrap properly */
+    flex-direction: column; /* Stack buttons vertically */
+    gap: 10px; /* Space between button rows */
+    width: max-content; /* Ensures the button container takes full width */
+    margin-bottom: 0;
+}
 
 
+.custom-button {
+    margin-bottom: 15px; /* Adds space below each button */
+    background-color: #141E30 !important; /* Custom background color */
+    border: none !important; /* No border */
+    transition: background-color 0.3s ease, box-shadow 0.3s ease !important; /* Smooth transition for hover effect */
+    box-shadow: -4px 4px 10px rgba(194, 197, 233, 0.411) !important; /* Adds the outer shadow */
+    height: 80px; 
+    width: 500px; 
+    padding: 10px; /* Padding inside the button */
+    width: 100%; /* Set to 100% to fill the button container */
+    font-size: 16px; /* Initial font size */
+    text-align: center; /* Centers the text within the button */
+    overflow: hidden; 
+    cursor: pointer; /* Shows the pointer cursor on hover */
+}
 
 
+.custom-button:hover {
+    background-color: #355185 !important ; /* Darker shade on hover */
+    box-shadow: -4px 4px 10px rgba(194, 197, 233, 0.411) !important; /* Slightly larger shadow on hover */
+}
 
-
+.custom-close-btn {
+    background: none;
+    border: none;
+    color: white; /* Make the close icon white */
+    font-size: 1.5rem;
+    position: absolute;
+    top: 10px; /* Adjust to your preference */
+    right: 10px; /* Adjust to your preference */
+    cursor: pointer;
+    z-index: 1; /* Ensure it appears above other elements */
+}

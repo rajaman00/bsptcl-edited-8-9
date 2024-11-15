@@ -16,10 +16,7 @@
   z-index: 99;
   
 }
-.sliderSection{
-  /* width: 100%; */
- 
-}
+
 .stickyMenu{
   position: fixed;
   top: 12rem;
@@ -62,4 +59,10 @@
 
 .awardSection{
   margin-top: 5rem;
+}
+.MediaAndNewspaperClippings{
+  margin-top: 4rem;
+  margin-left: 5rem;
+  margin-bottom: 4rem;
+  margin-right: 5rem;
 }

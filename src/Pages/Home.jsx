@@ -15,8 +15,8 @@ import Tenders from '../../components/tenders';
 import OtherUtilities from '../../components/OtherUtilities';
 import Footer from '../../components/Footer';
 import OtherInformation from '../../components/OtherInformation';
-
-
+import PhotoGallery from '../../components/PhotoGallery';
+import MediaAndNewspaperClippings from '../../components/MediaAndNewspaperClippings';
 
 function App() {
   useEffect(() => {
@@ -33,7 +33,7 @@ function App() {
           <Slider/>
         </div>
         
-        <div className='about'  >
+        <div className='about' id='main-content' >
           <About/>
         </div>
 
@@ -62,6 +62,14 @@ function App() {
 
         <div className="tenders" id='tender'>
            <Tenders/>
+        </div>
+
+        <div className="PhotoGallery">
+          <PhotoGallery/>
+        </div>
+
+        <div className="MediaAndNewspaperClippings">
+          <MediaAndNewspaperClippings/>
         </div>
 
         <div className="OtherUtilities">

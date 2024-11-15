@@ -23,6 +23,7 @@ import UpcomingTransmissionLines from './Pages/UpcomingTransmissionLines.jsx';
 import UpcomingGrids from './Pages/UpcomingGrids.jsx';
 import AdminTest from './admin/adminTest.jsx';
 import SidebarMenu from './admin/SideBarMenu.jsx';
+import PhotoGalleryPage from './Pages/PhotoGalleryPage.jsx';
 
 
 function App() {
@@ -50,6 +51,7 @@ function App() {
         <Route path="/upcoming-transmission-lines" element={<UpcomingTransmissionLines/> } />
         <Route path="/upcoming-grids" element={<UpcomingGrids/> } />
         <Route path="/newspaper-clippings" element={<NewsPaper_Clipping/> } />
+        <Route path="/photo-gallery" element={<PhotoGalleryPage/> } />
 
         <Route path="/admin" element={<AdminTest/> } />
         <Route path="/sidebar-menu" element={<SidebarMenu/> } />

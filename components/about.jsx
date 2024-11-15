@@ -2,7 +2,7 @@ import React, { useEffect } from 'react';
 import './css/about.css';
 import AOS from "aos";
 import "aos/dist/aos.css";
-import cmImage from '../public/images/nitishkumar.jpg';
+import cmImage from '../public/images/AboutImages/nitishkumar.jpg';
 import EnergyMinister from '../public/images/AboutImages/Energy Minister.jpg';
 import md from '../public/images/AboutImages/New MD Sir.jpeg.jpg'
 import cmd from '../public/images/AboutImages/cmd.jpg';
@@ -63,7 +63,7 @@ function About() {
                         </div>
                         <div className='cardText'>
                             <h5 className='designationName'>Chairman-cum-MD</h5>
-                            <p className='OfficeHolderName'> Mr. Sanjeev Hans</p>
+                            <p className='OfficeHolderName'>Sri Pankaj Kumar Pal</p>
                         </div>
                     </div>
 
