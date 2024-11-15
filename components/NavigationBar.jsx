@@ -385,8 +385,8 @@ function NavigationBar() {
                                                         < Link to="First" className='dropdownMenuText'>Schedule of Rate</Link>
                                                         < Link className='dropdownMenuText'>Policy</Link>
                                                         <Link to="/#tender" href="#"
-                                                            onClick={(e) => {
-                                                                e.preventDefault();
+                                                            onClick={() => {
+                                                                
                                                                 TenderScroll();
                                                             }} className='dropdownMenuText'>
                                                             Tenders

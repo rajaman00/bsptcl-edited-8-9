@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 import '../components/css/tenders.css';
 
 function Tenders() {
@@ -111,7 +112,7 @@ function Tenders() {
               </div>
 
               {/* Add more content as needed */}
-              <button className="view-more-button">View More</button>
+              <Link to='/active-tenders'><button className="view-more-button">View More</button></Link>
             </div>
           )}
           {showCancelledTendersL && (
@@ -159,7 +160,7 @@ function Tenders() {
                 </div>
               </div>
               {/* Add more content as needed */}
-              <button className="view-more-button">View More</button>
+              <Link to='/cancelled-tenders'><button className="view-more-button">View More</button></Link>
             </div>
           )}
 
@@ -250,7 +251,7 @@ function Tenders() {
                 </div>
               </div>
               {/* Add more content as needed */}
-              <button className="view-more-button">View More</button>
+              <Link to='/archive-tenders'><button className="view-more-button">View More</button></Link>
             </div>
           )}
         </div>
@@ -326,7 +327,7 @@ function Tenders() {
               </div>
 
               {/* Add more content as needed */}
-              <button className="view-more-button">View More</button>
+              <Link to='/active-tender'><button className="view-more-button">View More</button></Link>
             </div>
           )}
           {showTransferPostingsR && (
