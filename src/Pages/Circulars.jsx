@@ -46,17 +46,17 @@ const data = [
     },
 ];
 
-function OfficeOrder() {
+function Circulars() {
 
   const breadcrumbs = [
     { label: 'Home', href: '/' },
     { label: 'Notices', href: '#' },
-    { label: 'Office Orders' }
+    { label: 'Circulars' }
   ];
 
   return (
     <>
-       <div className="officeOrderContainer">
+       <div className="circularContainer">
         <div>
             <NavigationBar/>
         </div>
@@ -64,7 +64,7 @@ function OfficeOrder() {
            <div>
            <HeaderBox
                 backgroundImage={backgroundImage}
-                title="Office Orders"
+                title="Circulars"
                 breadcrumbs={breadcrumbs}
             />
            </div>
@@ -106,4 +106,4 @@ function OfficeOrder() {
   )
 }
 
-export default OfficeOrder;
+export default Circulars;

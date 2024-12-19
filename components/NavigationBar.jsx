@@ -286,7 +286,7 @@ function NavigationBar() {
                                                 <div className='transmissionDropDown'><div style={{height:'1rem', width:'100%', flexOrder:'1'}}></div>
                                                      <div className='triangle transmissionTrianglePosition'><img className='triangleImage' src={triangleImage} alt="" /></div>
                                                     <div className='dropDownMenu'>
-                                                        < Link to="First" className='dropdownMenuText'
+                                                        < Link  className='dropdownMenuText'
                                                             onMouseOver={() => setCurInfrastructureHovered(true)}
                                                             onMouseLeave={() => setCurInfrastructureHovered(false)}>
                                                             <div style={{ display: 'flex', justifyContent: 'space-between' }}>Current Infrastructure<span style={{ color: '#db8204', fontSize: '18px' }}><GoTriangleRight /></span></div>

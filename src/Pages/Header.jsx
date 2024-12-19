@@ -5,10 +5,13 @@ const HeaderBox = ({ backgroundImage, title, breadcrumbs }) => {
   return (
     <Box
       sx={{
+        // overflow:'hidden',
+        width:'100%',
         position: 'relative',
+        backgroundRepeat: 'no-repeat',
         height: '13rem',
         backgroundImage: `url(${backgroundImage})`,
-        backgroundSize: 'cover',
+        backgroundSize: '100%',
         backgroundPosition: 'center',
         display: 'flex',
         flexDirection: 'column',

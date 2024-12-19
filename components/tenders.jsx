@@ -60,7 +60,7 @@ function Tenders() {
                   <img src="public/images/doc.png" alt="Document Icon" />
                 </div>
                 <div className="details-header">
-                  <h6>NIT No. 26/PR/BSPTCL/2024</h6>
+                <Link to='/active-tenders' style={{textDecoration:'none'}}><h6>NIT No. 26/PR/BSPTCL/2024</h6></Link>
                   <div className="details-container">
                     <p>Department: Project 1</p>
                     <p className='verticalSeparator'>|</p>
@@ -74,7 +74,7 @@ function Tenders() {
                   <img src="public/images/doc.png" alt="Document Icon" />
                 </div>
                 <div className="details-header">
-                  <h6>NIT No. 27/PR/BSPTCL/2024</h6>
+                <Link to='/active-tenders'><h6>NIT No. 27/PR/BSPTCL/2024</h6></Link>
                   <div className="details-container">
                     <p>Department: Project 2</p>
                     <p className='verticalSeparator'>|</p>
@@ -88,7 +88,7 @@ function Tenders() {
                   <img src="public/images/doc.png" alt="Document Icon" />
                 </div>
                 <div className="details-header">
-                  <h6>NIT No. 28/PR/BSPTCL/2024</h6>
+                <Link to='/active-tenders'><h6>NIT No. 28/PR/BSPTCL/2024</h6></Link>
                   <div className="details-container">
                     <p>Department: Project 1</p>
                     <p className='verticalSeparator'>|</p>
@@ -102,7 +102,7 @@ function Tenders() {
                   <img src="public/images/doc.png" alt="Document Icon" />
                 </div>
                 <div className="details-header">
-                  <h6>NIT No. 33/PR/BSPTCL/2024</h6>
+                  <Link to='/active-tenders'><h6>NIT No. 33/PR/BSPTCL/2024</h6></Link>
                   <div className="details-container">
                     <p>Department: Project 2</p>
                     <p className='verticalSeparator'>|</p>
@@ -289,7 +289,7 @@ function Tenders() {
                   <img src="public/images/doc.png" alt="Document Icon" />
                 </div>
                 <div className="details-header">
-                  <h6>Regarding National Apprenticeship Training Scheme (NATS) at BSPTCL vide OO no 52 dated 19.01.2024</h6>
+                  <Link to='/office-order'><h6>Regarding National Apprenticeship Training Scheme (NATS) at BSPTCL vide OO no 52 dated 19.01.2024</h6></Link>
                   <div className="details-container">
                     <p>Department: HR</p>
                     <p className='verticalSeparator'>|</p>
@@ -303,7 +303,7 @@ function Tenders() {
                   <img src="public/images/doc.png" alt="Document Icon" />
                 </div>
                 <div className="details-header">
-                  <h6>Regarding Duty chart for SLDC Control room on the eve of Deepawali and Chhath Puja</h6>
+                  <Link to='/office-order'><h6>Regarding Duty chart for SLDC Control room on the eve of Deepawali and Chhath Puja</h6></Link>
                   <div className="details-container">
                     <p>Department: HR</p>
                     <p className='verticalSeparator'>|</p>
@@ -317,7 +317,7 @@ function Tenders() {
                   <img src="public/images/doc.png" alt="Document Icon" />
                 </div>
                 <div className="details-header">
-                  <h6>Regarding policy matters of BSPHCL vide OO no. 379 dated 11.07.2024</h6>
+                <Link to='/office-order'> <h6>Regarding policy matters of BSPHCL vide OO no. 379 dated 11.07.2024</h6></Link>
                   <div className="details-container">
                     <p>Department: HR</p>
                     <p className='verticalSeparator'>|</p>
@@ -327,7 +327,7 @@ function Tenders() {
               </div>
 
               {/* Add more content as needed */}
-              <Link to='/active-tender'><button className="view-more-button">View More</button></Link>
+              <Link to='/office-order'><button className="view-more-button">View More</button></Link>
             </div>
           )}
           {showTransferPostingsR && (

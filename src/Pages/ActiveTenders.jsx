@@ -15,7 +15,7 @@ const tenders = [
   { id: 6, text: 'NIT No. 22/PR/BSPTCL/2024', link: 'https://example.com/tender6' },
   { id: 7, text: 'NIT No. 24/PR/BSPTCL/2024', link: 'https://example.com/tender7' },
 ];
-
+const links = "/active-tenders/view-tenders"
 const ActiveTenders = () => {
   const breadcrumbs = [
     { label: 'Home', href: '/' },
@@ -53,11 +53,11 @@ const ActiveTenders = () => {
                 <ListItemText 
                   primary={
                     <Link 
-                      href={tender.link} 
+                      href={links} 
                       underline="none" 
                       color="primary"
-                      target="_blank"
-                      rel="noopener noreferrer"
+                      // target="_blank"
+                      // rel="noopener noreferrer"
                       sx={{ fontSize: '16px', fontWeight: '500', transition: 'color 0.3s', '&:hover': { color: '#0056b3' } }}
                     >
                       {tender.text}

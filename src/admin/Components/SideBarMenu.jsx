@@ -3,10 +3,12 @@ import { List, ListItem, ListItemText, Box } from '@mui/material';
 import { Link } from 'react-router-dom'; // Assuming you're using React Router for navigation
 
 function SidebarMenu() {
+  const basePath = '/admin';
   const menuItems = [
-    { label: 'Circular & notifications', path: '/circular-notifications' },
-    { label: 'Tender', path: '/tender' },
-    { label: 'Tender Notice', path: '/tender-notice' },
+    { label: 'Circular', path: '/circulars' },
+    { label: 'Notifications', path: '/notifications' },
+    { label: 'Tender', path: '/tenders' },
+    { label: 'Cancelled Tenders', path: '/cancelled-tenders' },
     { label: 'Transfer/Posting', path: '/transfer-posting' },
     { label: 'Notice Board', path: '/notice-board' },
     { label: 'Office Order', path: '/office-order' },
@@ -21,6 +23,7 @@ function SidebarMenu() {
     { label: 'Phone Directory', path: '/phone-directory' },
     { label: 'Designation Master', path: '/designation-master' },
     { label: 'ATC/TTC', path: '/atc-ttc' },
+    { label: 'Map-Section', path: '/map-section' },
   ];
 
   return (
@@ -30,7 +33,7 @@ function SidebarMenu() {
           <ListItem
             button
             component={Link}
-            to={item.path}
+            to={`${basePath}${item.path}`} // Use the admin base path directly
             key={index}
             sx={{
               backgroundColor: '#673ab7',
